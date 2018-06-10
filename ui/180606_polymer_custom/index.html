@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  	<!-- safari btn & adress hideen -->
+	<meta name="apple-mobile-web-app-capable" content="yes">  
+	<!-- status-bar COLOR -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"> <!-- black-translucent -->
+  
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <link rel="import" href="bower_components/app-layout/app-layout.html">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/swiper.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <custom-style>
+      <style is="custom-style">
+
+        app-drawer {
+          --app-drawer-scrim-background: rgba(0, 0, 0, 0.6);
+          --app-drawer-content-container: {
+            width:300px;
+            box-shadow:0px 25px 60px 0px rgba(0,0,0,0.4);
+          }
+          z-index:10;
+          
+        }
+
+        /* html, body {
+          margin: 0;
+          font-family: 'Roboto', 'Noto', sans-serif;
+          -webkit-font-smoothing: antialiased;
+          background: #f1f1f1;
+          max-height: 368px;
+        }
+        app-toolbar {
+          background-color: #4285f4;
+          color: #fff;
+        }
+    
+        paper-icon-button + [main-title] {
+          margin-left: 24px;
+        }
+        paper-progress {
+          display: block;
+          width: 100%;
+          --paper-progress-active-color: rgba(255, 255, 255, 0.5);
+          --paper-progress-container-color: transparent;
+        }
+        app-header {
+          @apply --layout-fixed-top;
+          color: #fff;
+          --app-header-background-rear-layer: {
+            background-color: #ef6c00;
+          };
+        }
+        app-drawer {
+          --app-drawer-scrim-background: rgba(0, 0, 0, 0.7);
+          --app-drawer-content-container: {
+            background-color: #B0BEC5;
+          }
+        }
+        sample-content {
+          padding-top: 64px;
+        } */
+
+
+      </style>
+    </custom-style>
+    
+    <app-header reveals>
+      <app-toolbar>
+
+
+        <div class="top_info">
+          <p class="tit">
+              김송희님
+              <span>
+              ,<br>
+                안녕하세요.
+              </span>
+          </p>
+
+          <a href="#none" class="menu" id="menuOpen" onclick="drawer.toggle()">
+              <i class="material-icons">
+                menu
+                </i>
+          </a>
+  
+          <div class="menu_ico">
+            <div class="df_ico">
+                <a href="#none" class="ico">
+                  <i class="material-icons">
+                      favorite_border
+                  </i>
+                </a>
+                <a href="#none" class="ico">
+                    <i class="material-icons">
+                    power_settings_new
+                    </i>
+                  </a>
+            </div>
+  
+            <div class="profile">
+              <i class="material-icons">
+              person
+              </i>
+            </div>
+          </div>
+  
+        </div>
+
+      </app-toolbar>
+
+
+
+    </app-header>
+    
+    <!-- <app-drawer id="drawer" swipe-open align="end" opened>dd</app-drawer> -->
+    <app-drawer id="drawer" swipe-open transition-duration=300>
+      <a href="#none" id="mnClose" onclick="drawer.toggle()">
+          <i class="material-icons">
+            close
+            </i>
+      </a>
+
+      <ul class="nav_mn">
+        <li><a href="#none">home</a></li>
+        <li><a href="#none">About</a></li>
+        <li><a href="#none">Work</a></li>
+        <li><a href="#none">Contact</a></li>
+      </ul>
+
+    </app-drawer>
+
+    <div class="content">
+      
+      <div class="top_area">
+					<div class="swiper-container type1">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><img src="https://i.pinimg.com/564x/b1/a5/4e/b1a54ea53ff5cb88a40fc899923b21c9.jpg"></div>
+							<div class="swiper-slide"><img src="https://i.pinimg.com/564x/f5/0b/b0/f50bb0618003a280d4994df0663c4d43.jpg"></div>
+							<div class="swiper-slide"><img src="https://i.pinimg.com/564x/fa/51/84/fa5184f540d59273e95fce43fa564108.jpg"></div>
+							<div class="swiper-slide"><img src="https://i.pinimg.com/564x/e3/87/99/e38799da1c2d5288e2968eab3ca95eb5.jpg"></div>
+							<div class="swiper-slide"><img src="https://i.pinimg.com/236x/30/a9/1e/30a91e48b1299a51afcb7db063a105bf.jpg"></div>
+							<div class="swiper-slide"><img src="https://i.pinimg.com/564x/12/d3/53/12d3537cbefe969d634766b2687f60c4.jpg"></div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+
+    </div>
+
+      <div class="img_list">
+        <a href="#none" class="img_box">
+          <div class="img">
+            <img src="https://i.pinimg.com/564x/b1/a5/4e/b1a54ea53ff5cb88a40fc899923b21c9.jpg">
+          </div>
+          <div class="txt">
+              <p class="tit">Material is the metaphor</p>
+              <p class="desc">
+                Material Design is a visual language that synthesizes the classic principles of good design with the innovation of technology and science.
+                Material Design is inspired by the physical world and its textures, including how they reflect light and cast shadows. Material surfaces reimagine the mediums of paper and ink.
+              </p>
+          </div>
+        </a>
+
+        <a href="#none" class="img_box">
+          <div class="img">
+            <img src="https://i.pinimg.com/564x/f5/0b/b0/f50bb0618003a280d4994df0663c4d43.jpg">
+          </div>
+          <div class="txt">
+              <p class="tit">Getting around</p>
+              <p class="desc">
+                  Our comprehensive guidance helps you make beautiful products, faster. Design and build with new tools for customizing Material and sharing work, find inspiration in the Material studies, and express your product’s unique identity with Material Theming.
+              </p>
+          </div>
+        </a>
+
+        <a href="#none" class="img_box">
+          <div class="img">
+            <img src="https://i.pinimg.com/564x/fa/51/84/fa5184f540d59273e95fce43fa564108.jpg">
+          </div>
+          <div class="txt">
+              <p class="tit">Layout, color, and more</p>
+              <p class="desc">
+                  Material Design defines the qualities that can be expressed by UI regions, surfaces, and components. Design and strategize how your app is built using foundations that address design from both a broad and detailed perspective.
+                  This section describes the Material environment and layout, its possible interactions, and the unified expression of qualities like color, shape, and motion.
+              </p>
+          </div>
+        </a>
+
+        <a href="#none" class="img_box">
+          <div class="img">
+            <img src="https://i.pinimg.com/564x/b1/a5/4e/b1a54ea53ff5cb88a40fc899923b21c9.jpg">
+          </div>
+          <div class="txt">
+              <p class="tit">Material is the metaphor</p>
+              <p class="desc">
+                Material Design is a visual language that synthesizes the classic principles of good design with the innovation of technology and science.
+                Material Design is inspired by the physical world and its textures, including how they reflect light and cast shadows. Material surfaces reimagine the mediums of paper and ink.
+              </p>
+          </div>
+        </a>
+
+        <a href="#none" class="img_box">
+          <div class="img">
+            <img src="https://i.pinimg.com/564x/f5/0b/b0/f50bb0618003a280d4994df0663c4d43.jpg">
+          </div>
+          <div class="txt">
+              <p class="tit">Getting around</p>
+              <p class="desc">
+                  Our comprehensive guidance helps you make beautiful products, faster. Design and build with new tools for customizing Material and sharing work, find inspiration in the Material studies, and express your product’s unique identity with Material Theming.
+              </p>
+          </div>
+        </a>
+
+        <a href="#none" class="img_box">
+          <div class="img">
+            <img src="https://i.pinimg.com/564x/fa/51/84/fa5184f540d59273e95fce43fa564108.jpg">
+          </div>
+          <div class="txt">
+              <p class="tit">Layout, color, and more</p>
+              <p class="desc">
+                  Material Design defines the qualities that can be expressed by UI regions, surfaces, and components. Design and strategize how your app is built using foundations that address design from both a broad and detailed perspective.
+                  This section describes the Material environment and layout, its possible interactions, and the unified expression of qualities like color, shape, and motion.
+              </p>
+          </div>
+        </a>
+
+
+      </div>
+
+    <script src="js/jquery-1.11.1.min.js"></script>
+
+	<!-- swiper Js -->
+  <script src="js/swiper-4.3.2.min.js"></script> 
+  
+	<script src="js/TweenMax.min.js"></script>
+  <script src="index.js"></script>
+  
+
+
+	<!-- Webapp Transition hotfix --> 
+	<script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+		
+
+</body>
+</html>
