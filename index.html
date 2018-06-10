@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ui Library</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <!-- <script src="https://unpkg.com/vue"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js"></script>
+  <!-- transition 사용시 vue 2.3.4 해당 버전사용 -->
+
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/main.css">
+  <script src="./js/jquery-2.1.4.min.js"></script>
+
+</head>
+<body>
+  <div id="app">
+
+    <div id="container">
+
+      <div class="pr_top_info">
+        <h1 class="pr_title">ui Library</h1>
+        <div class="pr_desc">
+          <p class="ver">ver 0.4</p>
+          <p class="update">Update : 18.06.09</p>
+          <p class="author">Author : Songhee Kim</p>
+
+          <p>All ui : <span class="allLeng">0</span>
+             <!-- / 1월 작업 : <span class="leng01"></span>개 -->
+            </p>
+        </div>
+      </div>
+
+
+      <div class="search_wrapper">
+        <div class="search_area">
+          <input class="pj_search" type="text" placeholder="search ui" v-model="projectname">
+        </div>
+    
+        <div class="fav_search">
+
+          <ul>
+            <!-- <li>
+              <div class="form_group">
+                <input type="checkbox" value="all" v-model="checkedTypes" id="chkAll">
+                <label for="chkAll">all</label>
+                <i class="helper"></i>
+                <span class="allLeng"></span>
+              </div>
+            </li> -->
+
+
+            <li>
+              <div class="form_group">
+                <input type="checkbox" value="ui" v-model="checkedTypes" id="chk1">
+                <label for="chk1">ui</label>
+                <i class="helper"></i>
+                <span class="uiLeng"></span>
+              </div>
+            </li>
+
+            <li>
+              <div class="form_group">
+                <input type="checkbox" value="vue" v-model="checkedTypes" id="chk_vue">
+                <label for="chk_vue">vue</label>
+                <i class="helper"></i>
+                <span class="vueLeng"></span>
+              </div>
+            </li>
+
+            <li>
+              <div class="form_group">
+                <input type="checkbox" value="react" v-model="checkedTypes" id="chk_react">
+                <label for="chk_react">react</label>
+                <i class="helper"></i>
+                <span class="reactLeng"></span>
+              </div>
+            </li>
+      
+            <li>
+              <div class="form_group">
+                <input type="checkbox" value="framer" v-model="checkedTypes" id="chk3">
+                <label for="chk3">framer</label>
+                <i class="helper"></i>
+                <span class="framerLeng"></span>
+              </div>
+            </li>
+      
+            <!-- <li>
+              <div class="form_group">
+                <input type="checkbox" value="layout" v-model="checkedTypes" id="chk4">
+                <label for="chk4">layout</label>
+                <i class="helper"></i>
+                <span class="layLeng"></span>
+              </div>
+            </li> -->
+            
+            <li>
+              <div class="form_group">
+                <input type="checkbox" value="API" v-model="checkedTypes" id="chk5">
+                <label for="chk5">API</label>
+                <i class="helper"></i>
+                <span class="apiLeng"></span>
+              </div>
+            </li>
+            
+            <!-- <li>
+              <div class="form_group">
+                <input type="checkbox" value="project" v-model="checkedTypes" id="chk6">
+                <label for="chk6">project</label>
+                <i class="helper"></i>
+                <span class="prjLeng"></span>
+              </div>
+            </li> -->
+            
+            <!-- <li>
+              <div class="form_group">
+                <input type="checkbox" value="library" v-model="checkedTypes" id="chk7">
+                <label for="chk7">Library</label>
+                <i class="helper"></i>
+                <span class="libLeng"></span>
+              </div>
+            </li> -->
+
+          </ul>
+          
+        </div>
+
+      </div>
+      
+<!-- 
+      <div class="check_after">
+        {{checkedTypes}}
+      </div>
+   -->
+  
+
+      <div class="item_wrap">
+        <div class="inner">
+
+          <transition-group name="list" tag="span">
+            <a v-for="(item,index) in filtered" class="item" :href="item.href" target="_blank"  v-bind:key="item">
+              <span class="num">{{index+1}}</span>
+              <dl>
+                <dt>{{item.name}}</dt>
+                <dd>
+                  <ul>
+                    <li class="type" :class="item.type">{{item.type}}</li>
+                    <li class="date">{{item.date}}</li>
+                  </ul>
+                  <span class="chk">{{item.check}}</span>
+                </dd>
+              </dl>
+            </a>
+          </transition-group>
+
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+  <script>
+    var model = {
+      projectname:"",
+      checkedTypes: [],
+      items : [
+        {
+          name:'polymer_custom',
+          date:'18.06.03',
+          type:'ui',
+          href:'./ui/180606_polymer_custom/index.html',
+          check:''
+        },
+         {
+          name:'react_drag',
+          date:'18.06.01',
+          type:'react',
+          href:'./ui/180601_react_drag/index.html',
+          check:''
+        },
+         {
+          name:'vue_todo',
+          date:'18.06.01',
+          type:'vue',
+          href:'./ui/180601_vue_todo/index.html',
+          check:''
+        },
+         {
+          name:'vue_clock',
+          date:'18.06.01',
+          type:'vue',
+          href:'./ui/180601_vue_clock/index.html',
+          check:''
+        },
+         {
+          name:'vue_search',
+          date:'18.06.01',
+          type:'vue',
+          href:'./ui/180601_vue_search/index.html',
+          check:''
+        },
+         {
+          name:'vue_layer',
+          date:'18.06.01',
+          type:'vue',
+          href:'./ui/180601_vue_layer/index.html',
+          check:''
+        },
+         {
+          name:'vue_slider',
+          date:'18.06.01',
+          type:'vue',
+          href:'./ui/180601_vue_slider/index.html',
+          check:''
+        },
+         {
+          name:'vue_font',
+          date:'18.06.01',
+          type:'vue',
+          href:'./ui/180601_vue_font_tester/index.html',
+          check:''
+        },
+         {
+          name:'position',
+          date:'18.05.26',
+          type:'ui',
+          href:'./ui/180526_position/index.html',
+          check:''
+        },
+         {
+          name:'card',
+          date:'18.02.04',
+          type:'ui',
+          href:'./ui/180203_card/index.html',
+          check:''
+        },
+        {
+          name:'ripple',
+          date:'18.02.03',
+          type:'ui',
+          href:'./ui/180203_ripple/index.html',
+          check:''
+        },
+        {
+          name:'radio/check',
+          date:'18.01.01',
+          type:'ui',
+          href:'./ui/180101_form/index.html',
+          check:''
+        },
+        {
+          name:'audio',
+          date:'18.01.08',
+          type:'API',
+          href:'./ui/170613_audiojs/index.html',
+          check:''
+        },
+        {
+          name:'audio player',
+          date:'18.01.08',
+          type:'API',
+          href:'./ui/170408_wave/index.html',
+          check:''
+        },
+        {
+          name:'sorting',
+          date:'18.01.08',
+          type:'ui',
+          href:'./ui/180121_sorting/index.html',
+          check:''
+        },
+        {
+          name:'framer trip',
+          date:'18.01.02',
+          type:'framer',
+          href:'https://framer.cloud/QNRXZ/',
+          check:''
+        },
+        {
+          name:'micro',
+          date:'18.01.08',
+          type:'ui',
+          href:'./ui/170315_micro/index.html',
+          check:''
+        },
+      ]
+    }
+  
+    new Vue({
+      el: '#app',
+      data: model,
+      computed:{
+        filtered: function(){
+          var pname = this.projectname.trim();
+
+          // return this.items.filter(function(item,index){
+          //   if (item.name.indexOf(pname) > -1){
+          //     return true;
+          //   }
+            
+          // })
+
+
+          //input
+          if (!this.checkedTypes.length) {
+            //$('.pj_search').prop('disabled', false);
+            return this.items.filter(item => {
+              return item.name.indexOf(pname) > -1
+            });
+          }
+          //checkbox
+          else {
+            //$('.pj_search').prop('disabled', true);
+            return this.items.filter(item => {
+                return this.checkedTypes.includes(item.type);
+            });
+          }
+        
+        }
+      },
+      mounted(){
+          //전체 목록 불러옴 원래 체크된것 해제
+          $('.pj_search').on('focus', function(){
+            $('.fav_search').find('input:checked').trigger('click');
+          });
+
+          var allItem = this.items;
+          var allLeng = this.items.length;
+          var uiLeng = $("li.type:contains('ui')").length;
+          var vueLeng = $("li.type:contains('vue')").length;
+          var reactLeng = $("li.type:contains('react')").length;
+          var formLeng = $("li.type:contains('form')").length;
+          var framerLeng = $("li.type:contains('framer')").length;
+          var layLeng = $("li.type:contains('layout')").length;
+          var apiLeng = $("li.type:contains('API')").length;
+          var prjLeng = $("li.type:contains('project')").length;
+          var libLeng = $("li.type:contains('library')").length;
+          var chkLeng = $(".chk:contains('')").length;
+
+          var leng01 = $("li.date:contains('18.01')").length;
+
+          console.log(allItem,allLeng,uiLeng);
+
+          $('.allLeng').text(allLeng);
+          $('.chkLeng').text(chkLeng);
+          $('.uiLeng').text(uiLeng);
+          $('.vueLeng').text(vueLeng);
+          $('.reactLeng').text(reactLeng);
+          $('.formLeng').text(formLeng);
+          $('.framerLeng').text(framerLeng);
+          $('.layLeng').text(layLeng);
+          $('.apiLeng').text(apiLeng);
+          $('.prjLeng').text(prjLeng);
+          $('.libLeng').text(libLeng);
+          $('.leng01').text(leng01);
+
+          // $('#chkAll').on('click', function(){
+          //     $('.fav_search').find('input:checkbox').trigger('click');
+          // });
+          
+      }
+
+
+    });
+
+
+  </script>
+</body>
+</html>

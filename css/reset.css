@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+/****************************************/
+/*	Name: reset
+/*	PART: RESET STYLE
+/*	Version: 1.0
+/*	Author: songhee
+/****************************************/
+
+/* basis Selector */
+html {}
+body {}
+body, p, h1, h2, h3, h4, h5, h6, ul, ol, li, dl, dt, dd, table, thead, tbody, tr, th, td, form, fieldset, legend, input, textarea, button {margin:0; padding:0; font-weight:normal;}
+body, input, select, div, textarea, table, button {font-size:1rem; font-family:dotum, Tahoma,arial; color:#454545;}
+table {width:100%; border:0; border-spacing:0px; border-collapse:collapse;}
+html:first-child select {padding-right:6px; height:20px;} /* Opera 9 & Below Fix */
+option {vertical-align:middle;  padding:3px 0;} /* Firefox Fix */
+legend {display:none; visibility:hidden;}
+img, fieldset, button {vertical-align:middle; border:0;}
+ul, ol, li {list-style:none;}
+em, address {font-style:normal;}
+hr {display:none; visibility:hidden;}
+caption  {display:block; height: 0; width: 0; font-size: 0; line-height: 0; margin: 0; padding: 0;}*/
+caption  {height: 0; width: 0; font-size: 0; line-height: 0; margin: 0; padding: 0;}
+input, textarea, button {line-height: 1.2; vertical-align: middle;}
+/*input*/
+input[type=text], input[type=password] {background:#ffffff; width:126px; height:17px; padding:4px 0 1px 0; color:#454545; text-indent:7px; vertical-align:middle; border:1px solid #e0e0e0;}
+input[type=text], input[type=password] {/* *width:119px; *text-indent:0; *padding-left:6px; */}
+textarea {background:#ffffff; width:100%; height:100px; padding:4px 0 1px 0; color:#454545; /* text-indent:7px; *text-indent:0; */ vertical-align:middle; border:1px solid #e0e0e0;}
+input[type=text]:hover, input[type=password]:hover, textarea:hover {border:1px solid #89b4d3;}
+select {border:1px solid #e0e0e0; height:24px; padding:3px 3px 3px 4px; vertical-align: middle; line-height:24px;}
+input[type="file"] {vertical-align:middle; height:22px; width:80%; margin-right:6px;}
+input[type="checkbox"],input[type="radio"] { margin:0; padding:0; vertical-align:middle; width:13px; height:13px; line-height:13px;}
+label {cursor:pointer;}
+a {text-decoration:none;color:#454545;}
+a:hover, a:active, a:focus{text-decoration:none;}
+
+/****************************/
+/* Common Style             */
+/****************************/
+.hands {cursor:pointer !important;}
+.hide {display:block; height: 0; width: 0; font-size: 0; line-height: 0; margin: 0; padding: 0; overflow:hidden;}
+
+.fixed {table-layout:fixed;} /* table사이즈를 고정 */
+.txt_break {
+	/* word-break:break-all !important;word-wrap:break-word !important; */
+	word-wrap: break-word !important; /* Internet Explorer 5.5+ */
+	white-space: pre-wrap !important; /* css-3 */
+	white-space: -moz-pre-wrap !important; /* Mozilla, since 1999 */
+	white-space: -pre-wrap !important; /* Opera 4-6 */
+	white-space: -o-pre-wrap !important; /* Opera 7 */
+	
+	} /* td 안에 텍스트 줄바꿈을 시켜줍니다 */
+
+.txt_nowrap {white-space:nowrap;} /* 줄바꿈 없음 */
+.ls_m01 {letter-spacing:-1px;} /* Letter spacing */
+.ls_nm {letter-spacing:normal !important;}
+	
+/* clear class */
+.clear {clear:both !important;}
+.clfix:after {content:'.'; display:block; height:0px; clear:both; visibility:hidden;}
+.clfix {display:inline-block;}
+.clfix {display:block;}
+* html .clfix {height:1%;} /* hides from ie-mac */
+.clfix {zoom:1;} /*for ie 5.5-7*/
+
+/* ALIGN */
+.alC {text-align:center !important;}
+.alL {text-align:left !important;}
+.alR {text-align:right !important;}
+.alJ {text-align:justify !important;}
+
+.vaT {vertical-align:top !important;}
+.vaM {vertical-align:middle !important;}
+.vaB {vertical-align:bottom !important;}
+.vapx {vertical-align:-1px !important;}
+
+/* TEXT COLOR*/
+/* pointBl-blue, pointOr-orange, pointRe-red, pointGn-green, pointGy-gray, pointBk-black, pointWh-white */
+.pointBl {color:#1479c7 !important;}
+.pointOr {color:#ff6000 !important;}
+.pointRe {color:#ED1C24 !important;}
+.pointGn {color:#61ac1e !important;}
+.pointGy01 {color:#606060 !important;}
+.pointGy02 {color:#666 !important;}
+.pointGy03 {color:#999 !important;}
+.pointBk {color:#000 !important;}
+.pointWh {color:#fff !important;}
+.pointPK {color:#F03D98 !important;}
+
+
+button{border:1px solid #eee;box-sizing:border-box;padding:10px 15px;border-radius:3px;box-shadow:5px 5px 10px rgba(0,0,0,.05);}
+
+/* tit style */
+h3.tit{margin-bottom:10px;font-weight:bold;}
+
+section{margin-bottom:30px;padding-bottom:10px;}
+section:last-child{border:none;}
+.group{margin-bottom:10px;}

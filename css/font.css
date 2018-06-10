@@ -1,0 +1,109 @@
+@import url(https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css);
+
+/* Noto Sans web font*/
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 100;
+    src: local('Noto Sans Thin'), local('Noto Sans Thin'), local('Noto Sans Thin');
+    src: url(../font/NotoSans/NotoSans-Thin.eot);
+    src: url(../font/NotoSans/NotoSans-Thin.eot?#iefix) format('embedded-opentype'),
+    url(../font/NotoSans/NotoSans-Thin.woff) format('woff'),
+    url(../font/NotoSans/NotoSans-Thin.otf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Noto Sans Light'), local('Noto Sans Light'), local('Noto Sans Light');
+    src: url(../font/NotoSans/NotoSans-Light.eot);
+    src: url(../font/NotoSans/NotoSans-Light.eot?#iefix) format('embedded-opentype'),
+    url(../font/NotoSans/NotoSans-Light.woff) format('woff'),
+    url(../font/NotoSans/NotoSans-Light.otf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 350;
+    src: local('Noto Sans DemiLight'), local('Noto Sans DemiLight'), local('Noto Sans DemiLight');
+    src: url(../font/NotoSans/NotoSans-DemiLight.eot);
+    src: url(../font/NotoSans/NotoSans-DemiLight.eot?#iefix) format('embedded-opentype'),
+    url(../font/NotoSans/NotoSans-DemiLight.woff) format('woff'),
+    url(../font/NotoSans/NotoSans-DemiLight.otf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Noto Sans Regular'), local('Noto Sans Regular'), local('Noto Sans Regular');
+    src: url(../font/NotoSans/NotoSans-Regular.eot);
+    src: url(../font/NotoSans/NotoSans-Regular.eot?#iefix) format('embedded-opentype'),
+    url(../font/NotoSans/NotoSans-Regular.woff) format('woff'),
+    url(../font/NotoSans/NotoSans-Regular.otf) format('truetype');
+}
+
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 500;
+    src: local('Noto Sans Medium'), local('Noto Sans Medium'), local('Noto Sans Medium');
+    src: url(../font/NotoSans/NotoSans-Medium.eot);
+    src: url(../font/NotoSans/NotoSans-Medium.eot?#iefix) format('embedded-opentype'),
+    url(../font/NotoSans/NotoSans-Medium.woff) format('woff'),
+    url(../font/NotoSans/NotoSans-Medium.otf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Noto Sans Bold'), local('Noto Sans Bold'), local('Noto Sans Bold');
+    src: url(../font/NotoSans/NotoSans-Bold.eot);
+    src: url(../font/NotoSans/NotoSans-Bold.eot?#iefix) format('embedded-opentype'),
+    url(../font/NotoSans/NotoSans-Bold.woff) format('woff'),
+    url(../font/NotoSans/NotoSans-Bold.otf) format('truetype');
+}
+
+
+/* SpoqaHanSans �߰� */
+@font-face {
+	font-family: 'SpoqaHanSans';
+	font-style: normal;
+	font-weight: 100;
+	src: url('../font/SpoqaHanSans/SpoqaHanSans-Thin.eot') format('embedded-opentype');
+	src: url('../font/SpoqaHanSans/SpoqaHanSans-Thin.woff') format('woff'),
+	url('../font/SpoqaHanSans/SpoqaHanSans-Thin.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'SpoqaHanSans';
+	font-style: normal;
+	font-weight: 300;
+	src: url('../font/SpoqaHanSans/SpoqaHanSans-Light.eot') format('embedded-opentype');
+	src: url('../font/SpoqaHanSans/SpoqaHanSans-Light.woff') format('woff'),
+	url('../font/SpoqaHanSans/SpoqaHanSans-Light.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'SpoqaHanSans';
+	font-style: normal;
+	font-weight: 400;
+	src: url('../font/SpoqaHanSans/SpoqaHanSans-Regular.eot') format('embedded-opentype');
+	src: url('../font/SpoqaHanSans/SpoqaHanSans-Regular.woff') format('woff'),
+	url('../font/SpoqaHanSans/SpoqaHanSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'SpoqaHanSans webfont';
+	font-style: normal;
+	font-weight: 600;
+	src: url('/fon/SpoqaHanSanst/SpoqaHanSans-Bold.eot') format('embedded-opentype');
+	src: url('../font/SpoqaHanSans/SpoqaHanSans-Bold.woff') format('woff'),
+	url('../font/SpoqaHanSans/SpoqaHanSans-Bold.ttf') format('truetype');
+}
+
+

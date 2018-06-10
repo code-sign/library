@@ -1,0 +1,227 @@
+@charset "utf-8";
+
+body{background:#222;}
+#container{padding:20px 0; max-width:1920px; margin:0 auto;padding:30px; box-sizing:border-box;}
+
+.hilight {color:royalblue;}
+.search_area{margin-bottom:20px;}
+input[type=text].pj_search{background:rgba(0,0,0,.35); color:#fff; width:96%; padding:25px 2%; font-size:30px;line-height:20px;outline:none;border:none; border-radius:5px;transition:.3s;}
+input[type=text].pj_search:hover,
+input[type=text].pj_search:focus{background:rgba(0,0,0,.45);  border:none;font-size:35px;}
+input[type=text].pj_search::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: rgba(255,255,255,.2);
+}
+input[type=text].pj_search::-moz-placeholder { /* Firefox 19+ */
+  color: rgba(255,255,255,.2);
+}
+input[type=text].pj_search:-ms-input-placeholder { /* IE 10+ */
+  color: rgba(255,255,255,.2);
+}
+input[type=text].pj_search:-moz-placeholder { /* Firefox 18- */
+  color: rgba(255,255,255,.2);
+}
+
+.search_wrapper{position:relative;}
+.search_wrapper:after{content:'';display:block;clear:both;}
+
+.item_wrap{position:relative;margin:0 auto;}
+.item_wrap .inner{}
+.item{display:inline-block; position:relative; margin:10px; text-align:left; width:200px; height:200px; background:rgba(255,255,255,.04); box-shadow:2px 2px 10px rgba(0,0,0,.3); border-radius:3px;transition:.3s;}
+.item:hover{transform:scale(1.05);transition:.3s; background:rgba(255,255,255,.08); box-shadow:2px 2px 20px rgba(0,0,0,.5);}
+.item .num{position:absolute; top:10px; right:10px; font-size:15px;line-height:20px; background:rgba(0,0,0,.3); color:rgba(255,255,255,.2); padding:5px; width:20px; height:20px; border-radius:3px;display:table-cell; vertical-align:middle; text-align:center;}
+
+.item dl{padding:20px;}
+.item dl dt {text-transform:capitalize; font-size:24px;margin-bottom:15px;color:rgba(255,255,255,.7);transition:.3s;}
+.item dl dd ul li{color:#bbb;}
+.item dl dd ul li.type{display:inline-block; color:#9c8e7e;border:1px solid #9c8e7e; padding:3px 5px;border-radius:3px;font-size:15px; line-height:15px;text-transform:capitalize; }
+.item dl dd ul li.date{position:absolute;bottom:15px;left:15px;font-size:13px;color:rgba(255,255,255,.2);}
+/* .item dl dd ul li.type.UI{border:1px solid #74f6d2; color:#74f6d2;}
+.item dl dd ul li.type.Layout{border:1px solid #77cddc; color:#77cddc;}
+.item dl dd ul li.type.API{border:1px solid #fffdd1; color:#fffdd1;}
+.item dl dd ul li.type.framer{border:1px solid #5671fe; color:#5671fe;}
+.item dl dd ul li.type.project{border:1px solid rgb(180, 160, 255); color:rgb(180, 160, 255);} */
+.item dl dd ul li.type.library{color:#222;background:#9c8e7e;padding:3px 5px;border-radius:3px;font-size:15px;border:none;} 
+
+.item:hover dl dt{color:rgba(255,255,255,1);}
+
+.list-enter-active, 
+.list-leave-active {
+  transition: opacity 0.3s, transform 0.3s;
+  transform-origin: left center;
+}
+
+.list-enter, 
+.list-leave-to {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.chk{
+  position: absolute;
+  bottom:10px;
+  right:10px;
+  color:#777;
+}
+
+.status_wrap{
+  /* background:#fff; */
+  margin-bottom:15px;
+  text-align:right;
+  font-size:14px;
+}
+
+.status_wrap p{
+  display:inline-block;
+  margin-left:10px;
+  color:#fff;
+}
+
+.status_wrap p span{
+  background:#fff;
+  display:inline-block;
+  width:22px;
+  height:22px;
+  line-height: 22px;
+  border-radius:50%;
+  text-align:center;
+  color:#444;
+}
+
+.fav_search{
+  margin-bottom:20px;
+  margin-left:10px;
+  border-radius:5px;
+}
+
+.fav_search ul{
+  position: relative;
+}
+.fav_search ul:after{
+  content:'';
+  display:block;
+  clear:both;
+}
+.fav_search ul li{
+  float:left;
+  margin-right:20px;
+  margin-bottom:10px;
+  padding-right:20px;
+  position:relative;
+}
+.fav_search ul li:after{
+  content:'';
+  display:inline-block;
+  width:1px;
+  height:15px;
+  background:rgba(255,255,255,.2);
+  position:absolute;
+  top:3px;
+  right:0;
+}
+.fav_search ul li:last-child:after{
+display:none;
+}
+.fav_search .form_group label{
+  font-size:17px;
+  line-height:20px;
+  text-transform:capitalize;
+}
+
+/* custom form */ 
+input[type="checkbox"]{
+  width:20px;
+  height:20px;
+  font-size:0;
+  line-height:0;
+  overflow:hidden;
+  position:absolute;
+  top:0;
+  left:0;
+  appearance: none; 
+  -webkit-appearance: none;
+}
+
+/* checkbox */
+.form_group{
+  position:relative;
+  display:block;
+  margin-bottom:5px;
+}
+
+.form_group span{
+  display:inline-block;
+  width:22px;
+  height:22px;
+  text-align:center;
+  font-size:13px;
+  line-height:22px;
+  color:#222;background:#9c8e7e;border-radius:50%;
+  margin-left:2px;
+  font-weight: bold;
+  letter-spacing:-1px;
+}
+
+.form_group label{
+  line-height:1.5;
+  margin-left:5px;
+  color:#fff;
+}
+
+.form_group .helper{
+  display:inline-block;
+  width:18px;
+  height:18px;
+  border:1px solid #ccc;
+  float:left;
+  border-radius:2px;
+}
+.form_group .helper:before,
+.form_group .helper:after{
+  display:inline-block;
+  position:absolute;
+  top:5px;
+  left:4px;
+  content:'';
+  width:3px;
+  height:0;
+  background:#fff;
+  transform:rotate(-45deg);
+  border-radius:5px;
+  transform-origin:top left;
+  opacity:0;
+  transition:opacity .3s, height 0s linear .3s;
+}
+.form_group .helper:after{
+  height:0;
+  transform:rotate(-135deg);
+  left:12px;
+  top:10px;
+}
+
+.form_group input:checked ~ .helper:before{
+  opacity:1;
+  height:9px;
+  transition:height .2s ease-out;
+}
+.form_group input:checked ~ .helper:after{
+  opacity:1;
+  height:18px;
+  transition:height .2s ease-out;
+  transition-delay:.2s;
+}
+
+.check_after{
+  margin-bottom:20px;
+  color:#fff;
+}
+
+.pr_top_info{position:relative;box-sizing:border-box;margin-bottom:20px;}
+.pr_top_info:after{content:'';display:block;clear:both;}
+.pr_top_info h1{margin:10px 0 0 10px;font-size:45px;float:left;color:#fff;text-transform:uppercase;font-weight:normal;}
+.pr_top_info .pr_desc{font-size:15px;float:right;text-align:right;color:rgba(255,255,255,.5);}
+.pr_top_info .pr_desc p{margin-bottom:10px;}
+.pr_top_info .pr_desc p.ver{font-size:19px;color:rgba(255,255,255,.8);}
+
+@media (max-width:640px){
+  .item{width:calc(45% - 10px);}
+}
