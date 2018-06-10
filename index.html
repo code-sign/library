@@ -27,7 +27,6 @@
           <p class="author">Author : Songhee Kim</p>
 
           <p>All ui : <span class="allLeng">0</span>
-             <!-- / 1월 작업 : <span class="leng01"></span>개 -->
             </p>
         </div>
       </div>
@@ -41,16 +40,6 @@
         <div class="fav_search">
 
           <ul>
-            <!-- <li>
-              <div class="form_group">
-                <input type="checkbox" value="all" v-model="checkedTypes" id="chkAll">
-                <label for="chkAll">all</label>
-                <i class="helper"></i>
-                <span class="allLeng"></span>
-              </div>
-            </li> -->
-
-
             <li>
               <div class="form_group">
                 <input type="checkbox" value="ui" v-model="checkedTypes" id="chk1">
@@ -86,16 +75,7 @@
                 <span class="framerLeng"></span>
               </div>
             </li>
-      
-            <!-- <li>
-              <div class="form_group">
-                <input type="checkbox" value="layout" v-model="checkedTypes" id="chk4">
-                <label for="chk4">layout</label>
-                <i class="helper"></i>
-                <span class="layLeng"></span>
-              </div>
-            </li> -->
-            
+
             <li>
               <div class="form_group">
                 <input type="checkbox" value="API" v-model="checkedTypes" id="chk5">
@@ -105,36 +85,12 @@
               </div>
             </li>
             
-            <!-- <li>
-              <div class="form_group">
-                <input type="checkbox" value="project" v-model="checkedTypes" id="chk6">
-                <label for="chk6">project</label>
-                <i class="helper"></i>
-                <span class="prjLeng"></span>
-              </div>
-            </li> -->
-            
-            <!-- <li>
-              <div class="form_group">
-                <input type="checkbox" value="library" v-model="checkedTypes" id="chk7">
-                <label for="chk7">Library</label>
-                <i class="helper"></i>
-                <span class="libLeng"></span>
-              </div>
-            </li> -->
-
           </ul>
           
         </div>
 
       </div>
       
-<!-- 
-      <div class="check_after">
-        {{checkedTypes}}
-      </div>
-   -->
-  
 
       <div class="item_wrap">
         <div class="inner">
@@ -298,14 +254,6 @@
         filtered: function(){
           var pname = this.projectname.trim();
 
-          // return this.items.filter(function(item,index){
-          //   if (item.name.indexOf(pname) > -1){
-          //     return true;
-          //   }
-            
-          // })
-
-
           //input
           if (!this.checkedTypes.length) {
             //$('.pj_search').prop('disabled', false);
@@ -324,7 +272,6 @@
         }
       },
       mounted(){
-          //전체 목록 불러옴 원래 체크된것 해제
           $('.pj_search').on('focus', function(){
             $('.fav_search').find('input:checked').trigger('click');
           });
@@ -336,15 +283,8 @@
           var reactLeng = $("li.type:contains('react')").length;
           var formLeng = $("li.type:contains('form')").length;
           var framerLeng = $("li.type:contains('framer')").length;
-          var layLeng = $("li.type:contains('layout')").length;
           var apiLeng = $("li.type:contains('API')").length;
-          var prjLeng = $("li.type:contains('project')").length;
-          var libLeng = $("li.type:contains('library')").length;
           var chkLeng = $(".chk:contains('')").length;
-
-          var leng01 = $("li.date:contains('18.01')").length;
-
-          console.log(allItem,allLeng,uiLeng);
 
           $('.allLeng').text(allLeng);
           $('.chkLeng').text(chkLeng);
@@ -353,16 +293,9 @@
           $('.reactLeng').text(reactLeng);
           $('.formLeng').text(formLeng);
           $('.framerLeng').text(framerLeng);
-          $('.layLeng').text(layLeng);
           $('.apiLeng').text(apiLeng);
-          $('.prjLeng').text(prjLeng);
-          $('.libLeng').text(libLeng);
           $('.leng01').text(leng01);
 
-          // $('#chkAll').on('click', function(){
-          //     $('.fav_search').find('input:checkbox').trigger('click');
-          // });
-          
       }
 
 
