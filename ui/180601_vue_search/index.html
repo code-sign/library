@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+  
+  <title>kimsonghee_KPI</title>
+  
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="../../css/common.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/vue/1.0.24/vue.js"></script>
+</head>
+<body>
+
+  <div class="container">
+
+    <a href="../index.html" class="home">Home</a>
+      
+    <h1>IT 신기술 용어</h1>
+    <!-- component template -->
+    <script type="text/x-template" id="grid-template">
+      <p class="tb_desc">테이블 헤딩 클릭시 Sorting</p>
+      <table>
+        <caption>no,name,power,description</caption>
+        <colgroup>
+          <col style="width:50px">
+          <col style="width:150px" span="2">
+          <col style="width:auto">
+        </colgroup>
+        <thead>
+          <tr>
+            <th scope="col" v-for="key in columns"
+              @click="sortBy(key)"
+              :class="{active: sortKey == key}">
+              {{key | capitalize}}
+              <span class="arrow"
+                :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
+              </span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="
+            entry in data
+            | filterBy filterKey
+            | orderBy sortKey sortOrders[sortKey]">
+            <td v-for="key in columns">
+              {{{entry[key] | highlight filterKey}}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </script>
+    <!--// component template -->
+
+
+    <!-- root element -->
+    <div id="app">
+      <div class="search_box">
+        <label for="search1">Search</label>  
+        <input id="search1" name="query" v-model="searchQuery" value="20">
+      </div>
+      <demo-grid
+        :data="gridData"
+        :columns="gridColumns"
+        :filter-key="searchQuery">
+      </demo-grid>
+    </div>
+
+
+    <script src="ui.js"></script>
+    
+
+  </div>
+
+</body>
+</html>

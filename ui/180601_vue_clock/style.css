@@ -1,0 +1,140 @@
+@charset "utf-8";
+
+
+body {
+  font-size: 16px;
+}
+.container{padding:0;}
+#app {
+  min-height: 100vh;
+  color: rgb(201, 251, 255);
+  background: rgb(255, 222, 217);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.clock {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+}
+
+.clock::before {
+  z-index: 3;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+    transform: translate(-50%, -50%);
+  background: rgb(155, 155, 155);
+  border-radius: 50%;
+}
+
+.clock .step {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -2px;
+  height: 100%;
+  width: 4px;
+}
+
+.clock .step::before, .clock .step::after {
+  content: '';
+  position: absolute;
+  left: -3px;
+  width: 15px;
+  height: 15px;
+  background: rgba(255, 165, 160, 0.7);
+  border-radius: 50%;
+}
+
+.clock .step::before {
+  top: .5rem;
+}
+
+.clock .step::after {
+  bottom: .5rem;
+}
+
+.clock .step:nth-child(1)::before, .clock .step:nth-child(1)::after {
+  background: rgb(255, 255, 255);
+}
+
+.clock .step:nth-child(2) {
+    transform: rotate(30deg);
+}
+
+.clock .step:nth-child(3) {
+    transform: rotate(60deg);
+}
+
+.clock .step:nth-child(4) {
+    transform: rotate(90deg);
+}
+
+.clock .step:nth-child(4)::before, .clock .step:nth-child(4)::after {
+  background: rgb(255, 255, 255);
+}
+
+.clock .step:nth-child(5) {
+    transform: rotate(120deg);
+}
+
+.clock .step:nth-child(6) {
+    transform: rotate(150deg);
+}
+
+.clock .title {
+  position: absolute;
+  bottom: 5rem;
+  left: 50%;
+    transform: translateX(-50%);
+  text-transform: uppercase;
+  font-size: 1em;
+  opacity: .5;
+}
+
+.clock .hour,
+.clock .min,
+.clock .sec {
+  z-index: 2;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  height: 40%;
+  width: 4px;
+  margin-left: -2px;
+  background: rgb(48, 48, 48);
+          transform-origin: bottom center;
+  border-radius: 3px 3px 0 0;
+}
+
+.clock .hour {
+  height: 30%;
+}
+
+.clock .sec {
+  z-index: 1;
+  height: 46%;
+  background: rgb(255, 255, 255);
+}
+
+.time_desc {
+    position:absolute;
+    top:50px;
+    right:50px;
+    font-size: 3em;
+    margin-right:30px;
+    color:rgb(226, 190, 190);
+}

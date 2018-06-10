@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>audio.js</title>
+    <meta content="width=device-width, initial-scale=0.6" name="viewport">
+    
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="audiojs/audio.js"></script>
+    <script>
+        $(function() {
+            // Setup the player to autoplay the next track
+            var a = audiojs.createAll({
+                trackEnded: function() {
+                    var next = $('ol li.playing').next();
+                    if (!next.length) next = $('ol li').first();
+                    next.addClass('playing').siblings().removeClass('playing');
+                    audio.load($('a', next).attr('data-src'));
+                    audio.play();
+
+					nowPlayTitle();
+                }
+            });
+
+            // Load in the first track
+            var audio = a[0];
+            first = $('ol a').attr('data-src');
+            $('ol li').first().addClass('playing');
+            audio.load(first);
+
+            // Load in a track on click
+            $('ol li').click(function(e) {
+                e.preventDefault();
+                $(this).addClass('playing').siblings().removeClass('playing');
+                audio.load($('a', this).attr('data-src'));
+                audio.play();
+                $('#btn_playpause').removeClass('off').find('i').text('stop_arrow');
+
+                var thisAlbum = $(this).find('.profile img').attr('src');
+
+                $('.play_info').css('background','#fff');
+                $('.play_info .bg').css('background-image','url('+thisAlbum+'');
+
+            });
+            // Keyboard shortcuts
+            $(document).keydown(function(e) {
+                var unicode = e.charCode ? e.charCode : e.keyCode;
+                // right arrow
+                if (unicode == 39) {
+                    var next = $('li.playing').next();
+                    if (!next.length) next = $('ol li').first();
+                    next.click();
+                    // back arrow
+                } else if (unicode == 37) {
+                    var prev = $('li.playing').prev();
+                    if (!prev.length) prev = $('ol li').last();
+                    prev.click();
+                    // spacebar
+                } else if (unicode == 32) {
+                    audio.playPause();
+                }
+            })
+
+			//btn event
+			$('.btn_area > a').on('click', function(){
+                $('.btn_area > a').removeClass('on');
+                $('.micro.music').hide();
+				$(this).addClass('on');
+			});
+
+			$('#btn_playpause').on('click', function(){
+                audio.playPause();
+                if($(this).hasClass('off')){
+                    $(this).removeClass('off');
+                    $(this).find('i').text('stop_arrow');
+                } else{
+                    $(this).addClass('off');
+                    $(this).find('i').text('play_arrow');
+                }
+				return false;
+			});
+
+			$('#btn_prev').on('click', function(){
+				var prev = $('li.playing').prev();
+				if (!prev.length) prev = $('ol li').last();
+				prev.click();
+				return false;
+			});
+
+			$('#btn_next').on('click', function(){
+				var next = $('li.playing').next();
+				if (!next.length) next = $('ol li').first();
+				next.click();
+				return false;
+			});
+
+
+			$('ol > li').on('click', function(){
+				nowPlayTitle();
+			});
+
+			//now playing title
+			function nowPlayTitle(){
+					var onM = $('.playing');
+					var onM_tit = onM.find('a').text();
+					console.log(onM_tit);
+					$('.now_playing').text(onM_tit);
+			} nowPlayTitle();
+
+
+
+
+		});
+
+
+    </script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="wrap">
+			<div class="container">
+
+                <div class="header">
+                    <div class="left">
+                        <a class="on" href="#none">home</a>
+                        <a href="#none">favor</a>
+                    </div>   
+                    <div class="right">
+                        <a href="#none"><i class="material-icons">search</i></a>
+                        <a href="#none"><i class="material-icons">queue_music</i></a>
+                    </div>
+                </div>
+                         
+                <div class="fixmenu">
+
+                    <a href="#none" class="arrow">
+                        <i class="material-icons">
+                        keyboard_arrow_up
+                        </i>
+                    </a href="#none">
+                    
+                    <div class="play_info">
+                        <div class="bg"></div>
+
+                        <div class="pl_cont">
+
+                            <div class="now_playing">Now</div>
+
+                            <div class="btn_area">
+                                <a href="#" id="btn_prev">
+                                    <i class="material-icons">
+                                        skip_previous
+                                    </i>
+                                </a>
+                                <a href="#" class="off" id="btn_playpause">
+                                    <i class="material-icons">
+                                    play_arrow
+                                    </i>
+                                </a>
+                                <a href="#" id="btn_next">
+                                        <i class="material-icons">
+                                            skip_next
+                                        </i>
+                                </a>
+                            </div>
+
+                            <audio preload></audio>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="playlist">
+                    <ol>
+                        <li>
+                            <span class="profile">
+                                <img src="image/1.jpg" alt="">
+                            </span>
+                            <a href="#" data-src="mp3/bensound-dubstep.mp3">Dubstep</a></li>
+                        <li>
+                            <span class="profile">
+                                <img src="image/2.jpg" alt="">
+                            </span>
+                            <a href="#" data-src="mp3/bensound-cute.mp3">Cute</a></li>
+                        <li>
+                            <span class="profile">
+                                <img src="image/3.jpg" alt="">
+                            </span>
+                            <a href="#" data-src="mp3/bensound-buddy.mp3">Buddy</a></li>
+                        <li>
+                            <span class="profile">
+                                <img src="image/4.jpg" alt="">
+                            </span>
+                            <a href="#" data-src="mp3/bensound-acousticbreeze.mp3">Acoustic Breeze</a></li>
+                        <li>
+                            <span class="profile">
+                                <img src="image/5.jpg" alt="">
+                            </span>
+                            <a href="#" data-src="mp3/bensound-epic.mp3">Epic</a></li>
+                        <li>
+                            <span class="profile">
+                                <img src="image/6.jpg" alt="">
+                            </span>
+                            <a href="#" data-src="mp3/bensound-funnysong.mp3">Funny Song</a></li>
+                        <li>
+                            <span class="profile">
+                                <img src="image/7.jpg" alt="">
+                            </span>
+                            <a href="#" data-src="mp3/bensound-littleidea.mp3">Little Idea</a></li>
+                        <li>
+                            <span class="profile">
+                                <img src="image/8.jpg" alt="">
+                            </span>
+                            <a href="#" data-src="mp3/bensound-betterdays.mp3">Better Days</a></li>
+                        <li>
+                            <span class="profile">
+                                <img src="image/9.jpg" alt="">
+                            </span>
+                            <a href="#" data-src="mp3/bensound-dubstep.mp3">Dubstep</a></li>
+                        <li>
+                            <span class="profile">
+                                <img src="image/10.jpg" alt="">
+                            </span>
+                            <a href="#" data-src="mp3/bensound-cute.mp3">Cute</a></li>
+                        <li>
+                            <span class="profile">
+                                <img src="image/1.jpg" alt="">
+                            </span>
+                            <a href="#" data-src="mp3/bensound-buddy.mp3">Buddy</a></li>
+                        <li>
+                            <span class="profile">
+                                <img src="image/2.jpg" alt="">
+                            </span>
+                            <a href="#" data-src="mp3/bensound-acousticbreeze.mp3">Acoustic Breeze</a></li>
+                        <li>
+                            <span class="profile">
+                                <img src="image/3.jpg" alt="">
+                            </span>
+                            <a href="#" data-src="mp3/bensound-epic.mp3">Epic</a></li>
+                        <li>
+                            <span class="profile">
+                                <img src="image/4.jpg" alt="">
+                            </span>
+                            <a href="#" data-src="mp3/bensound-funnysong.mp3">Funny Song</a></li>
+                        <li>
+                            <span class="profile">
+                                <img src="image/5.jpg" alt="">
+                            </span>
+                            <a href="#" data-src="mp3/bensound-littleidea.mp3">Little Idea</a></li>
+                        <li>
+                            <span class="profile">
+                                <img src="image/6.jpg" alt="">
+                            </span>
+                            <a href="#" data-src="mp3/bensound-betterdays.mp3">Better Days</a></li>
+                    </ol>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+    <!-- <div id="shortcuts">
+        <div>
+            <h1>Keyboard shortcuts:</h1>
+            <p><em>&rarr;</em> Next track</p>
+            <p><em>&larr;</em> Previous track</p>
+            <p><em>Space</em> Play/pause</p>
+        </div>
+    </div> -->
+
+    <script>
+    
+		//music 
+		setInterval(function(){
+			$('.music').find('span').each(function(){
+				var ranN = Math.floor(Math.random(0)*10);
+				//console.log(ranN);
+				$(this).css({'height':4*ranN+'px'});
+			});
+        },130);
+
+        //fixmenu
+        $('.fixmenu .arrow').on('click', function(){
+
+            if($(this).hasClass('on')){
+                $(this).removeClass('on').find('i').html('keyboard_arrow_up');
+                $('.play_info').animate({height:'120px'});
+            } else {
+                $(this).addClass('on').find('i').html('keyboard_arrow_down');
+                $('.play_info').animate({height:'300px'});
+            }
+        });
+        
+    </script>
+
+</body>
+</html>

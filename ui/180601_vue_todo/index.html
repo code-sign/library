@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+    <title>kimsonghee_KPI</title>
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <div id="app">
+            <h1 class="tit">{{tit}}<span class="num">{{todos.length}}</span></h1>
+
+            <div class="todo_wrap">
+                <div class="inner">
+
+                    <div class="ipt_wrap">
+                        <input 
+                            v-model="newTodo"
+                            @keyup.enter="addNewTodo"
+                            placeholder="할일을 입력하세요"
+                        >
+                        <button @click="addNewTodo">추가</button>
+                    </div>
+                    
+                    <ol class="todo_list">
+                        <li 
+                            v-for="(todo, index) in todos"
+                        >  
+                            <span class="num">{{index+1}}</span> {{todo}} <button @click="removeTodo(todo)">x</button>
+                            <!--{{title}}<button @click="$emit(\'remove\')">x</button>-->
+                        </li>
+                    </ol>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="ui.js"></script>
+    
+</body>
+
+</html>

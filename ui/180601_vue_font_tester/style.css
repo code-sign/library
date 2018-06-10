@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+
+
+.text_zone{margin-top:50px;}
+.text_zone .desc{margin-bottom:10px;color:#aaa;}
+
+.edit_wrap{margin-bottom:20px;}
+.edit_wrap > ul {position:relative;}
+.edit_wrap > ul:after{display:block;clear:both;content:'';}
+.edit_wrap > ul > li{float:left;margin-right:20px;}
+
+.txt_st{
+transition: all .3s ease-out;
+border: none;
+background: transparent;
+
+padding:20px;
+height:200px;
+width:calc(100% - 40px);
+border:1px solid #ccc;
+}

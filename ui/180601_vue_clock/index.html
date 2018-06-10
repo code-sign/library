@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+    <title>kimsonghee_KPI</title>
+
+	<link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <div id="app">
+            <div class="time_desc">{{ hour }} : {{ mins }} : {{ secs }}</div>
+            <div class="clock">
+                <div class="step"></div>
+                <div class="step"></div>
+                <div class="step"></div>
+                <div class="step"></div>
+                <div class="step"></div>
+                <div class="step"></div>
+                <div class="title">{{ appTitle }}</div>
+                <div class="hour" v-bind:style="{transform: 'rotate(' + hourDeg + ')'}"> </div>
+                <div class="min" v-bind:style="{transform: 'rotate(' + minsDeg + ')'}"></div>
+                <div class="sec" v-bind:style="{transform: 'rotate(' + secsDeg + ')'}"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="ui.js"></script>
+    
+</body>
+
+</html>

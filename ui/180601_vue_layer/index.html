@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+    <title>kimsonghee_KPI</title>
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/common.css">
+	<link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue"></script>
+  
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="con_section">
+            <h1>Layer Transition</h1>
+            <h2>트랜지션 진입 진출</h2>
+            <p>enter-active : enter / enter-to</p>
+            <p>leave-active : leave / leave-to</p>
+        </div>
+
+        <div id="app">
+
+            <div class="anim_group">
+                <button @click="show=!show">Toast Massage</button>
+                <transition name="fade">
+                <div class="msg" v-show="show">
+                    hello, I'm songhee
+                </div>
+                </transition>
+            </div>
+
+            <div class="anim_group">
+                <button @click="modal=!modal">Modal Layer</button>
+                <transition name="fade2">
+                <div v-show="modal">
+                    <div class="modal_wrap">
+                        <div class="modal type2">
+                            <p class="txt">hello, I'm modal layer</p>
+                            <button @click="modal=false">close</button>
+                        </div>
+                    </div>
+                </div>
+                </transition>
+            </div>
+
+            <div class="anim_group">
+                <button @click="dimModal=!dimModal">Dim Modal Layer</button>
+                <transition name="fade2">
+                <div class="dim_mask" v-show="dimModal">
+                    <div class="modal_wrap">
+                        <div class="modal type1">
+                            <p class="txt">hello, I'm dim Modal layer</p>
+                            <button @click="dimModal=false">close</button>
+                        </div>
+                    </div>
+                </div>
+                </transition>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="ui.js"></script>
+    
+</body>
+</html>

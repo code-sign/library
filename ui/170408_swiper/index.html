@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html >
+  <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta charset="UTF-8">
+    <title>swiper</title>
+		<link rel="stylesheet" href="css/swiper.min.css"> <!-- swiper css -->
+		<link rel="stylesheet" href="../../css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+
+		<link href="//cdn.jsdelivr.net/nanumsquare/1.0/nanumsquare.css"  rel="stylesheet" type="text/css">
+
+		<script src="../../js/jquery-1.11.1.min.js"></script>
+		
+  </head>
+
+  <body>
+
+	<div class="wrapper">
+		<div class="wrap">
+			<div class="container">
+
+				<div class="top_area">
+					<div class="swiper-container type1">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">1</div>
+							<div class="swiper-slide">2</div>
+							<div class="swiper-slide">3</div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+
+
+				<div class="swiper-container type2">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="list_wrap">
+								<a href="javascript:animate1();" class="profile"></a>
+
+							</div>
+						</div>
+						<div class="swiper-slide">2</div>
+						<div class="swiper-slide">3</div>
+						<div class="swiper-slide">4</div>
+						<div class="swiper-slide">5</div>
+						<div class="swiper-slide">6</div>
+						<div class="swiper-slide">7</div>
+						<div class="swiper-slide">8</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+	<!-- swiper Js -->
+	<script src="js/swiper.min.js"></script> 
+	<script src="js/TweenMax.min.js"></script>
+
+	<!-- instalize Swiper -->
+    <script> 
+
+		$(window).load(function(){
+			var swiper = new Swiper('.swiper-container.type1', {
+				pagination: '.swiper-pagination',
+				slidesPerView: 1.25,
+				paginationClickable: true,
+				spaceBetween: -10,
+				keyboardControl: true,
+				centeredSlides: true,
+				loop:true,
+
+			   autoplayDisableOnInteraction: false
+			});
+
+
+
+
+			var swiper2 = new Swiper('.swiper-container.type2', {
+				/*pagination: '.swiper-pagination',*/
+				slidesPerView: 3.6,
+				paginationClickable: true,
+				spaceBetween: 10,
+
+				/*centeredSlides: true,*/
+				freeMode: true,
+				direction:'vertical',
+				autoplay: false,
+				loop: false
+			});
+		});
+
+
+		var isSel = false;
+
+
+		$(window).on('resize', function(){
+			var winW = $(window).width();
+
+			if (isSel){
+				if(winW < 380){
+					isSel = false;
+					console.log("aa");
+				}
+			} else if(winW >= 380) {
+				isSel = true;
+				console.log("bb");
+			}
+
+		});
+
+    </script>
+
+	<script src="js/index.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html >
+  <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Easing</title>
+        <link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="../../css/reset.css">
+		<link href="//cdn.jsdelivr.net/nanumsquare/1.0/nanumsquare.css"  rel="stylesheet" type="text/css">
+
+		<script src="../../js/jquery-1.11.1.min.js"></script>
+		
+  </head>
+
+  <body>
+	<div class="wrap">
+		<h1>Tween Max Animation</h1>
+
+		<section>
+			<a class="btn" href="javascript:animate1();">start</a>
+			<div class="item item01">Item01</div>
+			<div class="code">
+				TweenMax.from( $( ".item01" ), 5, { opacity: 0 } );
+			</div>
+		</section>
+
+		<section>
+			<a class="btn" href="javascript:animate2();">start</a>
+			<div class="item item02">Item02</div>
+			<div class="code">
+				TweenMax.from( $( ".item02" ), 1, { rotation: 180 } );
+			</div>
+		</section>
+
+		<section>
+			<a class="btn" href="javascript:animate3();">start</a>
+			<div class="item item03">Item03</div>
+			<div class="code">
+				TweenMax.to(".item03", 1, { 
+					scale: function(){
+					return Math.random()*0.5;
+				}
+			</div>
+		</section>
+
+		<section>
+			<a class="btn" href="javascript:animate4();">start</a>
+			<div class="item item04">Item04</div>
+			<div class="code">
+				TweenMax.fromTo(".item04",1,{x:10, delay:1}, {x:100});
+			</div>
+		</section>
+
+		<section>
+			<a class="btn" href="javascript:animate5();">start</a>
+			<div class="item item05">Item05</div>
+			<div class="code">
+				move = TweenMax.to(".item05", 1 , {x:100, rotation:180, scale:1.5});
+				//after 1 second into the 3-second animations, lets try to reverse them
+				TweenLite.delayedCall(1, reverse)
+
+				function reverse(){
+					move.reverse();
+				}
+			</div>
+		</section>
+
+		<section>
+			<a class="btn" href="javascript:animate6();">start</a>
+			<div class="item" id="item06">0</div>
+			<div class="code">
+				var box2 = document.getElementById("item06"),
+					count = 0,
+					tween2;
+
+				tween2 = TweenMax.to(box2, 2, {x:100, repeat:10, yoyo:true, onRepeat:onRepeat, repeatDelay:0.5, ease:Linear.easeNone});
+
+				function onRepeat() {
+				  count++;
+				  box2.innerHTML = count;
+				  TweenLite.set(box2, {backgroundColor:"hsl(" + Math.random() * 255 + ", 90%, 60%)"});
+				}
+			</div>
+		</section>
+
+		<section>
+			<a class="btn" href="javascript:animate7();">start</a>
+			<div class="item item07">repeat</div>
+			<div class="code">
+				TweenMax.to(".item07",1,{x:50, yoyo:true, repeat:-1});
+			</div>
+		</section>
+
+		<section>
+			<a class="btn" href="javascript:animate8();">start</a>
+			<div class="item item08">Item08</div>
+			<div class="code">
+				var box8 = $('.item08');
+				var t1 = new TimelineLite();
+				t1.to(box8, 1, {x:30});
+				t1.to(box8, 1, {y:30});
+				t1.to(box8, 1, {x:0, y:0, backgroundColor:'#aaa'});
+			</div>
+		</section>
+
+		<section>
+			<a class="btn" href="javascript:animate9();">start</a>
+			<div class="item item09">
+				<div class="item09_1"></div>
+				<div class="item09_2"></div>
+				<div class="item09_3"></div>
+			</div>
+			<div class="code">
+				var box1 = $('.item09_1');
+				var box2 = $('.item09_2');
+				var box3 = $('.item09_3');
+
+				var t1 = new TimelineLite();
+				t1.staggerTo([box1,box2,box3], 1, {rotation:180},0.5);
+			</div>
+		</section>
+
+
+		<section>
+			<div class="item item10">
+				<div class="item10_1"></div>
+				<div class="item10_2"></div>
+				<div class="item10_3"></div>
+			</div>
+			<div class="code">
+				var box1 = $('.item10_1');
+				var box2 = $('.item10_2');
+				var box3 = $('.item10_3');
+
+				var t1 = new TimelineMax({repeat:-1, yoyo:true, repeatDelay:0.5});
+				t1.staggerTo([box1,box2,box3], 1, {rotation:180, backgroundColor:'#222'},0.5);
+			</div>
+		</section>
+
+
+
+		<section>
+			<a class="btn" href="javascript:animate11();">start</a>
+			<div class="item item11">
+			</div>
+			<div class="code">
+				ease:Back.easeOut
+			</div>
+		</section>
+
+		<section>
+			<a class="btn" href="javascript:animate12();">start</a>
+			<div class="item item12">
+				<div class="item12_1">1</div>
+				<div class="item12_2">2</div>
+				<div class="item12_3">3</div>
+			</div>
+			<div class="code">
+				var objects = [obj1, obj2, obj3, obj4, obj5];
+				TweenMax.staggerFrom(objects, 1, {y:"+=150"}, 0.2);
+			</div>
+		</section>
+
+		<section class="item13_wrap">
+			<div id="item13">item</div>
+			<div class="code">
+			</div>
+		</section>
+
+		
+
+
+	</div>
+
+
+		<script src="js/TweenMax.min.js"></script>
+		<script src='http://cdnjs.cloudflare.com/ajax/libs/velocity/1.1.0/velocity.min.js'></script>
+		<script src="js/index.js"></script>
+
+
+  </body>
+</html>

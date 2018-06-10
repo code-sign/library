@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>kimsonghee_KPI</title>
+    
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
+    <script src="https://unpkg.com/tween.js@16.3.4"></script>
+    <script src="https://unpkg.com/color-js@1.0.3/color.js"></script>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <div id="app1">
+        <h1>Vue.js</h1>
+        <h2>{{message}}</h2>
+        <hr>
+
+        <h3>{{ }} 기본바인딩</h3>
+        <p>{{welcomeMsg}}</p>
+        <hr>
+
+        <h3>v-if</h3>
+        <p v-if="seen">v-if (seen이 true 이면 보입니다)</p>
+        <hr>
+
+        <h3>v-for</h3>
+        <li v-for="(item, index) in items">
+           {{index}}. {{item.text}} 
+        </li>
+        <hr>
+
+        <h3>v-on:click = @click</h3>
+        <button @click="messagePop">alert message</button>
+        <hr>
+
+        <h3>v-bind:뷰 = :뷰</h3>
+        <p :style="styleBasic">Style</p>
+        <p :style="line">line style</p>
+        <p :style="[styleBasic, line]">여러 스타일 적용</p>
+        <hr>
+
+        <h3>v-model 양방향바인딩</h3>
+        <p>뷰와 데이터가 양방향으로 흐름</p>
+        <input type="text" v-model="sameText" placeholder="입력해보세요">
+        <p>입력 내용: {{sameText}}</p>
+        <hr>
+        <p>여러줄 입력<p>
+        <textarea v-model="multiLine" placeholder="여러줄을 입력할 수 있습니다." style="width:100%; height:70px;"></textarea>
+        <p style="white-space:pre-line">내용: {{multiLine}}</p>
+
+
+        <h3>v-text, v-html</h3>
+        <input type="checkbox" id="feeling"
+            v-model="feel"
+        >
+        <label for="feeling">feeling toggle</label>
+        <p v-text="feel ? good : bad">뿌려줌</p>
+        <p v-html="code">{{code}}</p>
+        <hr>
+
+        <h3>methods 뭘 실행할지 function</h3>
+        <h3>computed 계산된 속성</h3>
+        <button @click="addCnt" :disabled="moreFive">+</button>
+        <button @click="disCnt" :disabled="lessZero">-</button>
+        <p>{{count}}</p>
+        <hr>
+
+        <h3>component</h3>
+        <songs-component first="songhee" last="kim" city="seoul"></songs-component>
+        <p>컴포넌트 재사용</p>
+        <songs-component first="hongs" last="Lee" city="gwangju"></songs-component>
+        <hr>
+
+        <h3>transition</h3>
+        <button @click="show = !show">Go</button>
+        <transition name="fade">
+            <p v-if="show">text</p>
+        </transition>
+        <hr>
+
+        <button @click="number +=1">Click</button>
+        <span>클릭 횟수는 {{number}}번</span>
+        <hr>
+
+        <button @click="say('hi~~')">view message</button>
+        <hr>
+
+        <h3>checkbox 바인딩</h3>
+        <input type="checkbox" id="chk1" value="김치찌개" v-model="foodItems">
+        <label for="chk1">김치찌개</label>
+
+        <input type="checkbox" id="chk2" value="불닭" v-model="foodItems">
+        <label for="chk2">불닭</label>
+
+        <input type="checkbox" id="chk3" value="짜장면" v-model="foodItems">
+        <label for="chk3">짜장면</label>
+
+        <input type="checkbox" id="chk4" value="비빔밥" v-model="foodItems">
+        <label for="chk4">비빔밥</label>
+        
+        <p>{{foodItems.length}}개 선택</p>
+        <p>선택한 메뉴 : {{foodItems}}</p>
+        <p>data에서 배열로 생성</p>
+        <hr>
+
+        <h3>radio 바인딩</h3>
+        <input type="radio" id="rd1"
+            value="hello"
+            v-model="picked"
+        >
+        <label for="rd1">msg1</label>
+
+        <input type="radio" id="rd2"
+            value="bye"
+            v-model="picked"
+        >   
+        <label for="rd2">msg2</label>             
+        <p>선택: {{picked}}</p>
+        <hr>
+
+        <h3>select 바인딩</h3>
+        <select v-model="choice">
+            <option disabled value="">selecet one</option>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+
+        <p>선택: {{choice}}</p>
+        <hr>
+
+        <select v-model="choiceMulti" multiple>
+            <option disabled value="">selecet multi</option>
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+        <p>control 누르고 다중선택: {{choiceMulti}}</p>
+        <hr>
+
+        <h3>v-for 동적 옵션 렌더링</h3>
+        <select v-model="selectFor">
+            <option v-for="option in options" :value="option.value">
+                {{option.text}}
+            </option>
+        </select>
+        <span>{{selectFor}}</span>
+        <hr>
+
+
+        <my-comp-global></my-comp-global>
+        
+        <my-comp></my-comp>
+
+        <hr>
+        <h3>동적 props</h3>
+        <input type="text" v-model="nowMsg">
+
+        <child-new-comp :msging="nowMsg"></child-new-comp>
+        <hr>
+
+        <simple-counter></simple-counter>
+        <simple-counter></simple-counter>
+        <simple-counter></simple-counter>
+        <p>문제점 : 같은 data를 공유하므로 동시작동</p>
+        <hr>
+
+        <simple-counter2></simple-counter2>
+        <simple-counter2></simple-counter2>
+        <simple-counter2></simple-counter2>
+        <p>해결방법 : 새로운 데이터 객체를 반환한다</p>
+        <hr>
+
+        <h3>filter</h3>
+        <span v-for="n in evenNumbers">{{n}}</span>
+        <hr>
+
+        <h3>velocity</h3>
+        <button @click="velo = !velo">velocity effect</button>
+        <transition
+            @before-enter="beforeEnter"
+            @enter="enter"
+            @leave="leave"
+        >
+            <p v-if="velo">Velocity text</p>
+        </transition>
+        <hr>
+
+        <h3>transition toggle</h3>
+        <p>클릭할때마다 홀짝, 컨텐츠 v-if로 토글</p>
+        <button @click="docs++">Btn</button>
+
+        <div class="tg_txt_wrap">
+            <transition name="fade" mode="out-in">
+                <p v-if="docs%2 == 0" class="tgTxt first">첫번째 컨텐츠</p>
+            </transition>
+            <transition name="fade" mode="out-in">
+                <p v-if="docs%2 == 1" class="tgTxt second">두번째 컨텐츠</p>
+            </transition>      
+        </div>  
+        <hr>
+
+        <h3>컴포넌트간 전환</h3>
+        <input type="radio" id="rdo1" v-model="views" value="v-a">
+        <label for="rdo1">A</label>
+
+        <input type="radio" id="rdo2" v-model="views" value="v-b">
+        <label for="rdo2">B</label>
+
+        <p>mode out-in 앞요소 사라진 후 전환<p>
+        <transition name="comp-fade" mode="out-in">
+            <component :is="views"></component>
+        </transition>
+        <hr>
+
+        <h3>transition-group with lodash.js</h3>
+        <button @click="addNum">Add</button>
+        <button @click="removeNum">Remove</button>
+        <button @click="shuf">Shuffle</button>
+        <br><br>
+        <transition-group name="listg">
+            <!-- key? @.@ -->
+            <span v-for="nb in numbering" :key="nb" class="list-item">{{nb}}</span>
+        </transition-group>
+        <hr>
+
+        <h3>watch tween.js</h3>
+        <input type="number" step="20" v-model.numbs="numbs">
+        <p>{{animatedNum}}</p>
+        <hr>
+    </div>
+
+
+    <div id="app2">
+        <h3>tween.js color.js</h3>
+        
+        <input
+            v-model="colorQuery"
+            @keyup.enter="updateColor"
+            placeholder="Enter a color"
+        >
+        <button @click="updateColor">Update</button>
+        <p>Preview: {{tweenedCSSColor}}</p>
+        <span
+            :style="{backgroundColor:tweenedCSSColor}"
+            class="animate-color-preview"
+        ></span> 
+
+        <hr>
+        <h3>사용자 directive 여러값</h3>
+        <p v-demo="{coloring:'white', text:'this is text'}"></p>
+        <p id="txtxt">g</p>
+        <hr>
+        <h3>Mixin</h3>
+        <p>컴포넌트에 재사용 가능한 기능 배포</p>
+        <hr>
+        <h3>사용자 디렉티브 생성</h3>
+        <p>바인딩된 element가 dom에 삽입되었을때 포커스</p>
+        <!--<input type="text" v-focusgo>-->
+    </div>
+
+
+
+<script src="./js/index.js"></script>
+
+</body>
+</html>

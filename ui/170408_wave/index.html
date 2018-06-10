@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html >
+  <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>wave</title>
+	<!--<link rel="stylesheet" href="../../css/reset.css">-->
+	<link rel="stylesheet" href="css/style.css">
+	<script src="../../js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/audiojs/1.0.1/audio.min.js"></script>
+  </head>
+
+  <body>
+
+	<div class="wrapper">
+		<div class="wrap">
+			<div class="container">
+
+				  <div class="waves">
+					<div class="wave wave_back">
+					  <div class="water">
+						<svg viewBox="0 0 350 32" preserveAspectRatio="none"><path d="M350,17.32V32H0V17.32C116.56,65.94,175-39.51,350,17.32Z"/></svg>
+					  </div>
+					  <div class="water">
+						<svg viewBox="0 0 350 32" preserveAspectRatio="none"><path d="M350,17.32V32H0V17.32C116.56,65.94,175-39.51,350,17.32Z"/></svg>
+					  </div>
+					</div>
+
+					<div class="wave wave_front">
+					  <div class="water">
+						<svg viewBox="0 0 350 32" preserveAspectRatio="none"><path d="M350,17.32V32H0V17.32C116.56,65.94,175-39.51,350,17.32Z"/></svg>
+					  </div>
+					  <div class="water">
+						<svg viewBox="0 0 350 32" preserveAspectRatio="none"><path d="M350,17.32V32H0V17.32C116.56,65.94,175-39.51,350,17.32Z"/></svg>
+					  </div>
+					</div>
+
+					<div class="wave wave_front2">
+					  <div class="water">
+						<svg viewBox="0 0 350 32" preserveAspectRatio="none"><path d="M350,17.32V32H0V17.32C116.56,65.94,175-39.51,350,17.32Z"/></svg>
+					  </div>
+					  <div class="water">
+						<svg viewBox="0 0 350 32" preserveAspectRatio="none"><path d="M350,17.32V32H0V17.32C116.56,65.94,175-39.51,350,17.32Z"/></svg>
+					  </div>
+					</div>
+				  </div>
+
+
+				<div class="music_control">
+					<p class="tit">Haru Yo Koi</p>
+					<p class="author">Matsutoya Yumi</p>
+					<a href="#" class="play">
+						<span class="first"></span>
+						<span class="second"></span>
+						<span class="third"></span>
+					</a>
+				</div>
+
+				<div class="audio_area"><audio src="./media/HaruYoKoi.mp3" preload="auto" /></div>
+
+			</div>
+		</div>
+	</div>
+
+
+	<a class="back" href="../">Back</a> 
+
+	<!--<script src="js/TweenMax.min.js"></script>-->
+
+	<script src="js/index.js"></script>
+
+
+	<script type='text/javascript'>
+
+	  audiojs.events.ready(function() {
+		var as = audiojs.createAll();
+	  });
+
+	</script>
+
+
+  </body>
+</html>

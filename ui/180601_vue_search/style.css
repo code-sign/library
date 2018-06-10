@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+table{border-collapse:collapse;}
+table td,table th{border:1px solid #ddd; padding:10px;}
+table th{background:#eee;font-weight:bold;}
+table tbody tr td:nth-child(2),
+table tbody tr td:nth-child(3){text-align:center;}
+
+.highlight {color:royalblue; font-weight: bold;background:rgb(192, 255, 255); }
+.search_box{margin-bottom:20px;font-size:20px;}
+.search_box input{height:30px;width:300px;padding:10px;border:2px solid #ccc;border-radius:2px;}

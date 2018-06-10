@@ -1,0 +1,171 @@
+html, body {
+	position: relative;
+	height: 100%;
+	margin:0;
+	padding:0;
+	overflow:hidden;
+}
+body, input, select, div, textarea, table, button {font-family: 'NanumSquare', sans-serif !important;}
+
+.back{position:absolute; top:10px; left:10px; color:#aaa; z-index:999; color:#fff;}
+.wrapper{height:100%; width:100%; position:relative; }
+
+
+.waves {
+  position: absolute;
+  bottom: -150px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-transition: .4s transform ease;
+  transition: .4s transform ease;
+  -webkit-transform-origin: bottom center;
+		  transform-origin: bottom center;
+}
+
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-animation: wave 3.4s linear infinite;
+		  animation: wave 3.4s linear infinite;
+}
+
+
+.wave_front {
+  z-index: 2;
+  opacity:0.6;
+  color: #f08f8f !important;
+}
+.wave_back {
+  z-index: 1;
+  opacity:.3;
+  color: #f08f8f !important;
+  -webkit-animation: wave 4.2s linear infinite;
+		  animation: wave 4.2s linear infinite;
+  -webkit-animation-direction: reverse;
+		  animation-direction: reverse;
+}
+
+.water {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  background: currentColor  !important;
+}
+.water svg {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 99.9%;
+}
+
+
+.water:first-of-type {
+  -webkit-transform: translate(-100%, 0) !important;
+		  transform: translate(-100%, 0) !important;
+}
+
+svg {
+  fill: currentColor  !important;
+}
+
+
+/* custom s */
+.wave_front2 {
+  z-index: 3;
+  opacity:.7;
+  color:#f08f8f;
+}
+.wave_front2 .water{
+	height:77%;
+}
+.wave_front2.wave {
+  -webkit-animation: wave 4s linear infinite;
+		  animation: wave 4s linear infinite;
+}
+
+
+/*on setting*/
+.wave.on {
+  -webkit-animation: wave 0.9s linear infinite;
+		  animation: wave 0.9s linear infinite;
+}
+.wave_back.on {
+  -webkit-animation: wave 0.9s linear infinite;
+		  animation: wave 0.9s linear infinite;
+  -webkit-animation-direction: reverse;
+		  animation-direction: reverse;
+}
+.wave_front2.wave.on {
+  -webkit-animation: wave 1.5s linear infinite;
+		  animation: wave 1.5s linear infinite;
+}
+
+
+
+/* custom e*/
+
+@keyframes wave {
+  0% {
+	-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+  }
+  50% {
+	-webkit-transform: translate3d(50%, 0.5em, 0);
+			transform: translate3d(50%, 0.5em, 0);
+  }
+  100% {
+	-webkit-transform: translate3d(100%, 0, 0);
+			transform: translate3d(100%, 0, 0);
+  }
+}
+
+
+@-webkit-keyframes wave {
+  0% {
+	-webkit-transform: translate3d(0, 0, 0);
+			transform: translate3d(0, 0, 0);
+  }
+  50% {
+	-webkit-transform: translate3d(50%, 0.5em, 0);
+			transform: translate3d(50%, 0.5em, 0);
+  }
+  100% {
+	-webkit-transform: translate3d(100%, 0, 0);
+			transform: translate3d(100%, 0, 0);
+  }
+}
+
+
+
+.music_control{position:absolute; top:55%; z-index:999; width:100%; text-align:center;}
+.music_control .tit{color:#fff; font-size:25px; margin:5px; }
+.music_control .author{color:rgba(255,255,255,.7); font-size:16px; margin:5px 0 20px 0; }
+
+.play *{transition:all .3s ease-out;}
+
+.music_control .play{box-shadow:5px 10px 10px rgba(0,0,0,.1); width:70px; height:70px; position:relative; display:inline-block; background:#fff; border-radius:50%;}
+.music_control .play span{display:inline-block; position:absolute; top:25px; width:3px; height:20px; border-radius:3px; background:#f08f8f;}
+
+.music_control .play span.first{left:27px;}
+.music_control .play span.second{transform:rotate(-63deg); top:19px; left:35px; }
+.music_control .play span.third{transform:rotate(57deg); top:29px; left:34px;  opacity:1; }
+
+.play.on span{transform-origin:100% 100%;}
+.play.on span.second{left:40px; top:25px; transform:rotate(0deg);}
+.play.on span.third{transform:rotate(0deg);  opacity:0;}
+
+
+@media (min-width:600px){
+	.wrapper{display:table; background:linear-gradient(45deg, #fff,#eee);}
+	.wrap{ display:table-cell; vertical-align:middle;}
+	.container{border:1px solid #ddd; box-shadow:10px 10px 40px rgba(0,0,0,.1); width:375px; height:667px; position:relative; overflow:hidden; margin:0 auto; }
+}

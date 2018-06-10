@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+
+    <title>kimsonghee_KPI</title>
+
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/font.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>WebFont Tester</h1>
+            
+        <div id="app">
+
+            <div class="edit_wrap">
+                <ul>
+                    <li>
+                        <input v-model="fontType" type="radio"  name="font_groups" id="font_fm1" value="serif" />
+                        <label for="font_fm1">Serif</label>
+                    </li>
+                    <li>
+                        <input v-model="fontType" type="radio" name="font_groups" id="font_fm2" value="sans-serif"/>
+                        <label for="font_fm2">sans-serif</label>
+                    </li>
+            
+                    <li>
+                        <input v-model="fontType" type="radio" name="font_groups" id="font_fm3" value="nanumGothic"/>
+                        <label for="font_fm3">나눔고딕</label>
+                    </li>
+                    
+                    <li>
+                        <input v-model="fontType" type="radio" name="font_groups" id="font_fm4" value="NanumSquare" checked/>
+                        <label for="font_fm4">나눔스퀘어</label>
+                    </li>
+            
+                    <li>
+                        <input v-model="fontType" type="radio" name="font_groups" id="font_fm5" value="SpoqaHanSans"/>
+                        <label for="font_fm5">스포카한산스</label>
+                    </li>
+
+                    <li>
+                        <input v-model="fontType" type="radio" name="font_fm" id="font_fm6" value="Noto Sans"/>
+                        <label for="font_fm6">노토산스</label>
+                    </li>
+                </ul>
+            </div>
+                
+            <div class="edit_wrap">
+                작게
+                <button @click="dscCnt">-</button>
+                <input type="range" v-model="moveSize" min="20" max="100">
+                <button @click="addCnt">+</button>
+                크게
+            </div>
+            
+            <div class="edit_wrap">
+                사이즈 직접 입력
+                <input type="number" v-model="moveSize" step="1" style="width:50px;"> px 
+
+            </div>
+
+            <div class="edit_wrap">
+                흐리게
+                <input type="range" v-model="fontOpacity" min="0" max="1" step="0.1">
+                선명하게
+            </div>
+
+            <div class="edit_wrap">                
+                자간 좁게
+                <input type="range" v-model="letterSpacing" min="-2" max="2" step="0.5">
+                자간 넓게
+            </div>
+
+            <div class="text_zone">
+                <p class="desc">입력해보세요.</p>
+                <textarea class="txt_st" cols="30" rows="10" v-bind:style="{
+                    fontSize:moveSize + 'px', 
+                    opacity:fontOpacity,
+                    letterSpacing:letterSpacing + 'px',
+                    fontFamily:fontType
+                    }">안녕하세요 Hello 12345678 :-D</textarea>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="ui.js"></script>
+    
+
+</body>
+
+</html>

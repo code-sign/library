@@ -1,0 +1,25 @@
+html, body {
+	position: relative;
+	height: 100%;
+	margin:0;
+}
+body, input, select, div, textarea, table, button {font-family: 'NanumSquare', sans-serif !important;}
+.back{position:absolute; top:10px; left:10px; color:#aaa; z-index:999;}
+
+.img_wrap{width:300px;}
+.img_wrap img{width:100%; 
+filter: hue-rotate(127deg);
+}
+
+
+.filter_wrap{display:block; position:relative; *zoom:1; padding:10px 5px; }
+.filter_wrap:after{content:''; clear:both; display:block; }
+
+label{float:left;}
+input{float:left;}
+
+	canvas {
+	    border:1px solid #000;
+	    float:left;
+	    clear:both;
+	}

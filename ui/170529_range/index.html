@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+   <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+	<div class="filter_wrap">
+		<label for="slider1">hue-rotate</label>
+		<input id="slider1" class="sld" type="range" min="0" max="500" step="10" />
+		<input class="num" type="text" value="" / >
+	</div>
+
+	<div class="filter_wrap">
+		<label for="slider2">grayscale</label>
+		<input id="slider2" class="sld" type="range" min="0" value="0" max="100" step="10"/>
+		<input class="num" type="text" value="" / >
+	</div>
+
+	<div class="filter_wrap">
+		<label for="slider3">blur</label>
+		<input id="slider3" class="sld" type="range" min="0" value="0" max="20" step="0.5"/>
+		<input class="num" type="text" value="" / >
+	</div>
+
+	<div class="filter_wrap">
+		<label for="slider4">sepia</label>
+		<input id="slider4" class="sld" type="range" min="0" value="0" max="50" step="10"/>
+		<input class="num" type="text" value="" / >
+	</div>
+
+	<!-- brightness, contrast, opacity, saturate default 100 -->
+	<div class="filter_wrap">
+		<label for="slider5">brightness</label>
+		<input id="slider5" class="sld" type="range" min="0" value="100" max="100" step="1"/>
+		<input class="num" type="text" value="" / >
+	</div>
+
+	<div class="filter_wrap">
+		<label for="slider6">contrast</label>
+		<input id="slider6" class="sld" type="range" min="0" value="100" max="100" step="1"/>
+		<input class="num" type="text" value="" / >
+	</div>
+
+	<div class="filter_wrap">
+		<label for="slider7">opacity</label>
+		<input id="slider7" class="sld" type="range" min="0" value="100" max="100" step="1"/>
+		<input class="num" type="text" value="" / >
+	</div>
+
+	<div class="filter_wrap">
+		<label for="slider8">saturate</label>
+		<input id="slider8" class="sld" type="range" min="0" value="100" max="100" step="1"/>
+		<input class="num" type="text" value="" / >
+	</div>
+
+
+	<button class="orgin">original</button>
+	<button class="after">after</button>
+
+
+	<div class="img_wrap">
+		<img id="pho" src="img.jpg" />
+	</div>
+
+
+	<script src="../../js/jquery-1.11.1.min.js"></script>
+	<script src="js/index.js"></script>
+
+	<script>
+
+
+/* code ver.0
+		$('#slider1, #slider2, #slider3').on('input', function(){
+			var ranV1 = $('#slider1').val();
+			var ranV2 = $('#slider2').val();
+			var ranV3 = $('#slider3').val();
+
+			console.log(ranV1, ranV2, ranV3);
+
+			$('#rangeValue1').val(ranV1);
+			$('#rangeValue2').val(ranV2);
+			$('#rangeValue3').val(ranV3);
+
+			$('#pho').attr('style','filter:hue-rotate('+ranV1+'deg) grayscale('+ranV2+'%) blur('+ranV3+'px)');
+		});
+*/
+
+
+/* code edit ver.1 */
+
+		$('.sld').each(function(index){
+			$(this).on('input', function(){
+				var num = $(this).val();
+				$(this).next('.num').val(num);
+
+				var ranv1 = $('#slider1').val();
+				var ranv2 = $('#slider2').val();
+				var ranv3 = $('#slider3').val();
+				var ranv4 = $('#slider4').val();
+				var ranv5 = $('#slider5').val();
+				var ranv6 = $('#slider6').val();
+				var ranv7 = $('#slider7').val();
+				var ranv8 = $('#slider8').val();
+
+				function after(){
+					$('#pho').attr('style','filter:hue-rotate('+ranv1+'deg) grayscale('+ranv2+'%) blur('+ranv3+'px) sepia('+ranv4+'%) brightness('+ranv5+'%) contrast('+ranv6+'%) opacity('+ranv7+'%) saturate('+ranv8+'%)');
+				} after();
+
+
+				//orgin
+				$('.orgin').on('click', function(){
+					$('#pho').attr('style','filter:inherit');
+				});
+
+				//after
+				$('.after').on('click', function(){
+					console.log('aa');
+					after();
+				});
+
+			});
+
+		});
+
+
+
+
+
+
+/* divide
+		$('#slider2').on('input', function(){
+			var ranV = $(this).val();
+			console.log(ranV);
+			$('#rangeValue2').val(ranV);
+			$('#pho').attr('style','filter:grayscale('+ranV+')');
+		});
+*/
+	</script>
+
+	<!-- Webapp Transition hotfix --> 
+	<script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+
+</body>
+</html>

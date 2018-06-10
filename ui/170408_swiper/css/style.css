@@ -1,0 +1,76 @@
+html, body {
+	position: relative;
+	height: 100%;
+}
+body, input, select, div, textarea, table, button {font-family: 'NanumSquare', sans-serif !important;}
+.back{position:absolute; top:10px; left:10px; color:#aaa; z-index:999; color:#fff;}
+
+.wrapper{height:100%; width:100%; }
+
+.top_area{background: #83a0ec; padding:60px 0px 10px 0px; }
+.swiper-container{ width:100%; height:240px; margin-left:auto; margin-right:auto;}
+
+.swiper-wrapper{}
+.swiper-slide{
+	text-align:center;
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+
+	background:#fff;
+	height:200px;
+	border-radius:5px;
+	box-shadow:5px 5px 15px rgba(0,0,0,.1);
+	
+
+}
+.type1 .swiper-slide{ transform:scale(0.85) !important; opacity:0.8; transition:all .3s ease-out;}
+.type1 .swiper-slide-active{transform:scale(1) !important; opacity:1; transition:all .3s ease-out;}
+
+.swiper-pagination{bottom:0;}
+
+.swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    border-radius: 100%;
+    background: #fff;
+    opacity: .2;
+	transform:scale(1);
+	transition:all .3s ease-out;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+	transform:scale(1.3);
+	transition:all .3s ease-out;
+}
+
+
+.swiper-button-next, .swiper-button-prev{transform:scale(0.7) !important;}
+
+.swiper-container.type2{background:#eee; height:400px; padding:20px 10px;width:auto; }
+.swiper-container.type2 .swiper-slide{background:#fff; }
+
+.list_wrap{position:relative; width:100%; height:100%; zoom:1;}
+.list_wrap:after{content:''; clear:both; display:block;}
+.profile{width:60px; height:60px; display:inline-block;  border-radius:10%; background:#aaa; float:left; margin:20px 0 0 20px;}
+
+
+
+@media (min-width:600px){
+
+	.wrapper{display:table; background:linear-gradient(45deg, #fff,#eee);}
+	.wrap{ display:table-cell; vertical-align:middle;}
+	.container{box-shadow:10px 10px 40px rgba(0,0,0,.1); width:375px; height:667px; overflow:hidden; margin:0 auto; }
+}

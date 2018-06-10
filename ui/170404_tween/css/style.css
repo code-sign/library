@@ -1,0 +1,29 @@
+* { -webkit-tap-highlight-color: rgba(255,255,255,0); }
+body,html{height:100%; }
+body, input, select, div, textarea, table, button {font-family: 'NanumSquare', sans-serif !important;}
+.back{position:absolute; top:10px; left:10px; color:#aaa; z-index:999;}
+
+.wrap{position:relative; padding:15px;}
+.wrap h1{text-align:center; margin-bottom:20px; margin-top:70px; font-size:17px;}
+
+section{border:1px solid #ccc; padding:10px; margin-bottom:15px;}
+section .btn{border:1px solid #aaa; display:inline-block; padding:5px; border-radius:2px;}
+section .code{background:#eee; padding:10px; font-size:13px; line-height:1.5;}
+
+.item{width:50px; height:50px; background:#eee; margin:20px 0;}
+
+.item09{position:relative; background:none; width:auto; margin:30px 0;}
+.item09 > div{width:20px; height:20px; background:#ddd; float:left; margin:10px;}
+
+.item10{position:relative; background:none; width:auto; margin:30px 0;}
+.item10 > div{width:20px; height:20px; background:#ccc; float:left; margin:10px;}
+
+
+.item12{position:relative; background:none; width:auto; margin:30px 0; }
+.item12 > div{width:20px; height:20px; background:#ccc; float:left; margin:10px;}
+
+.item13_wrap{padding:100px; 0;}
+#item13{
+position:relative; width:20px; height:20px;
+border:1px solid royalblue;
+}

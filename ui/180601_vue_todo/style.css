@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+body{background-color:#eee;}
+
+.tit .num{display:inline-block; width:38px;height:38px;margin-left:10px;background:#bbb;color:#fff;border-radius:50%;text-align:center;font-size:26px;line-height:42px;}
+.todo_wrap{background:#fff;box-shadow:5px 5px 10px rgba(0,0,0,.1);}
+.todo_wrap .inner{padding:30px;}
+.todo_wrap .ipt_wrap{margin-bottom:20px;}
+.todo_wrap input{height:30px;width:200px;padding-left:10px;border:1px solid #ccc;}
+
+.todo_list{}
+.todo_list li{position:relative;padding:10px;border-bottom:1px dotted #ccc;}
+.todo_list li:after{display:block;clear:both;content:'';}
+.todo_list li:last-child{border-bottom:none;}
+.todo_list li button{float:right;width:30px;height:30px;color:#aaa;font-weight:bold;line-height:18px;text-align:center;}
+.todo_list li .num{margin-right:10px;font-weight:bold;color:#bbb;font-size:25px;}

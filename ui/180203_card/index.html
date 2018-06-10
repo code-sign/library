@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to Vue</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <script src="../../js/jquery-2.1.4.min.js"></script>
+  
+  <link rel="stylesheet" href="../../css/reset.css">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+ 
+
+      <div class="wrapper">
+        <div class="wrap">
+          <div class="container">
+
+              <div class="card_area">
+                <div id="card">
+                  <span class="cardbg"></span>
+                  <span class="logo"><img src="./visa.png" alt=""></span>
+                    <div class="front">
+                      <div class="card_inner">
+                          <div class="number"></div>
+
+                          <div class="card-holder">
+                            <label>Card holder</label>
+                            <div></div>
+                          </div>
+
+                          <div class="card-expiration-date">
+                            <label>Expires</label>
+                            <div></div>
+                          </div>
+                          
+                      </div>
+                    </div>
+                   <div class="back">
+                     <div class="card_inner">
+                       <div class="strip"></div>
+                       <div class="ccv">
+                          <label>CCV</label>
+                          <div></div>
+                        </div>
+                        <span class="logo"><img src="./visa.png" alt=""></span>
+                     </div>
+                   </div>    
+                  
+                </div>
+              </div>
+
+
+              <form class="form" autocomplete="off" novalidate>
+                <p class="color">
+                  color :
+                  <input type="radio" id="blue" value="#92d5dd" name="color" checked>
+                  <label for="blue">blue</label>
+
+                  <input type="radio" id="pupple" value="#706fbf" name="color">
+                  <label for="pupple">pupple</label>
+                  
+                </p>
+                <fieldset>
+                  <label for="card-number">Card Number</label>
+                  <input type="num" id="card-number" class="input-cart-number" maxlength="4" />
+                  <input type="num" id="card-number-1" class="input-cart-number" maxlength="4" />
+                  <input type="num" id="card-number-2" class="input-cart-number" maxlength="4" />
+                  <input type="num" id="card-number-3" class="input-cart-number" maxlength="4" />
+                </fieldset>
+                <fieldset>
+                  <label for="card-holder">Card holder</label>
+                  <input type="text" id="card-holder" />
+                </fieldset>
+                <fieldset class="fieldset-expiration">
+                  <label for="card-expiration-month">Expiration date</label>
+                  <div class="select">
+                    <select id="card-expiration-month">
+                      <option></option>
+                      <option>01</option>
+                      <option>02</option>
+                      <option>03</option>
+                      <option>04</option>
+                      <option>05</option>
+                      <option>06</option>
+                      <option>07</option>
+                      <option>08</option>
+                      <option>09</option>
+                      <option>10</option>
+                      <option>11</option>
+                      <option>12</option>
+                    </select>
+                  </div>
+                  <div class="select">
+                    <select id="card-expiration-year">
+                      <option></option>
+                      <option>2016</option>
+                      <option>2017</option>
+                      <option>2018</option>
+                      <option>2019</option>
+                      <option>2020</option>
+                      <option>2021</option>
+                      <option>2022</option>
+                      <option>2023</option>
+                      <option>2024</option>
+                      <option>2025</option>
+                    </select>
+                  </div>
+                </fieldset>
+                <fieldset class="fieldset-ccv">
+                  <label for="card-ccv">CCV</label>
+                  <input type="text" id="card-ccv" maxlength="3" />
+                </fieldset>
+              </form>
+
+      </div>
+     </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
