@@ -5,6 +5,24 @@ const dataStructure = [ // structure that models our initial rendered view of it
   [8, 9, 10, 11]
 ]
 
+const titles =[
+    '리빙',
+    '푸드',
+    '스포츠',
+    '자동차',
+    '패션뷰티',
+    '건강',
+    '웹툰',
+    '게임',
+    '영화',
+    '뮤직',
+    '과학',
+    '디자인',
+    '비즈니스',
+    '공연전시',
+    '테크',
+]
+
 const reinsert = (array, colFrom, rowFrom, colTo, rowTo) => {
   const _array = array.slice(0);
   const val = _array[colFrom][rowFrom];
@@ -167,7 +185,9 @@ const List = React.createClass({
                                           WebkitTransform: `translate3d(${translateX}px, ${translateY}px, 0) scale(${scale})`,
                                           transform: `translate3d(${translateX}px, ${translateY}px, 0) scale(${scale})`,
                                           zIndex: (row === lastPress && colIndex === currentColumn) ? 99 : visualPosition,
-                                      }}>Item {row + 1}</div>
+                                      }}>
+                                      <span class="tit">{titles[row]}</span>
+                                      </div>
                                   }
                               </ReactMotion.Motion>
                           )
