@@ -150,8 +150,9 @@ body.hidden {
   left: 0px !important;
   top: 0px  !important;
   width: 100%  !important;
-  height: 100vh  !important;
+  height: 100%  !important;
   overflow: auto;
+  z-index: 9999;
 }
 
 .card.is-open .card-article {
