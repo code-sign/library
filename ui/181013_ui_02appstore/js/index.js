@@ -44,7 +44,7 @@ $(document).ready(function(){
         height: 'auto'
         }).parents('.card-holder').removeAttr('style')
         $('body').removeClass('hidden')
-    }, 600);
+    }, 500);
     })
 
 });
