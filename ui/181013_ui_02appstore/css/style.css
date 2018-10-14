@@ -151,14 +151,14 @@ body.hidden {
   top: 0px  !important;
   width: 100%  !important;
   height: 100%  !important;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
+  /* overflow: auto;
+  -webkit-overflow-scrolling: touch; */
   z-index: 9999;
 }
 
 .card.is-open .card-article {
   max-height: 100%;
-  /* overflow: auto; */
+  overflow: auto;
 }
 .card.is-open .close {
   opacity: 1;
