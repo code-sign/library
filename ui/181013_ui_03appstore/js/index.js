@@ -56,6 +56,9 @@ $(document).ready(function(){
         nextTick(() => {
           this.element.classList.add('is-zoomed');
         });
+
+        $('.grid').css('overflow','hidden');
+
       };
       
       CardZoomer.prototype.zoomOut = function() {
@@ -73,6 +76,9 @@ $(document).ready(function(){
           this.element.style.left = 'auto';
           this.element.style.position = 'static';
         }, this.options.transitionDuration);
+
+        $('.grid').css('overflow','auto');
+
       };
       
       function cardZoomer(target, options) {
