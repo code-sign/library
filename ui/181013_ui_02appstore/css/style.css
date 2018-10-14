@@ -152,6 +152,7 @@ body.hidden {
   width: 100%  !important;
   height: 100%  !important;
   overflow: auto;
+  -webkit-overflow-scrolling: touch;
   z-index: 9999;
 }
 
