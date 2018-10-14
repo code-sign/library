@@ -57,7 +57,10 @@ $(document).ready(function(){
           this.element.classList.add('is-zoomed');
         });
 
-        $('.grid').css('overflow','hidden');
+        $('.grid').css({
+          'overflow':'hidden',
+          'height':'100%'
+        });
 
       };
       
@@ -77,7 +80,10 @@ $(document).ready(function(){
           this.element.style.position = 'static';
         }, this.options.transitionDuration);
 
-        $('.grid').css('overflow','inherit');
+        $('.grid').css({
+          'overflow':'inherit',
+          'height':'inherit'
+        });
 
       };
       
