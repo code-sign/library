@@ -6,7 +6,7 @@ $(document).ready(function(){
     Card = $(this).parents('.card');
     ScTop = $(window).scrollTop();
     if (!Card.hasClass('is-open')) {
-        $('body').addClass('hidden');
+        $('body, .cards-list').addClass('hidden');
         CardLeft = Card.offset().left;
         CardTop = Card.offset().top - ScTop;
         CardWidth = Card.outerWidth();
@@ -43,7 +43,7 @@ $(document).ready(function(){
         width: 'auto',
         height: 'auto'
         }).parents('.card-holder').removeAttr('style')
-        $('body').removeClass('hidden')
+        $('body, .cards-list').removeClass('hidden')
     }, 500);
     })
 
