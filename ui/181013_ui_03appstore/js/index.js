@@ -57,7 +57,7 @@ $(document).ready(function(){
           this.element.classList.add('is-zoomed');
         });
 
-        // $('.grid').css('overflow','hidden');
+        $('.grid').css('overflow','hidden');
 
       };
       
@@ -77,7 +77,7 @@ $(document).ready(function(){
           this.element.style.position = 'static';
         }, this.options.transitionDuration);
 
-        // $('.grid').css('overflow','auto');
+        $('.grid').css('overflow','inherit');
 
       };
       
