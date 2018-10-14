@@ -97,7 +97,7 @@ body, input, select, div, textarea, table, button {font-family: 'NanumSquare', s
   overflow: scroll;
   cursor: default;
   border-radius: 0;
-  border:1px solid red;
+  border:1px solid blue;
 }
 @media (min-width: 60em) {
   .card.is-zoomed {
