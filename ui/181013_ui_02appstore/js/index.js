@@ -7,6 +7,8 @@ $(document).ready(function(){
     ScTop = $(window).scrollTop();
     if (!Card.hasClass('is-open')) {
         $('body, .cards-list').addClass('hidden');
+        $('.is-open').scrollTop(0);
+        
         CardLeft = Card.offset().left;
         CardTop = Card.offset().top - ScTop;
         CardWidth = Card.outerWidth();
