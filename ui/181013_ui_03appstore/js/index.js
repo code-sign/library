@@ -57,7 +57,7 @@ $(document).ready(function(){
           this.element.classList.add('is-zoomed');
         });
 
-        $('.grid').css('overflow','hidden');
+        // $('.grid').css('overflow','hidden');
 
       };
       
@@ -66,7 +66,7 @@ $(document).ready(function(){
       
         this.element.classList.remove('is-zoomed');
       
-        document.querySelector('body').style.overflow = 'visible';
+        document.querySelector('body').style.overflow = 'auto';
         this.overlay.classList.remove('is-active');
         console.log(this.overlay);
         setTimeout(() => {
@@ -77,7 +77,7 @@ $(document).ready(function(){
           this.element.style.position = 'static';
         }, this.options.transitionDuration);
 
-        $('.grid').css('overflow','auto');
+        // $('.grid').css('overflow','auto');
 
       };
       
