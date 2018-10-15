@@ -58,8 +58,11 @@ $(document).ready(function(){
         });
 
         $('.grid').css({
-          'overflow':'hidden',
-          'height':'100%'
+          'overflow':'hidden'
+        });
+
+        $('.card__body').css({
+          'overflow':'initial'
         });
 
       };
@@ -81,8 +84,11 @@ $(document).ready(function(){
         }, this.options.transitionDuration);
 
         $('.grid').css({
-          'overflow':'inherit',
-          'height':'inherit'
+          'overflow':'inherit'
+        });
+        $('.is-zoomed').scrollTop(0);
+        $('.card__body').css({
+          'overflow':'hidden'
         });
 
       };

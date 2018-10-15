@@ -58,6 +58,10 @@ body, input, select, div, textarea, table, button {font-family: 'NanumSquare', s
     cursor:url('../image/cursor_a.png') 32 32, auto;
   }
 
+.hidden{
+  overflow:hidden;
+}
+
   
 /* style */
 .app_wrap{
@@ -94,7 +98,7 @@ body, input, select, div, textarea, table, button {font-family: 'NanumSquare', s
   left: 0 !important;
   width: 100% !important;
   height: 100%!important;
-  overflow: scroll;
+  overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   cursor: default;
   border-radius: 0;
@@ -148,7 +152,7 @@ body, input, select, div, textarea, table, button {font-family: 'NanumSquare', s
 
 .card__body {
   max-height: 0;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 .is-zoomed .card__body {
   max-height: 100%;
