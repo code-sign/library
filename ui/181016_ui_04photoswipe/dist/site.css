@@ -1,0 +1,375 @@
+/* Demo site CSS. Not mobile first, not semantic, not optimized, made for 20 minutes, mess */
+html, body, div, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, ol, ul, li, form, fieldset, legend, label, table, header, footer, nav, section, figure {
+  margin: 0;
+  padding: 0; 
+}
+figure {
+  display: block;
+}
+
+a {
+  color: #3169B3;
+}
+a:hover {
+  color: #C00;
+}
+
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  font-family: "myriad-pro","Myriad Pro","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  color: #282B30;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-font-feature-settings: "liga", "kern";
+}
+
+img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}
+
+
+ul {
+  list-style: disc;
+}
+ul, ol {
+  padding: 0;
+  margin: 0 0 12px 25px;
+}
+li {
+  margin: 0 0 12px 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: normal;
+}
+
+
+h1 {
+  font-size: 48px;
+  line-height: 1;
+  margin: 0;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+
+/* style */
+.app_wrap{
+  position: relative;
+  padding:20px;
+}
+
+.app_wrap .top_area{
+  margin-bottom:1.5rem;
+}
+.app_wrap .top_area .date{
+  color:#8e8e90;
+  font-size:1.1rem;
+}
+.app_wrap .top_area h1{
+  font-weight: bold;
+  font-size: 2rem;
+  letter-spacing: -1px;
+}
+
+
+.row--heading {
+  position: relative;
+}
+
+.row--nav {
+  text-align: center;
+  font-size: 32px;
+  line-height: 1.1; 
+}
+
+.section {
+  width: 100%;
+}
+.docs {
+  margin-top: 60px;
+}
+
+.row {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.row--docs {
+  max-width: 960px;
+  padding-left: 210px;
+}
+.row--heading {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.row--footer {
+  text-align: center;
+  padding: 132px 0;
+}
+.row--wide {
+  max-width: 1000px;
+}
+.row--video {
+  max-width: 1160px;
+}
+
+.row--wide img {
+  float: left;
+  margin: 0 12px 12px 0;
+  width: 200px;
+}
+img.img--with_border {
+  border: 1px solid #DDD;
+  border-radius: 2px;
+}
+.img-desc {
+  margin-left: 212px;
+}
+
+/* clearfix */
+.row:after{
+  content: " "; 
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+.row--large {
+  margin-bottom: 48px;
+}
+
+.section--head h1 a {
+  vertical-align: super;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.col-50 {
+  width: 48%;
+  float: left;
+}
+.col-50:nth-child(1) {
+  margin-right: 4%;
+}
+.col-img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.style-select {
+  width: 100%;
+  float: left;
+}
+.style-select .radio {
+  position: relative;
+  margin-bottom: 12px;
+  display: block;
+  float: left;
+  width: 100%;
+}
+.style-select label {
+  padding-left: 24px;
+  position: relative;
+  display: block;
+  cursor: pointer;
+}
+.style-select input {
+  position: absolute;
+  left:0;
+  top:0;
+  width:24px;
+  height:24px;
+  overflow:hidden;
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  opacity:0;
+  cursor: pointer;
+  
+}
+.style-select input + label:before {
+  content: '';
+  position: absolute;
+  left:0;
+  top:4px;
+  background: none;
+  border-radius: 50%;
+  width:16px;
+  height:16px;
+  box-sizing: border-box;
+  border: 2px solid rgba(0,0,0,0.6);
+}
+.radio:hover label:before {
+  border-color: #3169B3;
+}
+.style-select input:checked + label:before {
+  border-color: #3169B3;
+}
+.style-select input:checked + label:after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 9px;
+  width:6px;
+  height: 6px;
+  background: #3169B3;
+  border-radius: 50%;
+}
+
+.row--modules ul {
+  list-style: none;
+  margin-left: 0;
+  /*color: rgba(255, 255, 255, 0.8);*/
+}
+.row--modules span {
+  font-wight:600;
+  border-left:5px solid #FFF;
+  padding-left:5px;
+  margin-left:-10px;
+}
+
+.size-chart {
+  width: 100%;
+  display: inline-block;
+}
+
+.size-chart div {
+  height: 21px;
+  float: left;
+  font-size: 13px;
+  padding: 4px;
+  line-height: 1;
+}
+
+.block__ui-separated {
+  position: relative;
+}
+.block__ui-separated .col-50 {
+  position: absolute;
+  left: 0;
+  top:12px;
+}
+.block__ui-separated img {
+  float: right;
+  max-width: 450px;
+}
+
+
+.demo-gallery {
+  width: 100%;
+  height: auto;
+  margin:0 auto;
+}
+.demo-gallery a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -webkit-touch-callout: none;
+  display: block;
+  /* float: left; */
+  /* margin: 0 12px 12px 0; */
+  margin-bottom:15px;
+  width:170px;
+  line-height: 0;
+  border-radius:5px;
+  overflow:hidden;
+}
+
+a.demo-gallery__img--main {
+  width: auto;
+  height: auto;
+}
+
+.ukraine-flag {
+  width: 21px;
+  height: 14px;
+  position: relative;
+  background: #ffcc00;
+  top: 1px;
+  display: inline-block;
+}
+.ukraine-flag:before {
+ content:'';
+ position: absolute;
+ width: 21px;
+ height: 7px;
+ left:0;
+ top:0;
+ background: #0066cc;
+}
+
+.demo-gallery figure {
+  display: none;
+}
+.demo-gallery__title {
+  line-height: 14px;
+  font-size: 14px;
+  opacity: 0.8;
+  margin-top: 5px;
+  width: 100%;
+  float: left;
+}
+
+.share-buttons h2 {
+  text-align: center;
+  border: 0;
+  
+}
+.share-buttons {
+  text-align: center;
+  position: relative;
+  margin: 0 0 24px;
+}
+.share-buttons a {
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  color: #FFF;
+  text-decoration: none;
+  background: #5AAF63;
+  font-size: 16px;
+  line-height: 22px;
+  cursor: pointer;
+}
+.share-buttons a:hover {
+  opacity: 0.7;
+}
+#tweet {
+  background: #0096c4;
+}
+#like {
+  background: #3b5998;
+}
+#gplus {
+  background: #d34836;
+}
+
+@media screen and (max-width: 480px) {
+  html, body{
+    font-size:80%;
+  }
+  .demo-gallery{
+    width:100% !important;
+  }
+  .demo-gallery a{
+    width:100%;
+  }
+  .demo-gallery a img{
+    width:100%;
+  }
+}
+
