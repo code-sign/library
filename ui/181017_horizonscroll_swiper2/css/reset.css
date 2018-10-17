@@ -1,0 +1,38 @@
+@charset "utf-8";
+
+/* 애드캡슐 UI개발팀 guide reset CSS */
+html,body,div,p,iframe,frameset, h1,h2,h3,h4,h5,h6, strong,span,b,em,var,label,legend, ul,ol,li,dl,dt,dd, 
+table,thead,tbody,tfoot,tr,th,td,caption, form,fieldset,input,textarea, sub,sup,img,a,del,button,pre,
+header,footer,section,article,aside {padding:0;margin:0;}
+
+body {color:#222;font-size:14px;line-height:1.42;letter-spacing:-1px;font-family:'NotoSansKR','맑은 고딕','Malgun Gothic','돋음',Dotum,Apple SD Gothic Neo,AppeGothic,Arial,Helvetica,sans-serif;}
+
+/* 태그 리셋 */
+button {background:transparent;cursor:pointer;}
+img {vertical-align:top;}
+img,button,fieldset,table {border:0;}
+em, address, del {font-style:normal;}
+label,a {display:inline-block;}
+strong,b {font-weight:bold;}
+
+/* form */
+input,select,label,button,textarea {color:#000;font-size:14px;line-height:1.42;letter-spacing:-1px;font-family:'맑은 고딕','Malgun Gothic','돋음',Dotum,Apple SD Gothic Neo,AppeGothic,Arial,Helvetica,sans-serif;vertical-align:middle;outline: none;}
+textarea {padding:10px;border:1px solid #d5d5d5;color:#222;background:#fafafa;font-family:'맑은 고딕','Malgun Gothic','돋음',Dotum,Apple SD Gothic Neo,AppeGothic,Arial,Helvetica,sans-serif;}
+textarea:target,
+textarea:focus {outline:none;border:3px solid #000;padding:8px 7px 8px 9px;}
+select {height:36px;padding:0 0 0 6px;color:#a0a3aa;}
+
+/* 목록 스타일 리셋 */
+ul, ol, li {list-style:none;}
+
+/* table */
+table {width:100%;border-collapse:separate;border-spacing:0;}
+th, td {word-break:break-all;word-wrap:break-word;}
+
+/* alink 세팅 */
+a {border:0;color:#222;text-decoration:none;}
+a:hover {text-decoration:none;}
+a.on {height:auto;text-indent:inherit;background-image:none;}
+
+/* 대체텍스트 and 숨김처리 */
+caption, legend, .hidden {position:absolute;top:0;left:0;overflow:hidden;visibility:hidden;width:0 !important;height:0 !important;font-size:0 !important;line-height:0 !important;}
