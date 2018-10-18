@@ -17,7 +17,7 @@ padding: 0;
 }
 
 body.hidex{
-    overflow-x:hidden;
+    overflow:hidden;
 }
 
 .swiper-container {
@@ -51,10 +51,22 @@ flex-direction:column;
     padding:30px 0;
     transition:.3s;
 }
+.swiper-slide{
+    background-size:cover;
+    border-radius:10px;
+    overflow:hidden;
+    cursor: pointer;
+}
+.swiper-slide .tit{
+    color:#fff;
+    padding:30px;
+}
+
 
 /* wide motion */
 .sw_wrap.widemotion{
     padding:0;
+    height:200px;
 }
 .sw_wrap.widemotion .swiper-container{
     overflow:visible;
@@ -67,6 +79,16 @@ flex-direction:column;
 
 .sw_wrap.widemotion .swiper-slide{
     overflow:visible;
+    border-radius:0;
+    /* justify-content:flex-start;
+    align-items:flex-start; */
+    cursor: inherit;
+}
+
+.sw_wrap.widemotion .swiper-slide .tit{
+    font-size:2rem;
+    text-transform:uppercase;
+    color:rgba(255,255,255,.8);
 }
 
 
@@ -76,43 +98,52 @@ flex-direction:column;
     transition-timing-function: ease !important;
 }
 
-.swiper-slide{
-    /* transition:.3s; */
-    background-size:cover;
-    border-radius:10px;
-    overflow:hidden;
-}
 
-/* active style */
-.swiper-slide.wide{
-    /* width:100% !important; */
-    border-radius:0;
-}
-
-.swiper-slide.wide .tit{
-    font-size:1.5em;
-    margin-top:50px;
-}
-
-.close{
-    display: none;
+.close {
+    width: 40px;
+    height: 40px;
+    padding: 0;
     position: absolute;
-    top:30px;
-    right:30px;
-    color:#aaa;
-    width:40px;
-    height:40px;
+    display: none;
+    top: 130px;
+    left:0;
+    right:0;
+    margin:auto;
+    z-index: 99999;
+    text-indent: -999em;
     border-radius:50%;
-    background: #eee;
-    font-size:1em;
-    line-height:40px;
-}
+    background-color: rgba(0,0,0,.5);
+    cursor: pointer;
+  }
+  
+  .close:after{
+    content:'';
+    width:20px;
+    height:2px;
+    background-color: #fff;
+    position: absolute;
+    top:18px;
+    left:9px;
+    transform:rotate(45deg);
+  }
+  
+  .close:before{
+    content:'';
+    width:20px;
+    height:2px;
+    background-color: #fff;
+    position: absolute;
+    top:18px;
+    left:9px;
+    transform:rotate(-45deg);
+  }
+  
 .contbox{
     position: absolute;
     display:none;
     width:90%;
     height:70vh;
-    top:200px;
+    top:150px;
     left:0;
     right:0;
     margin:auto;
@@ -131,6 +162,6 @@ flex-direction:column;
 }
 
 .nano {  width: calc(100% - 50px); height:calc(100% - 80px); margin:40px auto; }
-.nano > .nano-content { padding: 30px; }
+.nano > .nano-content { padding: 0 20px; -webkit-overflow-scrolling: touch; }
 .nano > .nano-pane   { background: #888; }
 .nano > .nano-pane > .nano-slider { background: #111; }

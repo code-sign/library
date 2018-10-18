@@ -6,7 +6,7 @@ var swiper = new Swiper('.swiper-container', {
     slidesPerView: 2.5,
     spaceBetween: gutter,
     freeMode: true,
-    // centeredSlides:true,
+    centeredSlides:true,
     pagination: {
     //   el: '.swiper-pagination',
       clickable: true,
@@ -32,7 +32,7 @@ $(window).on('mousewheel', function(){
 // swiper event
 $('.swiper-slide').each(function(){
     var allSlide = $('.swiper-slide');
-    var winWid = $(window).width();
+    var winWid = $(window).outerWidth();
     var sldWid = allSlide.width();
     var speed = 1;
     var slideWid = sldWid+gutter;
@@ -44,10 +44,6 @@ $('.swiper-slide').each(function(){
 
         TweenMax.to( $(this), speed, { width:winWid } );
         
-        allSlide.removeClass('wide');
-        $(this).addClass('wide');
-
-
         // move left
         var thisIdx = $(this).index();
         $('.sw_wrap').addClass('widemotion');
@@ -86,10 +82,8 @@ $(window).on('resize', function(){
 // slideShow
 function slideShow(e){
 
-    // e.find('.contbox').show();
-
     // none block 트윈맥스로 사용시 nano scroll 안보이므로 css로 설정
-    e.parent().find('.contbox').css('display','block');
+    e.find('.contbox').css('display','block');
 
     TweenMax.fromTo( e.find('.contbox'), 1, 
         {y:100, scale:.5, opacity:0},
@@ -106,21 +100,19 @@ function slideShow(e){
 
     swWrapperLeft = $('.swiper-wrapper').offset().left;
 
-    console.log(swWrapperLeft);
+    // console.log(swWrapperLeft);
 }
 
 // slideHide
 function slideHide(e){
     isOpen = false;
 
-    // e.parent().find('.contbox').hide();
     e.parent().find('.contbox').css('display','none');
     TweenMax.fromTo( e.parent().find('.contbox'), .5, 
         {y:0, scale:1, opacity:1},
         {y:-300, scale:.3, opacity:0}
      );
 
-    e.parent('.swiper-slide').removeClass('wide');
     $('.swiper-wrapper').css('transform','translate3d('+ swWrapperLeft +'px, 0, 0)');
 
     // close motion timeout remove
