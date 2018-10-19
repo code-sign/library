@@ -1,5 +1,6 @@
 
 var gutter = 15;
+var isOpen = false;
 
 // swiper
 var swiper = new Swiper('.swiper-container', {
@@ -38,7 +39,6 @@ $('.swiper-slide').each(function(){
     var slideWid = sldWid+gutter;
     var swWrapper = $('.swiper-wrapper');
     var swWrapperLeft = ''
-    var isOpen = false;
 
     $(this).on('click', function(){
 
@@ -85,14 +85,16 @@ function slideShow(e){
     // none block 트윈맥스로 사용시 nano scroll 안보이므로 css로 설정
     e.find('.contbox').css('display','block');
 
-    TweenMax.fromTo( e.find('.contbox'), 1, 
-        {y:100, scale:.5, opacity:0},
+    TweenMax.fromTo( e.find('.contbox'), .6, 
+        {y:100, scale:.8, opacity:0},
         {y:0, scale:1, opacity:1}
      );
 
     $('.nano').nanoScroller(); //show nona scroll init!
 
     e.find('.close').show();
+    TweenMax.to(e.find('.close'), .5, {scale:1, opacity:1, delay:.5});
+
     $('.swiper-pagination').hide();
 
     swiper.mousewheel.disable();
@@ -106,11 +108,10 @@ function slideShow(e){
 // slideHide
 function slideHide(e){
     isOpen = false;
-
-    e.parent().find('.contbox').css('display','none');
-    TweenMax.fromTo( e.parent().find('.contbox'), .5, 
-        {y:0, scale:1, opacity:1},
-        {y:-300, scale:.3, opacity:0}
+    
+    TweenMax.fromTo( e.parent().find('.contbox'), .4, 
+        {y:0, opacity:1},
+        {y:30, opacity:0}
      );
 
     $('.swiper-wrapper').css('transform','translate3d('+ swWrapperLeft +'px, 0, 0)');
@@ -118,11 +119,13 @@ function slideHide(e){
     // close motion timeout remove
     setTimeout(function(){
         $('.sw_wrap').removeClass('widemotion');
+        e.parent().find('.contbox').css('display','none');
     },400);
 
     $('body').removeClass('hidex');
 
-    $('.close').hide();
+    // $('.close').hide();
+    TweenMax.to($('.close'), .5, {scale:0, opacity:0});
     $('.swiper-pagination').show();
 
     swiper.mousewheel.enable();
