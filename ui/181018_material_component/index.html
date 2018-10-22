@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>material component</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="bundle.css">
+
+    <script src="bundle.js" async></script>
+</head>
+<body>
+
+    material component test
+
+    <hr>
+
+    <button class="mdc-button">button</button>
+
+    <button class="mdc-button mdc-button--raised">
+        Button
+    </button>
+
+    <button class="mdc-button mdc-button--unelevated">
+        Button
+    </button>
+
+    <button class="mdc-button mdc-button--outlined">
+        Button
+    </button>
+
+    <button class="mdc-button">
+        <i class="material-icons mdc-button__icon" aria-hidden="true">favorite</i>
+        Button
+    </button>
+
+    <button class="mdc-button" disabled>
+        Button
+    </button>
+
+
+    <hr>
+
+    <!-- dialog -->
+    <button class="mdc-button open-dl-alert">
+        Alert Dialog
+    </button>
+
+    <div class="mdc-dialog alert"
+        role="alertdialog"
+        aria-modal="true"
+        aria-labelledby="my-dialog-title"
+        aria-describedby="my-dialog-content">
+        <div class="mdc-dialog__container">
+        <div class="mdc-dialog__surface">
+            <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+            <h2 class="mdc-dialog__title" id="my-dialog-title">Dialog Title</h2>
+            <div class="mdc-dialog__content" id="my-dialog-content">
+            Dialog body text goes here.
+            </div>
+            <footer class="mdc-dialog__actions">
+            <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="no">No</button>
+            <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="yes">Yes</button>
+            </footer>
+        </div>
+        </div>
+        <div class="mdc-dialog__scrim"></div>
+    </div>
+
+
+
+</body>
+</html>
