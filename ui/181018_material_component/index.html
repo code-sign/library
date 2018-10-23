@@ -1,75 +1,265 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>material component</title>
-    
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="bundle.css">
 
     <script src="bundle.js" async></script>
 </head>
+
 <body>
 
-    material component test
+    <div class="wrap">
+        <h1>material component test</h1>
 
-    <hr>
+        <button class="mdc-button">button</button>
 
-    <button class="mdc-button">button</button>
+        <button class="mdc-button mdc-button--raised">
+            Button
+        </button>
 
-    <button class="mdc-button mdc-button--raised">
-        Button
-    </button>
+        <button class="mdc-button mdc-button--unelevated">
+            Button
+        </button>
 
-    <button class="mdc-button mdc-button--unelevated">
-        Button
-    </button>
+        <button class="mdc-button mdc-button--outlined">
+            Button
+        </button>
 
-    <button class="mdc-button mdc-button--outlined">
-        Button
-    </button>
+        <button class="mdc-button">
+            <i class="material-icons mdc-button__icon" aria-hidden="true">favorite</i>
+            Button
+        </button>
 
-    <button class="mdc-button">
-        <i class="material-icons mdc-button__icon" aria-hidden="true">favorite</i>
-        Button
-    </button>
-
-    <button class="mdc-button" disabled>
-        Button
-    </button>
+        <button class="mdc-button" disabled>
+            Button
+        </button>
 
 
-    <hr>
+        <hr>
 
-    <!-- dialog -->
-    <button class="mdc-button open-dl-alert">
-        Alert Dialog
-    </button>
-
-    <div class="mdc-dialog alert"
-        role="alertdialog"
-        aria-modal="true"
-        aria-labelledby="my-dialog-title"
-        aria-describedby="my-dialog-content">
-        <div class="mdc-dialog__container">
-        <div class="mdc-dialog__surface">
-            <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
-            <h2 class="mdc-dialog__title" id="my-dialog-title">Dialog Title</h2>
-            <div class="mdc-dialog__content" id="my-dialog-content">
-            Dialog body text goes here.
+        <!-- checkbox -->
+        <div class="mdc-form-field">
+            <div class="mdc-checkbox">
+                <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-1" />
+                <div class="mdc-checkbox__background">
+                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                    </svg>
+                    <div class="mdc-checkbox__mixedmark"></div>
+                </div>
             </div>
-            <footer class="mdc-dialog__actions">
-            <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="no">No</button>
-            <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="yes">Yes</button>
-            </footer>
+            <label for="checkbox-1">Checkbox 1</label>
+
+            <div class="mdc-checkbox">
+                <input type="checkbox" class="mdc-checkbox__native-control" id="checkbox-2" />
+                <div class="mdc-checkbox__background">
+                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                    </svg>
+                    <div class="mdc-checkbox__mixedmark"></div>
+                </div>
+            </div>
+            <label for="checkbox-2">Checkbox 2</label>
         </div>
+
+        <hr>
+        <!-- Radio -->
+        <div class="mdc-form-field">
+            <div class="mdc-radio">
+                <input class="mdc-radio__native-control" type="radio" id="radio-1" name="radios" checked>
+                <div class="mdc-radio__background">
+                    <div class="mdc-radio__outer-circle"></div>
+                    <div class="mdc-radio__inner-circle"></div>
+                </div>
+            </div>
+            <label for="radio-1">Radio 1</label>
+
+            <div class="mdc-radio">
+                <input class="mdc-radio__native-control" type="radio" id="radio-2" name="radios">
+                <div class="mdc-radio__background">
+                    <div class="mdc-radio__outer-circle"></div>
+                    <div class="mdc-radio__inner-circle"></div>
+                </div>
+            </div>
+            <label for="radio-2">Radio 2</label>
         </div>
-        <div class="mdc-dialog__scrim"></div>
+
+        <hr>
+
+        <!-- Select -->
+
+        <div class="mdc-select select1">
+            <select class="mdc-select__native-control">
+                <option value="" disabled selected></option>
+                <option value="grains">
+                    Bread, Cereal, Rice, and Pasta
+                </option>
+                <option value="vegetables">
+                    Vegetables
+                </option>
+                <option value="fruit">
+                    Fruit
+                </option>
+            </select>
+            <label class="mdc-floating-label">Pick a Food Group</label>
+            <div class="mdc-line-ripple"></div>
+        </div>
+
+        <div class="mdc-select mdc-select--outlined select2">
+            <select class="mdc-select__native-control">
+                <option value="" disabled selected></option>
+                <option value="grains">
+                    Bread, Cereal, Rice, and Pasta
+                </option>
+                <option value="vegetables">
+                    Vegetables
+                </option>
+                <option value="fruit">
+                    Fruit
+                </option>
+            </select>
+            <label class="mdc-floating-label">Pick a Food Group</label>
+            <div class="mdc-notched-outline">
+                <svg>
+                    <path class="mdc-notched-outline__path"></path>
+                </svg>
+            </div>
+            <div class="mdc-notched-outline__idle"></div>
+        </div>
+
+        <hr>
+
+        <!-- Chips -->
+        <div class="mdc-chip-set mdc-chip-set--choice">
+            <div class="mdc-chip" tabindex="0">
+                <div class="mdc-chip__text">Chip 1</div>
+            </div>
+            <div class="mdc-chip" tabindex="0">
+                <div class="mdc-chip__text">Chip 2</div>
+            </div>
+            <div class="mdc-chip" tabindex="0">
+                <div class="mdc-chip__text">Chip 3</div>
+            </div>
+            <div class="mdc-chip" tabindex="0">
+                <div class="mdc-chip__text">Chip 4</div>
+            </div>
+        </div>
+
+        <div class="mdc-chip">
+            <i class="material-icons mdc-chip__icon mdc-chip__icon--leading">event</i>
+            <div class="mdc-chip__text">Add to calendar</div>
+        </div>
+
+        <div class="mdc-chip">
+            <div class="mdc-chip__text">Jane Smith</div>
+            <i class="material-icons mdc-chip__icon mdc-chip__icon--trailing" tabindex="0" role="button">cancel</i>
+        </div>
+
+        <div class="mdc-chip-set mdc-chip-set--filter">
+            <div class="mdc-chip">
+                <div class="mdc-chip__checkmark">
+                    <svg class="mdc-chip__checkmark-svg" viewBox="-2 -3 30 30">
+                        <path class="mdc-chip__checkmark-path" fill="none" stroke="black" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                    </svg>
+                </div>
+                <div class="mdc-chip__text">Filterable content</div>
+            </div>
+
+            <div class="mdc-chip">
+                <div class="mdc-chip__checkmark">
+                    <svg class="mdc-chip__checkmark-svg" viewBox="-2 -3 30 30">
+                        <path class="mdc-chip__checkmark-path" fill="none" stroke="black" d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                    </svg>
+                </div>
+                <div class="mdc-chip__text">Filterable content</div>
+            </div>
+
+        </div>
+
+        <hr>
+
+
+        <!-- dialog -->
+        <button class="mdc-button mdc-button--outlined open-dl-alert1">
+            Dialog 01
+        </button>
+        <button class="mdc-button mdc-button--outlined open-dl-alert2">
+            Dialog 02
+        </button>
+
+        <div class="mdc-dialog alert1" role="alertdialog" aria-modal="true" aria-labelledby="my-dialog-title"
+            aria-describedby="my-dialog-content">
+            <div class="mdc-dialog__container">
+                <div class="mdc-dialog__surface">
+                    <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+                    <h2 class="mdc-dialog__title" id="my-dialog-title">Dialog 01</h2>
+                    <div class="mdc-dialog__content" id="my-dialog-content">
+                        Dialog body text goes here.
+                    </div>
+                    <footer class="mdc-dialog__actions">
+                        <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="no">No</button>
+                        <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="yes">Yes</button>
+                    </footer>
+                </div>
+            </div>
+            <div class="mdc-dialog__scrim"></div>
+        </div>
+
+        <div class="mdc-dialog alert2" role="alertdialog" aria-modal="true" aria-labelledby="my-dialog-title"
+            aria-describedby="my-dialog-content">
+            <div class="mdc-dialog__container">
+                <div class="mdc-dialog__surface">
+                    <!-- Title cannot contain leading whitespace due to mdc-typography-baseline-top() -->
+                    <h2 class="mdc-dialog__title" id="my-dialog-title">Dialog 02</h2>
+                    <div class="mdc-dialog__content" id="my-dialog-content">
+                        Dialog body text goes here.
+                    </div>
+                    <footer class="mdc-dialog__actions">
+                        <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="no">No</button>
+                        <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="yes">Yes</button>
+                    </footer>
+                </div>
+            </div>
+            <div class="mdc-dialog__scrim"></div>
+        </div>
+
+        <hr>
+
+        <!-- field -->
+        <!-- <div class="mdc-text-field">
+            <input type="text" id="my-text-field" class="mdc-text-field__input">
+            <label class="mdc-floating-label" for="my-text-field">Hint text</label>
+            <div class="mdc-line-ripple"></div>
+        </div> -->
+
+        <div class="mdc-text-field mdc-text-field--outlined field1">
+            <input type="text" id="tf-outlined" class="mdc-text-field__input">
+            <label for="tf-outlined" class="mdc-floating-label">Your Name</label>
+            <div class="mdc-notched-outline">
+                <svg>
+                    <path class="mdc-notched-outline__path" />
+                </svg>
+            </div>
+            <div class="mdc-notched-outline__idle"></div>
+        </div>
+
+        <br>
+        <br>
+
+        <div class="mdc-text-field mdc-text-field--textarea field2">
+            <textarea id="textarea" class="mdc-text-field__input" rows="8" cols="40"></textarea>
+            <label for="textarea" class="mdc-floating-label">Textarea Label</label>
+        </div>
+
     </div>
 
-
-
 </body>
+
 </html>
