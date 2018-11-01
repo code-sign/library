@@ -1,1 +1,732 @@
-<!DOCTYPE html><html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <meta http-equiv="X-UA-Compatible" content="ie=edge"> <title>scss</title> <link rel="stylesheet" href="js.5e0e5e1e.css"></head> <body>  <div id="container"> <div class="guide_info"> <h1>UI Component</h1> <p class="desc"> Typograhy & UI Component Guide </p> </div> <section> <h2 class="sec_tit">Color theme</h2> <div class="ui_guide"> <p>$mainColor, $lightColor, $darkColor, $formColor</p> </div> <div class="color_guide colbox col6 alC"> <div> <div class="colorchip maincolor"></div> <p>Main</p> </div> <div> <div class="colorchip darkcolor"></div> <p>Sub - dark</p> </div> <div> <div class="colorchip lightcolor"></div> <p>Sub - light</p> </div> <div> <div class="colorchip border"></div> <p>border</p> </div> <div> <div class="colorchip form"><span>A</span></div> <p>form</p> </div> <div> <div class="colorchip text"><span>A</span></div> <p>text</p> </div> </div> </section> <section> <h2 class="sec_tit">Heading</h2> <div class="ui_guide">standard : 16px = 1rem </div> <div class="ui_group"> <p class="info"><strong>H1</strong> <span>45px</span> <span>2.8125rem</span></p> <h1>Heading 1 Lorem Ipsum</h1> </div> <div class="ui_group"> <p class="info"><strong>H2</strong> <span>36px</span> <span>2.25rem</span></p> <h2>Heading 2 Lorem Ipsum</h2> </div> <div class="ui_group"> <p class="info"><strong>H3</strong> <span>26px</span> <span>1.625rem</span></p> <h3>Heading 3 Lorem Ipsum</h3> </div> <div class="ui_group"> <p class="info"><strong>H4</strong> <span>20px</span> <span>1.25rem</span></p> <h4>Heading 4 Lorem Ipsum</h4> </div> <div class="ui_group"> <p class="info"><strong>H5</strong> <span>18px</span> <span>1.125rem</span></p> <h5>Heading 5 Lorem Ipsum</h5> </div> <div class="ui_group"> <p class="info"><strong>H6</strong> <span>16px</span> <span>1rem</span></p> <h6>Heading 6 Lorem Ipsum</h6> </div> </section> <section> <h2 class="sec_tit">Button</h2> <div class="ui_guide">Button, Link</div> <div class="ui_group"> <h4>Shape</h4> <button>default</button> <button class="border">border</button> <button class="round">round</button> <button class="round border">round border</button>  </div> <div class="ui_group"> <h4>Size</h4> <button class="s">Small</button> <button>default</button> <button class="l">Large</button> </div> <div class="ui_group"> <h4>Color</h4> <button>default</button> <button class="color">color</button> <button class="border color">border color</button> <hr> <button class="round">round</button> <button class="round color">round color</button> <button class="round border color">round border color</button> </div> </section> <section> <h2 class="sec_tit">Forms</h2> <div class="ui_guide">Input, Radio, Checkbox, Selectbox</div> <div class="ui_group"> <h4>Input</h4> <input type="text" value="normal"> <input type="text" class="bottom" value="bottom"> <input type="text" class="bg" value="bg"> <hr> <input type="text" class="color" value="color"> <input type="text" class="fullcolor" value="fullcolor"> <input type="password" value="password"> </div> <div class="ui_group"> <h4>Radio</h4> <span class="radiowrap"> <input type="radio" name="rdgroup1" id="rd1" checked=""> <label for="rd1">radio1</label> </span> <span class="radiowrap"> <input type="radio" name="rdgroup1" id="rd2"> <label for="rd2">radio2</label> </span> </div> <div class="ui_group"> <h4>Checkbox</h4> <span class="checkwrap"> <input type="checkbox" id="ck1" checked=""> <label for="ck1">check1</label> </span> <span class="checkwrap ml_20"> <input type="checkbox" id="ck2"> <label for="ck2">check2</label> </span> <hr> <span class="checkwrap right"> <input type="checkbox" id="ck3" checked=""> <label for="ck3">check right</label> </span> <hr> <div class="checkwrap right full"> <input type="checkbox" id="ck4" checked=""> <label for="ck4">check right full check right fullcheck right fullcheck right fullcheck right full</label> </div> </div> <div class="ui_group"> <h4>Selectbox</h4> <select name=""> <option value="">1</option> <option value="">2</option> <option value="">3</option> </select> <select name="" class="color"> <option value="">1</option> <option value="">2</option> <option value="">3</option> </select> <select name="" class="fullcolor"> <option value="">1</option> <option value="">2</option> <option value="">3</option> </select> </div> <div class="ui_group"> <h4>Custom Selectbox</h4> <div class="select"> <a href="#none" class="default">default</a> <ul class="option"> <li> <a href="#none">select1</a> </li> <li> <a href="#none">select2</a> </li> <li> <a href="#none">select3</a> </li> </ul> </div> <hr> <div class="select color"> <a href="#none" class="default">default</a> <ul class="option"> <li> <a href="#none">select1</a> </li> <li> <a href="#none">select2</a> </li> <li> <a href="#none">select3</a> </li> </ul> </div> <hr> <div class="select fullcolor"> <a href="#none" class="default">default</a> <ul class="option"> <li> <a href="#none">select1</a> </li> <li> <a href="#none">select2</a> </li> <li> <a href="#none">select3</a> </li> </ul> </div> </div> </section> <section> <h2 class="sec_tit">Layer</h2> <div class="ui_group"> <h4>modal</h4> <button class="color border" layerid="layer1">Normal</button> <button class="color border" layerid="layerFull">Full</button> <button class="color" layerid="layerDialog">Dialog</button> <button class="color" layerid="layerScroll">Scroll</button> </div> <div class="layer_wrap" id="layer1"> <div class="dim"></div> <div class="layer_box"> <div class="pop_head">Normal Layer</div> <div class="inner"> <a href="#none">link text</a> <p>content</p> <p>content</p> </div> <a href="#none" class="close"><span class="hide">close</span></a> </div> </div> <div class="layer_wrap full" id="layerFull"> <div class="dim"></div> <div class="layer_box"> <div class="pop_head">Full Layer</div> <div class="inner"> <a href="#none">link text</a> <p>content</p> <p>content</p> </div> <a href="#none" class="close"><span class="hide">close</span></a> </div> </div> <div class="layer_wrap dialog" id="layerDialog"> <div class="dim"></div> <div class="layer_box"> <div class="pop_head">Dialog Layer</div> <div class="inner"> <a href="#none">link text</a> <p>content</p> <p>content</p> <div class="btn_wrap" id="btnConfirm"> <button>NO</button> <button class="color">YES</button> </div> </div> </div> </div> <div class="layer_wrap" id="layerScroll"> <div class="dim"></div> <div class="layer_box"> <div class="pop_head">Scroll Layer</div> <div class="inner" tabindex="0"> <p>scroll content</p> <p>scroll content</p> <p>scroll content</p> <p>scroll content</p> <p>scroll content</p> <p>scroll content</p> <p>scroll content</p> <p>scroll content</p> <p>scroll content</p> <p>scroll content</p> <p>scroll content</p> </div> <a href="#none" class="close"><span class="hide">close</span></a> </div> </div> </section> <section> <h2 class="sec_tit">Motion</h2> <div class="ui_guide"> Click, Focus, Micro Interaction </div> <div class="ui_group"> <h4>Click Ripple</h4> <div class="btn_motion ripple"> <button class="color">ripple</button> <span class="effect"></span> </div> <div class="btn_motion ripple"> <button class="color border">ripple</button> <span class="effect"></span> </div> </div> <div class="ui_group"> <h4>Focus Form</h4> <hr> <div class="form_group mt_linebot"> <input id="ids" class="bottom" type="text" required=""> <label for="ids">id</label> <span class="line"></span> </div> <div class="form_group mt_linebot"> <input id="pas" class="bottom" type="text" required=""> <label for="pas">password</label> <span class="line"></span> </div> <hr> <div class="form_group mt_line"> <input id="names" class="color" type="text" required=""> <label for="names">Your Name</label> <span class="line"></span> </div> <div class="form_group mt_line"> <input id="place" class="color" type="text" required=""> <label for="place">Place</label> </div> <hr> <div class="form_group mt_line"> <input id="names2" class="fullcolor" type="text" required=""> <label for="names2">Your Name</label> <span class="line"></span> </div> <div class="form_group mt_line"> <input id="place2" class="fullcolor" type="text" required=""> <label for="place2">Place</label> </div> </div> <div class="ui_group"> <h4>Micro interaction</h4> <div class="micro line type1"> <a href="#none"> <span></span> <span></span> <span></span> </a> </div> <div class="micro line type2"> <a href="#none"> <span></span> <span></span> <span></span> </a> </div> <div class="micro line type3"> <a href="#none"> <span></span> <span></span> <span></span> </a> </div> <div class="micro ok"> <a href="#none"> <span class="circle"></span> <span class="line1"></span> <span class="line2"></span> </a> </div>  <div class="micro music"> <a href="#none"> <span></span> <span></span> <span></span> <span></span> </a> </div> <div class="micro music color"> <a href="#none"> <span></span> <span></span> <span></span> <span></span> </a> </div> </div> </section> <section> <h2 class="sec_tit">Card</h2> <div class="card"> <div class="cd_top"> Card Top </div> <div class="cd_bot"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </div> </div> <div class="card fullcolor"> <div class="cd_top"> Card Top </div> <div class="cd_bot"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </div> </div> <div class="card topcolor"> <div class="cd_top"> Card Top </div> <div class="cd_bot"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </div> </div> </section> <section> <h2 class="sec_tit">Grid</h2> <div class="ui_guide"> <p>colbox, col2 ~ col5</p> <p>$gutter : 1rem</p> <p>max-width 768 : 50%</p> <p>max-width 480 : 100%</p> </div> <div class="ui_group"> <h4>col2</h4> <div class="colbox col2"> <div class="card"> <div class="cd_top"> Card Top </div> <div class="cd_bot"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </div> </div> <div class="card"> <div class="cd_top"> Card Top </div> <div class="cd_bot"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </div> </div> </div> </div> <div class="ui_group"> <h4>col3</h4> <div class="colbox col3"> <div class="card"> <div class="cd_top"> Card Top </div> <div class="cd_bot"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </div> </div> <div class="card"> <div class="cd_top"> Card Top </div> <div class="cd_bot"> Lorem Ipsum is simply dummy text typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </div> </div> <div class="card"> <div class="cd_top"> Card Top </div> <div class="cd_bot"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </div> </div> </div> </div> <div class="ui_group"> <h4>col4</h4> <div class="colbox col4"> <div class="card"> <div class="cd_top"> Card Top </div> <div class="cd_bot"> Lorem Ipsum is simply dummy text of the printing industry. </div> </div> <div class="card"> <div class="cd_top"> Card Top </div> <div class="cd_bot"> Lorem Ipsum is simply dummy text of the printing industry. </div> </div> <div class="card"> <div class="cd_top"> Card Top </div> <div class="cd_bot"> Lorem Ipsum is simply dummy text of the printing industry. </div> </div> <div class="card"> <div class="cd_top"> Card Top </div> <div class="cd_bot"> Lorem Ipsum is simply dummy text of the printing industry. </div> </div> </div> </div> <div class="ui_group"> <h4>col5</h4> <div class="colbox col5"> <div class="card"> <div class="cd_top"> Card Top </div> <div class="cd_bot"> Lorem Ipsum is simply dummy text. </div> </div> <div class="card"> <div class="cd_top"> Card Top </div> <div class="cd_bot"> Lorem Ipsum is simply dummy text. </div> </div> <div class="card"> <div class="cd_top"> Card Top </div> <div class="cd_bot"> Lorem Ipsum is simply dummy text. </div> </div> <div class="card"> <div class="cd_top"> Card Top </div> <div class="cd_bot"> Lorem Ipsum is simply dummy text. </div> </div> <div class="card"> <div class="cd_top"> Card Top </div> <div class="cd_bot"> Lorem Ipsum is simply dummy text. </div> </div> </div> </div> <div class="ui_group"> <h4>50% + col2</h4> <div class="colbox col2"> <div class="card"> <div class="cd_top"> Card Top </div> <div class="cd_bot"> Lorem Ipsum is simply dummy text. </div> </div> <div class="colbox col2"> <div class="card"> <div class="cd_top"> Card Top </div> <div class="cd_bot"> Lorem Ipsum is simply dummy text. </div> </div> <div class="card"> <div class="cd_top"> Card Top </div> <div class="cd_bot"> Lorem Ipsum is simply dummy text. </div> </div> </div> </div> </div> <div class="ui_group"> <h4>50% + col3</h4> <div class="colbox col2"> <div class="card"> <div class="cd_top"> Card Top </div> <div class="cd_bot"> Lorem Ipsum is simply dummy text. </div> </div> <div class="colbox col3"> <div class="card"> <div class="cd_top"> Card </div> <div class="cd_bot"> Lorem Ipsum </div> </div> <div class="card"> <div class="cd_top"> Card </div> <div class="cd_bot"> Lorem Ipsum </div> </div> <div class="card"> <div class="cd_top"> Card </div> <div class="cd_bot"> Lorem Ipsum </div> </div> </div> </div> </div> </section>  <section> <h2 class="sec_tit">List</h2> </section>  <script src="js.c4a58088.js"></script> </div></body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>scss</title>
+
+<link rel="stylesheet" href="/js.00a46daa.css"></head>
+<body>
+    <!--
+        npm i 
+        npm run dev
+        npm run build 
+    -->
+
+    <div id="container">
+
+        <div class="guide_info">
+            <h1>UI Component</h1>
+            <p class="desc">
+                Typograhy & UI Component Guide
+            </p>
+        </div>
+
+        <section>
+            <h2 class="sec_tit">Color theme</h2>
+
+            <div class="ui_guide">
+                <p>$mainColor, $lightColor, $darkColor, $formColor</p>
+            </div>
+
+            <div class="color_guide colbox col6 alC">
+                <div>
+                    <div class="colorchip maincolor"></div>
+                    <p>Main</p>
+                </div>
+                <div>
+                    <div class="colorchip darkcolor"></div>
+                    <p>Sub - dark</p>
+                </div>
+                <div>
+                    <div class="colorchip lightcolor"></div>
+                    <p>Sub - light</p>
+                </div>
+                <div>
+                    <div class="colorchip border"></div>
+                    <p>border</p>
+                </div>
+                <div>
+                    <div class="colorchip form"><span>A</span></div>
+                    <p>form</p>
+                </div>
+                <div>
+                    <div class="colorchip text"><span>A</span></div>
+                    <p>text</p>
+                </div>
+            </div>
+        </section>  
+
+        <section>
+            <h2 class="sec_tit">Heading</h2>
+            <div class="ui_guide">standard : 16px = 1rem </div>
+
+            <div class="ui_group">
+                <p class="info"><strong>H1</strong> <span>45px</span> <span>2.8125rem</span></p> 
+                <h1>Heading 1 Lorem Ipsum</h1>
+            </div>
+
+            <div class="ui_group">
+                <p class="info"><strong>H2</strong> <span>36px</span> <span>2.25rem</span></p> 
+                <h2>Heading 2 Lorem Ipsum</h2>
+            </div>
+            <div class="ui_group">
+                <p class="info"><strong>H3</strong> <span>26px</span> <span>1.625rem</span></p>
+                <h3>Heading 3 Lorem Ipsum</h3>
+            </div>
+            <div class="ui_group">
+                <p class="info"><strong>H4</strong> <span>20px</span> <span>1.25rem</span></p>
+                <h4>Heading 4 Lorem Ipsum</h4>
+            </div>
+            <div class="ui_group">
+                <p class="info"><strong>H5</strong> <span>18px</span> <span>1.125rem</span></p>
+                <h5>Heading 5 Lorem Ipsum</h5>
+            </div>
+            <div class="ui_group">
+                <p class="info"><strong>H6</strong> <span>16px</span> <span>1rem</span></p>
+                <h6>Heading 6 Lorem Ipsum</h6>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="sec_tit">Button</h2>
+            <div class="ui_guide">Button, Link</div>
+
+            <div class="ui_group">
+                <h4>Shape</h4>
+                <button>default</button>
+                <button class="border">border</button>
+                <button class="round">round</button>
+                <button class="round border">round border</button>
+                <!-- <hr>
+                <a href="#none" class="btn">Button</a>
+                <a href="#none" class="btn border">Button</a>
+                <a href="#none" class="btn round">Button</a>
+                <a href="#none" class="btn round border">Button</a> -->
+            </div>
+
+            <div class="ui_group">
+                <h4>Size</h4>
+                <button class="s">Small</button>
+                <button>default</button>
+                <button class="l">Large</button>
+            </div>
+
+            <div class="ui_group">
+                <h4>Color</h4>
+                <button>default</button>
+                <button class="color">color</button>
+                <button class="border color">border color</button>
+                <hr>
+                <button class="round">round</button>
+                <button class="round color">round color</button>
+                <button class="round border color">round border color</button>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="sec_tit">Forms</h2>
+            <div class="ui_guide">Input, Radio, Checkbox, Selectbox</div>
+
+            <div class="ui_group">
+                <h4>Input</h4>
+                <input type="text" value="normal">
+                <input type="text" class="bottom" value="bottom">
+                <input type="text" class="bg" value="bg">
+                <hr>
+                <input type="text" class="color" value="color">
+                <input type="text" class="fullcolor" value="fullcolor">
+                <input type="password" value="password">
+            </div>
+
+            <div class="ui_group">
+                <h4>Radio</h4>
+                <span class="radiowrap">
+                    <input type="radio" name="rdgroup1" id="rd1" checked="">
+                    <label for="rd1">radio1</label>
+                </span>
+    
+                <span class="radiowrap">
+                    <input type="radio" name="rdgroup1" id="rd2">
+                    <label for="rd2">radio2</label>
+                </span>
+            </div>
+
+            <div class="ui_group">
+                <h4>Checkbox</h4>
+                <span class="checkwrap">
+                    <input type="checkbox" id="ck1" checked="">
+                    <label for="ck1">check1</label>
+                </span>
+
+                <span class="checkwrap ml_20">
+                    <input type="checkbox" id="ck2">
+                    <label for="ck2">check2</label>
+                </span>
+                
+                <hr>
+
+                <span class="checkwrap right">
+                    <input type="checkbox" id="ck3" checked="">
+                    <label for="ck3">check right</label>
+                </span>
+
+                <hr>
+
+                <div class="checkwrap right full">
+                    <input type="checkbox" id="ck4" checked="">
+                    <label for="ck4">check right full check right fullcheck right fullcheck right fullcheck right full</label>
+                </div>
+
+            </div>
+
+            <div class="ui_group">
+                <h4>Selectbox</h4>
+                <select name="" id="">
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                </select>
+
+                <select name="" id="" class="color">
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                </select>
+
+                <select name="" id="" class="fullcolor">
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                </select>
+
+            </div>
+
+            <div class="ui_group">
+                <h4>Custom Selectbox</h4>
+                <div class="select">
+                    <a href="#none" class="default">default</a>
+                    <ul class="option">
+                        <li>
+                            <a href="#none">select1</a>
+                        </li>
+                        <li>
+                            <a href="#none">select2</a>
+                        </li>
+                        <li>
+                            <a href="#none">select3</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <hr>
+
+                <div class="select color">
+                    <a href="#none" class="default">default</a>
+                    <ul class="option">
+                        <li>
+                            <a href="#none">select1</a>
+                        </li>
+                        <li>
+                            <a href="#none">select2</a>
+                        </li>
+                        <li>
+                            <a href="#none">select3</a>
+                        </li>
+                    </ul>
+                </div>
+                <hr>
+
+                <div class="select fullcolor">
+                    <a href="#none" class="default">default</a>
+                    <ul class="option">
+                        <li>
+                            <a href="#none">select1</a>
+                        </li>
+                        <li>
+                            <a href="#none">select2</a>
+                        </li>
+                        <li>
+                            <a href="#none">select3</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section>
+            <h2 class="sec_tit">Layer</h2>
+
+            <div class="ui_group">
+                <h4>modal</h4>
+                <button class="color border" layerid="layer1">Normal</button>
+                <button class="color border" layerid="layerFull">Full</button>
+                <button class="color" layerid="layerDialog">Dialog</button>
+                <button class="color" layerid="layerScroll">Scroll</button>
+            </div>
+
+            <div class="layer_wrap" id="layer1">
+                <div class="dim"></div>
+                <div class="layer_box">
+                    <div class="pop_head">Normal Layer</div>
+                    <div class="inner">
+                        <a href="#none">link text</a>
+                        <p>content</p>
+                        <p>content</p>
+                    </div>
+                    <a href="#none" class="close"><span class="hide">close</span></a>
+                </div>
+            </div>
+
+            <div class="layer_wrap full" id="layerFull">
+                <div class="dim"></div>
+                <div class="layer_box">
+                    <div class="pop_head">Full Layer</div>
+                    <div class="inner">
+                        <a href="#none">link text</a>
+                        <p>content</p>
+                        <p>content</p>
+                    </div>
+                    <a href="#none" class="close"><span class="hide">close</span></a>
+                </div>
+            </div>
+
+            <div class="layer_wrap dialog" id="layerDialog">
+                <div class="dim"></div>
+                <div class="layer_box">
+                    <div class="pop_head">Dialog Layer</div>
+                    <div class="inner">
+                        <a href="#none">link text</a>
+                        <p>content</p>
+                        <p>content</p>
+
+                        <div class="btn_wrap" id="btnConfirm">
+                            <button>NO</button>
+                            <button class="color">YES</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layer_wrap" id="layerScroll">
+                <div class="dim"></div>
+                <div class="layer_box">
+                    <div class="pop_head">Scroll Layer</div>
+                    <div class="inner" tabindex="0">
+                        <p>scroll content</p>
+                        <p>scroll content</p>
+                        <p>scroll content</p>
+                        <p>scroll content</p>
+                        <p>scroll content</p>
+                        <p>scroll content</p>
+                        <p>scroll content</p>
+                        <p>scroll content</p>
+                        <p>scroll content</p>
+                        <p>scroll content</p>
+                        <p>scroll content</p>
+                    </div>
+                    <a href="#none" class="close"><span class="hide">close</span></a>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section>
+            <h2 class="sec_tit">Motion</h2>
+            <div class="ui_guide">
+                Click, Focus, Micro Interaction
+            </div>
+
+            <div class="ui_group">
+                <h4>Click Ripple</h4>
+                <div class="btn_motion ripple">
+                    <button class="color">ripple</button>
+                    <span class="effect"></span>
+                </div>
+                <div class="btn_motion ripple">
+                    <button class="color border">ripple</button>
+                    <span class="effect"></span>
+                </div>
+            </div>
+
+            <div class="ui_group">
+                <h4>Focus Form</h4>
+                <hr>
+                <div class="form_group mt_linebot">
+                    <input id="ids" class="bottom" type="text" required="required">
+                    <label for="ids">id</label>
+                    <span class="line"></span>
+                </div>
+                <div class="form_group mt_linebot">
+                    <input id="pas" class="bottom" type="text" required="required">
+                    <label for="pas">password</label>
+                    <span class="line"></span>
+                </div>
+
+                <hr>
+
+                <div class="form_group mt_line">
+                    <input id="names" class="color" type="text" required="required">
+                    <label for="names">Your Name</label>
+                    <span class="line"></span>
+                </div>
+                <div class="form_group mt_line">
+                    <input id="place" class="color" type="text" required="required">
+                    <label for="place">Place</label>
+                </div>
+
+                <hr>
+
+                <div class="form_group mt_line">
+                    <input id="names2" class="fullcolor" type="text" required="required">
+                    <label for="names2">Your Name</label>
+                    <span class="line"></span>
+                </div>
+                <div class="form_group mt_line">
+                    <input id="place2" class="fullcolor" type="text" required="required">
+                    <label for="place2">Place</label>
+                </div>
+            </div>
+
+            <div class="ui_group">
+                <h4>Micro interaction</h4>
+
+                <div class="micro line type1">
+                    <a href="#none">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                </div>
+
+                <div class="micro line type2">
+                    <a href="#none">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                </div>
+                
+                <div class="micro line type3">
+                    <a href="#none">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                </div>
+
+                <div class="micro ok">
+                    <a href="#none">
+                        <span class="circle"></span>
+                        <span class="line1"></span>
+                        <span class="line2"></span>
+                    </a>
+                </div>
+
+                <!-- <div class="micro heart">
+                    <a href="#none">
+                        <svg version="1.1" id="heart1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" 
+                            width="100%" height="100%" viewBox="0 0 512 512" xml:space="preserve">
+                            <path class="path" d="M340.8,98.4c50.7,0,91.9,41.3,91.9,92.3c0,26.2-10.9,49.8-28.3,66.6L256,407.1L105,254.6c-15.8-16.6-25.6-39.1-25.6-63.9
+                                c0-51,41.1-92.3,91.9-92.3c38.2,0,70.9,23.4,84.8,56.8C269.8,121.9,302.6,98.4,340.8,98.4 M340.8,83C307,83,276,98.8,256,124.8
+                                c-20-26-51-41.8-84.8-41.8C112.1,83,64,131.3,64,190.7c0,27.9,10.6,54.4,29.9,74.6L245.1,418l10.9,11l10.9-11l148.3-149.8
+                                c21-20.3,32.8-47.9,32.8-77.5C448,131.3,399.9,83,340.8,83L340.8,83z"></path>
+                        </svg>				
+                    </a>
+                </div> -->
+
+                <div class="micro music">
+                    <a href="#none">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                </div>
+
+                <div class="micro music color">
+                    <a href="#none">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </a>
+                </div>
+                
+            </div>
+                        
+        </section>
+        
+        
+        <section>
+            <h2 class="sec_tit">Card</h2>
+
+            <div class="card">
+                <div class="cd_top">
+                    Card Top
+                </div>
+                <div class="cd_bot">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                </div>
+            </div>
+
+            <div class="card fullcolor">
+                <div class="cd_top">
+                    Card Top
+                </div>
+                <div class="cd_bot">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                </div>
+            </div>
+
+            <div class="card topcolor">
+                <div class="cd_top">
+                    Card Top
+                </div>
+                <div class="cd_bot">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                </div>
+            </div>            
+
+        </section>
+
+        <section>
+            <h2 class="sec_tit">Grid</h2>
+            <div class="ui_guide">
+                <p>colbox, col2 ~ col5</p>
+                <p>$gutter : 1rem</p>
+                <p>max-width 768 : 50%</p>
+                <p>max-width 480 : 100%</p>
+            </div>
+
+            <div class="ui_group">
+                <h4>col2</h4>
+                <div class="colbox col2">
+                    <div class="card">
+                        <div class="cd_top">
+                            Card Top
+                        </div>
+                        <div class="cd_bot">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="cd_top">
+                            Card Top
+                        </div>
+                        <div class="cd_bot">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui_group">
+                <h4>col3</h4>
+                <div class="colbox col3">
+                    <div class="card">
+                        <div class="cd_top">
+                            Card Top
+                        </div>
+                        <div class="cd_bot">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="cd_top">
+                            Card Top
+                        </div>
+                        <div class="cd_bot">
+                            Lorem Ipsum is simply dummy text typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="cd_top">
+                            Card Top
+                        </div>
+                        <div class="cd_bot">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui_group">
+                <h4>col4</h4>
+                <div class="colbox col4">
+                    <div class="card">
+                        <div class="cd_top">
+                            Card Top
+                        </div>
+                        <div class="cd_bot">
+                            Lorem Ipsum is simply dummy text of the printing industry.
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="cd_top">
+                            Card Top
+                        </div>
+                        <div class="cd_bot">
+                            Lorem Ipsum is simply dummy text of the printing industry.
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="cd_top">
+                            Card Top
+                        </div>
+                        <div class="cd_bot">
+                            Lorem Ipsum is simply dummy text of the printing industry.
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="cd_top">
+                            Card Top
+                        </div>
+                        <div class="cd_bot">
+                            Lorem Ipsum is simply dummy text of the printing industry.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui_group">
+                <h4>col5</h4>
+                <div class="colbox col5">
+                    <div class="card">
+                        <div class="cd_top">
+                            Card Top
+                        </div>
+                        <div class="cd_bot">
+                            Lorem Ipsum is simply dummy text.
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="cd_top">
+                            Card Top
+                        </div>
+                        <div class="cd_bot">
+                            Lorem Ipsum is simply dummy text.
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="cd_top">
+                            Card Top
+                        </div>
+                        <div class="cd_bot">
+                            Lorem Ipsum is simply dummy text.
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="cd_top">
+                            Card Top
+                        </div>
+                        <div class="cd_bot">
+                            Lorem Ipsum is simply dummy text.
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="cd_top">
+                            Card Top
+                        </div>
+                        <div class="cd_bot">
+                            Lorem Ipsum is simply dummy text.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ui_group">
+                <h4>50% + col2</h4>
+                <div class="colbox col2">
+                    <div class="card">
+                        <div class="cd_top">
+                            Card Top
+                        </div>
+                        <div class="cd_bot">
+                            Lorem Ipsum is simply dummy text.
+                        </div>
+                    </div>
+                    <div class="colbox col2">
+                        <div class="card">
+                            <div class="cd_top">
+                                Card Top
+                            </div>
+                            <div class="cd_bot">
+                                Lorem Ipsum is simply dummy text.
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="cd_top">
+                                Card Top
+                            </div>
+                            <div class="cd_bot">
+                                Lorem Ipsum is simply dummy text.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="ui_group">
+                <h4>50% + col3</h4>
+                <div class="colbox col2">
+                    <div class="card">
+                        <div class="cd_top">
+                            Card Top
+                        </div>
+                        <div class="cd_bot">
+                            Lorem Ipsum is simply dummy text.
+                        </div>
+                    </div>
+                    <div class="colbox col3">
+                        <div class="card">
+                            <div class="cd_top">
+                                Card
+                            </div>
+                            <div class="cd_bot">
+                                Lorem Ipsum
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="cd_top">
+                                Card
+                            </div>
+                            <div class="cd_bot">
+                                Lorem Ipsum
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="cd_top">
+                                Card
+                            </div>
+                            <div class="cd_bot">
+                                Lorem Ipsum
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        
+
+        <section>
+            <h2 class="sec_tit">List</h2>
+
+        </section>              
+
+
+    
+
+    <script src="/js.00a46daa.js"></script>
+
+</div></body>
+</html>
