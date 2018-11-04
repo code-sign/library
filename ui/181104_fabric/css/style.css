@@ -1,0 +1,50 @@
+*{
+ font-family: 'Spoqa Han Sans', 'Sans-serif' !important;
+ font-size:12px;
+
+}
+html, body {
+	position: relative;
+	height: 100%;
+	margin:0;
+	padding:0;
+}
+
+canvas{border:1px solid #ccc}
+
+.blind {
+  position:absolute;
+  left:-9999px;
+}
+.btn {
+  display:inline-block;
+  padding:10px 15px;
+  margin:15px 7px;
+  border:1px solid #2ac1bc;
+  background:#2ac1bc;
+  font:inherit;
+  color:#fff;
+  text-decoration:none;
+}
+
+
+  .controls { display: inline-block; width:40%; margin-left:20px;background: #fafafa; padding:10px;}
+  .canvas-container { display: inline-block; vertical-align: top; }
+  input[disabled] { opacity: 0.5; }
+  input[type="checkbox"]{width:20px; height:20px;}
+
+  p.bold{font-weight:bold;}
+  .filter_group{ float:left; width:45%;}
+  .filter_group li{margin-bottom:20px;}
+  .filter_group.first{margin-right:10px;}
+
+  .btn_area{display:inline-block;}
+
+  @media (max-width:480px) {
+
+    .controls{
+      width:100%;
+      margin-left: 0;
+    }
+    
+  }

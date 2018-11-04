@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html >
+  <head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
+	<title>fabric filter</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<!-- <link rel="stylesheet" href="css/material.css" /> -->
+
+
+	<link href='//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css' rel='stylesheet' type='text/css'>
+	<script src="js/jquery-2.1.4.min.js"></script>
+	<script src='js/fabric.min.js'></script>
+  </head>
+
+  <body>
+
+
+	<canvas id="c" class="lower-canvas"></canvas>
+
+
+
+	<div class="controls">
+		
+		<div class="btn_area">
+			<label for="addFile" class="btn">ADD</label>
+			<input type="file" class="blind" id="addFile">
+	
+			<a href="#none" id="download" class="btn">Down</a>
+		</div>
+
+		<p class="bold">Filters</p>
+
+		<div class="filter_wrap">
+		  <ul class="filter_group first">
+			<li><label><span>Grayscale:</span> <input type="checkbox" id="grayscale"></label></li>
+			<li><label><span>Invert:</span> <input type="checkbox" id="invert"></label></li>
+			<li><label><span>Sepia:</span> <input type="checkbox" id="sepia"></label></li>
+			<li><label><span>Sepia2:</span> <input type="checkbox" id="sepia2"></label></li>
+			<li>
+				<label><span>Remove white:</span> <input type="checkbox" id="remove-white"></label>
+				<br>
+				<label>Threshold: <input type="range" id="remove-white-threshold" value="60" min="0" max="255"></label>
+				<br>
+				<label>Distance: <input type="range" id="remove-white-distance" value="10" min="0" max="255"></label>
+			</li>
+			<li>
+				 <label><span>Brightness:</span> <input type="checkbox" id="brightness"></label>
+				<br>
+
+				<label>Value: <input type="range" id="brightness-value" value="100" min="-255" max="255" tabindex="0"></label>
+			</li>
+			<li>
+				<label><span>Contrast:</span> <input type="checkbox" id="contrast"></label>
+				<br>
+				<label>Value: <input type="range" id="contrast-value" value="0" min="-255" max="255"></label>
+			</li>
+			<li>
+				 <label><span>Saturate:</span> <input type="checkbox" id="saturate"></label>
+				<br>
+				<label>Value: <input type="range" id="saturate-value" value="100" min="-100" max="100"></label>
+			</li>
+			<li>
+				<label><span>Noise:</span> <input type="checkbox" id="noise"></label>
+				<br>
+				<label>Value: <input type="range" id="noise-value" value="100" min="0" max="1000"></label>
+			</li>
+		  </ul>
+
+
+		  <ul class="filter_group">
+			<li>
+				<label><span>GradientTransparency:</span> <input type="checkbox" id="gradient-transparency"></label>
+				<br>
+				<label>Value: <input type="range" id="gradient-transparency-value" value="100" min="0" max="255"></label>
+			</li>
+			  <li>
+				<label><span>Pixelate</span> <input type="checkbox" id="pixelate"></label>
+				<br>
+				<label>Value: <input type="range" id="pixelate-value" value="4" min="2" max="20"></label>
+			  </li>
+			  <li>
+				<label><span>Blur:</span> <input type="checkbox" id="blur"></label>
+			  </li>
+			  <li>
+				<label><span>Sharpen:</span> <input type="checkbox" id="sharpen"></label>
+			  </li>
+			  <li>
+				<label><span>Emboss:</span> <input type="checkbox" id="emboss"></label>
+			  </li>
+			  <li>
+				<label><span>Tint:</span> <input type="checkbox" id="tint"></label><br>
+				<label>Color: <input class="jscolor" id="tint-color" value="4169e1"></label><br>
+				<label>Opacity: <input type="range" id="tint-opacity" min="0" max="1" value="1" step="0.1"></label><br>
+			  </li>
+			  <li>
+				<label><span>Multiply:</span> <input type="checkbox" id="multiply"></label><br>
+				<label>Color: <input class="jscolor" id="multiply-color" value="4169e1"></label><br>    
+			  </li>
+			  <li>
+			  <label><span>Blend:</span> <input type="checkbox" id="blend"></label>
+			  <br>
+			  <label>Mode:</label>
+				<select id="blend-mode" name="blend-mode">
+				  <option selected="" value="add">Add</option>
+				  <option value="diff">Diff</option>
+				  <option value="subtract">Subtract</option>
+				  <option value="multiply">Multiply</option>
+				  <option value="screen">Screen</option>
+				  <option value="lighten">Lighten</option>
+				  <option value="darken">Darken</option>
+				</select>
+				<br>
+					<label>Color: <input class="jscolor" id="blend-color" value="4169e1"></label><br>
+			  </li>
+		  </ul>
+		</div>
+
+
+	</div>
+
+
+
+
+
+	<script src="js/jscolor.js"></script>
+	<script src="js/index.js"></script>
+	<!-- <script src="js/material.js"></script> -->
+
+  </body>
+</html>
