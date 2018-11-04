@@ -11368,7 +11368,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.color
     }
-  }, [_vm._v("컬러")]), _vm._v(" "), _c('button', {
+  }, [_vm._v("컬러1")]), _vm._v(" "), _c('button', {
     attrs: {
       "id": "color2"
     },
