@@ -10756,10 +10756,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             reader.onload = function (e) {
                 image = new Image();
                 image.onload = function () {
-                    var centerW = canvas.width / 2 - image.width / 2;
-                    var centerH = canvas.height / 2 - image.height / 2;
+                    var wid = canvas.width / 2;
+                    var hid = canvas.height / 2;
+                    var xPos = canvas.width / 2 - image.width / 2;
+                    var yPos = canvas.height / 2 - image.height / 2;
 
-                    ctx.drawImage(image, centerW, centerH);
+                    ctx.drawImage(image, xPos, yPos, wid, hid);
                 };
                 image.src = e.target.result;
                 //return me.uploadfile.image = e.target.result;
