@@ -11340,7 +11340,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     on: {
       "click": _vm.original
     }
-  }, [_vm._v("원본비교")]), _vm._v(" "), _c('button', {
+  }, [_vm._v("원본")]), _vm._v(" "), _c('button', {
     attrs: {
       "id": "afterBtn"
     },
