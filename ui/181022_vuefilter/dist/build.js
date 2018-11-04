@@ -451,7 +451,7 @@ var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(5),
   /* template */
-  __webpack_require__(22),
+  __webpack_require__(20),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -10705,6 +10705,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data() {
@@ -10742,6 +10747,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var canvas = document.getElementById('canvas');
             var ctx = canvas.getContext('2d');
 
+            // canvas clear
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
             reader = new FileReader();
             me = this;
             me.uploadfile.name = file.name;
@@ -10749,7 +10757,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             reader.onload = function (e) {
                 image = new Image();
                 image.onload = function () {
-                    ctx.drawImage(image, 0, 0);
+                    var centerW = canvas.width / 2 - image.width / 2;
+                    var centerH = canvas.height / 2 - image.height / 2;
+
+                    ctx.drawImage(image, centerW, centerH);
                 };
                 image.src = e.target.result;
                 //return me.uploadfile.image = e.target.result;
@@ -10777,13 +10788,40 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             document.getElementById('color_filter_area').classList.remove('none');
         },
         reset: function () {
+
             return this.fontOpacity = 1, this.grs = 0, this.blr = 0, this.hrt = 0, this.spa = 0, this.brt = 100, this.cnt = 100, this.orangemix = 0, this.bluemix = 0, this.greenmix = 0;
         },
         gray: function () {
-            return this.grs = 100;
+            this.reset();
+            this.grs = 100;
+            document.getElementById('color1').classList.remove('active');
+            document.getElementById('color2').classList.remove('active');
+            document.getElementById('color3').classList.remove('active');
+            document.getElementById('gray').classList.add('active');
         },
         color: function () {
-            return this.grs = 0;
+            this.reset();
+            this.grs = 0;
+            document.getElementById('color2').classList.remove('active');
+            document.getElementById('color3').classList.remove('active');
+            document.getElementById('gray').classList.remove('active');
+            document.getElementById('color1').classList.add('active');
+        },
+        color2: function () {
+            this.reset();
+            this.hrt = 50;
+            document.getElementById('color1').classList.remove('active');
+            document.getElementById('color3').classList.remove('active');
+            document.getElementById('gray').classList.remove('active');
+            document.getElementById('color2').classList.add('active');
+        },
+        color3: function () {
+            this.reset();
+            this.hrt = 100;
+            document.getElementById('color1').classList.remove('active');
+            document.getElementById('color2').classList.remove('active');
+            document.getElementById('gray').classList.remove('active');
+            document.getElementById('color3').classList.add('active');
         },
         warm: function () {
             return this.orangemix = .2, this.bluemix = 0, this.greenmix = 0;
@@ -10821,6 +10859,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     ready: function () {
         var filedrag;
         return filedrag = document.getElementById('filedrag');
+    },
+    mounted: function () {
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext("2d");
+
+        function make_base() {
+            var base_image = new Image();
+            var canvasW = canvas.width / 1.5;
+            var canvasH = canvas.height / 1.5;
+            var xpos = canvas.width / 6 - base_image.width / 2;
+            var ypos = canvas.height / 6 - base_image.height / 2;
+
+            base_image.src = './printio.png';
+            base_image.onload = function () {
+                ctx.drawImage(base_image, xpos, ypos, canvasW, canvasH);
+            };
+        }
+
+        make_base();
     }
 });
 
@@ -10988,7 +11045,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, ".textedit_wrap[data-v-685f8f00]{padding:30px}.txt_st[data-v-685f8f00]{transition:all .3s ease-out;border:none;background:transparent;color:#fff;padding:10px;width:calc(100% - 20px)}", ""]);
+exports.push([module.i, "[data-v-2e7a36a1]{font-size:.95em;box-sizing:border-box}.filterwrap[data-v-2e7a36a1]{background:#333;padding:30px}label[data-v-2e7a36a1]{display:inline-block;color:hsla(0,0%,100%,.7);border:1px solid hsla(0,0%,100%,.7);background:transparent;border-radius:20px;padding:0 15px;height:30px;cursor:pointer;line-height:27px}input[type=file][data-v-2e7a36a1]{opacity:0}#downFile[data-v-2e7a36a1]{position:absolute;left:100px;top:30px;z-index:99999}.image_area[data-v-2e7a36a1]{position:relative;height:50vw;margin:30px 0}.image_area canvas[data-v-2e7a36a1]{position:absolute;top:0;left:0;right:0;bottom:0;margin:auto;width:auto;height:100%;transition:.3s}#fileDrag[data-v-2e7a36a1]{position:absolute;top:0;left:0;right:0;width:calc(100% - 80px);height:50vw;max-width:700px;margin:0 auto;padding:30px;box-shadow:0 0 0 transparent;transition:.2s ease;text-align:center;border:5px solid #222}#fileDrag p[data-v-2e7a36a1]{color:hsla(0,0%,100%,.7)}#fileDrag.hover[data-v-2e7a36a1]{background:rgba(0,0,0,.5);border:5px solid #fff;box-shadow:0 0 0 5px rgba(0,0,0,.15)}img[data-v-2e7a36a1]{max-width:100%}button[data-v-2e7a36a1]{line-height:30px;cursor:pointer}.btn[data-v-2e7a36a1],button[data-v-2e7a36a1]{color:hsla(0,0%,100%,.7);border:1px solid hsla(0,0%,100%,.7);background:transparent;border-radius:20px;padding:0 15px;height:30px}.btn[data-v-2e7a36a1]{line-height:27px;text-decoration:none}button[data-v-2e7a36a1]:focus{outline:none}button.active[data-v-2e7a36a1]{background:#fff;border:none;color:#222}.addBorder[data-v-2e7a36a1]{filter:inherit!important}#sliderWrap[data-v-2e7a36a1]{margin-top:20px;background:#282828;padding:30px;max-height:500px;overflow-y:auto;color:hsla(0,0%,100%,.7);border-radius:10px}@media screen and (max-width:380px){#sliderWrap[data-v-2e7a36a1]{max-height:260px}}#sliderWrap p[data-v-2e7a36a1]{margin:0 0 15px}#sliderWrap p[data-v-2e7a36a1]:last-child{margin:0}#sliderWrap span[data-v-2e7a36a1]{display:inline-block;min-width:80px}#sliderWrap input[data-v-2e7a36a1]{margin-right:15px}#sliderWrap.none[data-v-2e7a36a1]{opacity:.1}.mix[data-v-2e7a36a1]{mix-blend-mode:soft-light;position:absolute;top:0;left:0;width:100%;height:100%;opacity:.5}.mix.blue[data-v-2e7a36a1]{background:blue}.mix.green[data-v-2e7a36a1]{background:green}.mix.orange[data-v-2e7a36a1]{background:orange}#color_filter_area.none[data-v-2e7a36a1]{visibility:hidden}#canvas2[data-v-2e7a36a1]{visibility:hidden;width:0;height:0;overflow:hidden}", ""]);
 
 // exports
 
@@ -11002,7 +11059,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "[data-v-6938ed9e]{font-size:.95em;box-sizing:border-box}.filterwrap[data-v-6938ed9e]{background:#333;padding:30px}label[data-v-6938ed9e]{display:inline-block;color:hsla(0,0%,100%,.7);border:1px solid hsla(0,0%,100%,.7);background:transparent;border-radius:20px;padding:0 15px;height:30px;cursor:pointer;line-height:27px}input[type=file][data-v-6938ed9e]{opacity:0}#downFile[data-v-6938ed9e]{position:absolute;left:100px;top:30px;z-index:99999}.image_area[data-v-6938ed9e]{position:relative;height:200px;margin:30px 0}.image_area canvas[data-v-6938ed9e]{position:absolute;top:0;left:0;right:0;margin:auto;height:100%;width:auto}#fileDrag[data-v-6938ed9e]{position:absolute;top:0;left:0;right:0;width:calc(100% - 80px);height:200px;max-width:700px;margin:0 auto;padding:30px;box-shadow:0 0 0 transparent;transition:.2s ease;text-align:center;border:5px solid #222}#fileDrag p[data-v-6938ed9e]{color:hsla(0,0%,100%,.7)}#fileDrag.hover[data-v-6938ed9e]{background:rgba(0,0,0,.5);border:5px solid #fff;box-shadow:0 0 0 5px rgba(0,0,0,.15)}img[data-v-6938ed9e]{max-width:100%}button[data-v-6938ed9e]{line-height:30px}.btn[data-v-6938ed9e],button[data-v-6938ed9e]{color:hsla(0,0%,100%,.7);border:1px solid hsla(0,0%,100%,.7);background:transparent;border-radius:20px;padding:0 15px;height:30px}.btn[data-v-6938ed9e]{line-height:27px;text-decoration:none}button[data-v-6938ed9e]:focus{outline:none}button.active[data-v-6938ed9e]{background:#222;border:none}.addBorder[data-v-6938ed9e]{filter:inherit!important}#sliderWrap[data-v-6938ed9e]{margin-top:20px;background:#282828;padding:30px;max-height:500px;overflow-y:auto;color:hsla(0,0%,100%,.7);border-radius:10px}@media screen and (max-width:380px){#sliderWrap[data-v-6938ed9e]{max-height:260px}}#sliderWrap p[data-v-6938ed9e]{margin:0 0 15px}#sliderWrap p[data-v-6938ed9e]:last-child{margin:0}#sliderWrap span[data-v-6938ed9e]{display:inline-block;min-width:80px}#sliderWrap input[data-v-6938ed9e]{margin-right:15px}#sliderWrap.none[data-v-6938ed9e]{opacity:.1}.mix[data-v-6938ed9e]{mix-blend-mode:soft-light;position:absolute;top:0;left:0;width:100%;height:100%;opacity:.5}.mix.blue[data-v-6938ed9e]{background:blue}.mix.green[data-v-6938ed9e]{background:green}.mix.orange[data-v-6938ed9e]{background:orange}#color_filter_area.none[data-v-6938ed9e]{visibility:hidden}#canvas2[data-v-6938ed9e]{visibility:hidden;width:0;height:0;overflow:hidden}", ""]);
+exports.push([module.i, ".textedit_wrap[data-v-60555790]{padding:30px}.txt_st[data-v-60555790]{transition:all .3s ease-out;border:none;background:transparent;color:#fff;padding:10px;width:calc(100% - 20px)}", ""]);
 
 // exports
 
@@ -11016,7 +11073,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "p[data-v-91990d30]{background:#444;padding:10px}", ""]);
+exports.push([module.i, "p[data-v-84127a50]{background:#444;padding:10px}", ""]);
 
 // exports
 
@@ -11036,7 +11093,7 @@ var Component = __webpack_require__(0)(
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-91990d30",
+  "data-v-84127a50",
   /* moduleIdentifier (server only) */
   null
 )
@@ -11052,7 +11109,7 @@ var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(6),
   /* template */
-  __webpack_require__(21),
+  __webpack_require__(23),
   /* styles */
   null,
   /* scopeId */
@@ -11069,17 +11126,17 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 function injectStyle (ssrContext) {
-  __webpack_require__(28)
+  __webpack_require__(27)
 }
 var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(7),
   /* template */
-  __webpack_require__(24),
+  __webpack_require__(22),
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-6938ed9e",
+  "data-v-2e7a36a1",
   /* moduleIdentifier (server only) */
   null
 )
@@ -11092,17 +11149,17 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 function injectStyle (ssrContext) {
-  __webpack_require__(27)
+  __webpack_require__(28)
 }
 var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(8),
   /* template */
-  __webpack_require__(23),
+  __webpack_require__(24),
   /* styles */
   injectStyle,
   /* scopeId */
-  "data-v-685f8f00",
+  "data-v-60555790",
   /* moduleIdentifier (server only) */
   null
 )
@@ -11118,7 +11175,7 @@ var Component = __webpack_require__(0)(
   /* script */
   __webpack_require__(9),
   /* template */
-  __webpack_require__(20),
+  __webpack_require__(21),
   /* styles */
   null,
   /* scopeId */
@@ -11132,6 +11189,18 @@ module.exports = Component.exports
 
 /***/ }),
 /* 20 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    attrs: {
+      "id": "app"
+    }
+  }, [_c('photo-filter')], 1)
+},staticRenderFns: []}
+
+/***/ }),
+/* 21 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -11180,7 +11249,284 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 21 */
+/* 22 */
+/***/ (function(module, exports) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', [_c('div', {
+    staticClass: "filterwrap"
+  }, [_c('label', {
+    attrs: {
+      "for": "upload-input"
+    }
+  }, [_vm._v("ADD")]), _vm._v(" "), _c('input', {
+    attrs: {
+      "id": "upload-input",
+      "type": "file"
+    },
+    on: {
+      "change": _vm.onFileChange
+    }
+  }), _vm._v(" "), _c('a', {
+    staticClass: "btn",
+    attrs: {
+      "href": "#none",
+      "id": "downFile"
+    },
+    on: {
+      "click": _vm.downs
+    }
+  }, [_vm._v("DOWN")]), _vm._v(" "), _c('div', {
+    staticClass: "image_area"
+  }, [_c('canvas', {
+    staticClass: "upload-img",
+    style: ({
+      opacity: _vm.fontOpacity,
+      filter: 'grayscale(' + _vm.grs + '%) blur(' + _vm.blr + 'px) hue-rotate(' + _vm.hrt + 'deg) sepia(' + _vm.spa + '%) brightness(' + _vm.brt + '%) contrast(' + _vm.cnt + '%)'
+    }),
+    attrs: {
+      "id": "canvas",
+      "width": "400",
+      "height": "400",
+      "src": _vm.uploadfile.image
+    }
+  }, [_c('img', {
+    attrs: {
+      "id": "imgs"
+    }
+  })]), _vm._v(" "), _c('canvas', {
+    attrs: {
+      "id": "canvas2",
+      "width": "400",
+      "height": "400"
+    }
+  }), _vm._v(" "), _c('div', {
+    attrs: {
+      "id": "color_filter_area"
+    }
+  }, [_c('div', {
+    staticClass: "mix blue",
+    style: ({
+      opacity: _vm.bluemix
+    })
+  }, [_vm._v("Mix")]), _vm._v(" "), _c('div', {
+    staticClass: "mix green",
+    style: ({
+      opacity: _vm.greenmix
+    })
+  }, [_vm._v("Mix")]), _vm._v(" "), _c('div', {
+    staticClass: "mix orange",
+    style: ({
+      opacity: _vm.orangemix
+    })
+  }, [_vm._v("Mix")])]), _vm._v(" "), _c('div', {
+    attrs: {
+      "id": "fileDrag"
+    },
+    on: {
+      "dragover": _vm.FileDragHover,
+      "dragleave": _vm.FileDragHover,
+      "drop": _vm.onFileChange
+    }
+  }, [_c('p', [_vm._v("drag on here!")])])]), _vm._v(" "), _c('p', [_c('button', {
+    attrs: {
+      "id": "originBtn"
+    },
+    on: {
+      "click": _vm.original
+    }
+  }, [_vm._v("원본비교")]), _vm._v(" "), _c('button', {
+    attrs: {
+      "id": "afterBtn"
+    },
+    on: {
+      "click": _vm.after
+    }
+  }, [_vm._v("효과적용")]), _vm._v(" "), _c('button', {
+    attrs: {
+      "id": "resetBtn"
+    },
+    on: {
+      "click": _vm.reset
+    }
+  }, [_vm._v("초기화")])]), _vm._v(" "), _c('button', {
+    attrs: {
+      "id": "gray"
+    },
+    on: {
+      "click": _vm.gray
+    }
+  }, [_vm._v("흑백")]), _vm._v(" "), _c('button', {
+    attrs: {
+      "id": "color1"
+    },
+    on: {
+      "click": _vm.color
+    }
+  }, [_vm._v("컬러")]), _vm._v(" "), _c('button', {
+    attrs: {
+      "id": "color2"
+    },
+    on: {
+      "click": _vm.color2
+    }
+  }, [_vm._v("컬러2")]), _vm._v(" "), _c('button', {
+    attrs: {
+      "id": "color3"
+    },
+    on: {
+      "click": _vm.color3
+    }
+  }, [_vm._v("컬러3")]), _vm._v(" "), _c('br'), _vm._v(" "), _c('br'), _vm._v(" "), _c('div', {
+    attrs: {
+      "id": "sliderWrap"
+    }
+  }, [_c('p', [_c('span', [_vm._v("투명하게")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.fontOpacity),
+      expression: "fontOpacity"
+    }],
+    attrs: {
+      "type": "range",
+      "min": "0",
+      "max": "1",
+      "step": "0.1"
+    },
+    domProps: {
+      "value": (_vm.fontOpacity)
+    },
+    on: {
+      "__r": function($event) {
+        _vm.fontOpacity = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('span', [_vm._v("선명하게")])]), _vm._v(" "), _c('p', [_c('span', [_vm._v("컬러")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.grs),
+      expression: "grs"
+    }],
+    attrs: {
+      "type": "range",
+      "min": "0",
+      "max": "100"
+    },
+    domProps: {
+      "value": (_vm.grs)
+    },
+    on: {
+      "__r": function($event) {
+        _vm.grs = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('span', [_vm._v("흑백")])]), _vm._v(" "), _c('p', [_c('span', [_vm._v("선명하게")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.blr),
+      expression: "blr"
+    }],
+    attrs: {
+      "type": "range",
+      "min": "0",
+      "max": "50"
+    },
+    domProps: {
+      "value": (_vm.blr)
+    },
+    on: {
+      "__r": function($event) {
+        _vm.blr = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('span', [_vm._v("번지게")])]), _vm._v(" "), _c('p', [_c('span', [_vm._v("huerotate")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.hrt),
+      expression: "hrt"
+    }],
+    attrs: {
+      "type": "range",
+      "min": "0",
+      "max": "360"
+    },
+    domProps: {
+      "value": (_vm.hrt)
+    },
+    on: {
+      "__r": function($event) {
+        _vm.hrt = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('p', [_c('span', [_vm._v("sepia")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.spa),
+      expression: "spa"
+    }],
+    attrs: {
+      "type": "range",
+      "min": "0",
+      "max": "100"
+    },
+    domProps: {
+      "value": (_vm.spa)
+    },
+    on: {
+      "__r": function($event) {
+        _vm.spa = $event.target.value
+      }
+    }
+  })]), _vm._v(" "), _c('p', [_c('span', [_vm._v("어둡게")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.brt),
+      expression: "brt"
+    }],
+    attrs: {
+      "type": "range",
+      "min": "20",
+      "max": "100"
+    },
+    domProps: {
+      "value": (_vm.brt)
+    },
+    on: {
+      "__r": function($event) {
+        _vm.brt = $event.target.value
+      }
+    }
+  }), _vm._v(" "), _c('span', [_vm._v("밝게")])]), _vm._v(" "), _c('p', [_c('span', [_vm._v("대비 약하게")]), _vm._v(" "), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: (_vm.cnt),
+      expression: "cnt"
+    }],
+    attrs: {
+      "type": "range",
+      "min": "25",
+      "max": "200"
+    },
+    domProps: {
+      "value": (_vm.cnt)
+    },
+    on: {
+      "__r": function($event) {
+        _vm.cnt = $event.target.value
+      }
+    }
+  }), _vm._v("\n                대비 강하게\n            ")]), _vm._v(" "), _c('br')])])])
+},staticRenderFns: []}
+
+/***/ }),
+/* 23 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -11188,19 +11534,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 22 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', {
-    attrs: {
-      "id": "app"
-    }
-  }, [_c('photo-filter')], 1)
-},staticRenderFns: []}
-
-/***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -11391,338 +11725,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
 },staticRenderFns: []}
 
 /***/ }),
-/* 24 */
-/***/ (function(module, exports) {
-
-module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('div', {
-    staticClass: "filterwrap"
-  }, [_c('label', {
-    attrs: {
-      "for": "upload-input"
-    }
-  }, [_vm._v("ADD")]), _vm._v(" "), _c('input', {
-    attrs: {
-      "id": "upload-input",
-      "type": "file"
-    },
-    on: {
-      "change": _vm.onFileChange
-    }
-  }), _vm._v(" "), _c('a', {
-    staticClass: "btn",
-    attrs: {
-      "href": "#none",
-      "id": "downFile"
-    },
-    on: {
-      "click": _vm.downs
-    }
-  }, [_vm._v("DOWN")]), _vm._v(" "), _c('div', {
-    staticClass: "image_area"
-  }, [_c('canvas', {
-    staticClass: "upload-img",
-    style: ({
-      opacity: _vm.fontOpacity,
-      filter: 'grayscale(' + _vm.grs + '%) blur(' + _vm.blr + 'px) hue-rotate(' + _vm.hrt + 'deg) sepia(' + _vm.spa + '%) brightness(' + _vm.brt + '%) contrast(' + _vm.cnt + '%)'
-    }),
-    attrs: {
-      "id": "canvas",
-      "width": "300",
-      "height": "200",
-      "src": _vm.uploadfile.image
-    }
-  }, [_c('img', {
-    attrs: {
-      "id": "imgs"
-    }
-  })]), _vm._v(" "), _c('canvas', {
-    attrs: {
-      "id": "canvas2",
-      "width": "300",
-      "height": "200"
-    }
-  }), _vm._v(" "), _c('div', {
-    attrs: {
-      "id": "color_filter_area"
-    }
-  }, [_c('div', {
-    staticClass: "mix blue",
-    style: ({
-      opacity: _vm.bluemix
-    })
-  }, [_vm._v("Mix")]), _vm._v(" "), _c('div', {
-    staticClass: "mix green",
-    style: ({
-      opacity: _vm.greenmix
-    })
-  }, [_vm._v("Mix")]), _vm._v(" "), _c('div', {
-    staticClass: "mix orange",
-    style: ({
-      opacity: _vm.orangemix
-    })
-  }, [_vm._v("Mix")])]), _vm._v(" "), _c('div', {
-    attrs: {
-      "id": "fileDrag"
-    },
-    on: {
-      "dragover": _vm.FileDragHover,
-      "dragleave": _vm.FileDragHover,
-      "drop": _vm.onFileChange
-    }
-  }, [_c('p', [_vm._v("drag on here!")])])]), _vm._v(" "), _c('p', [_c('button', {
-    attrs: {
-      "id": "originBtn"
-    },
-    on: {
-      "click": _vm.original
-    }
-  }, [_vm._v("원본비교")]), _vm._v(" "), _c('button', {
-    attrs: {
-      "id": "afterBtn"
-    },
-    on: {
-      "click": _vm.after
-    }
-  }, [_vm._v("효과적용")]), _vm._v(" "), _c('button', {
-    attrs: {
-      "id": "resetBtn"
-    },
-    on: {
-      "click": _vm.reset
-    }
-  }, [_vm._v("초기화")])]), _vm._v(" "), _c('button', {
-    on: {
-      "click": _vm.gray
-    }
-  }, [_vm._v("흑백")]), _vm._v(" "), _c('button', {
-    on: {
-      "click": _vm.color
-    }
-  }, [_vm._v("컬러")]), _vm._v(" "), _c('button', {
-    on: {
-      "click": _vm.warm
-    }
-  }, [_vm._v("따뜻한")]), _vm._v(" "), _c('button', {
-    on: {
-      "click": _vm.cold
-    }
-  }, [_vm._v("차가운")]), _vm._v(" "), _c('button', {
-    on: {
-      "click": _vm.green
-    }
-  }, [_vm._v("푸릇한")]), _vm._v(" "), _c('div', {
-    attrs: {
-      "id": "sliderWrap"
-    }
-  }, [_c('p', [_c('span', [_vm._v("투명하게")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.fontOpacity),
-      expression: "fontOpacity"
-    }],
-    attrs: {
-      "type": "range",
-      "min": "0",
-      "max": "1",
-      "step": "0.1"
-    },
-    domProps: {
-      "value": (_vm.fontOpacity)
-    },
-    on: {
-      "__r": function($event) {
-        _vm.fontOpacity = $event.target.value
-      }
-    }
-  }), _vm._v(" "), _c('span', [_vm._v("선명하게")])]), _vm._v(" "), _c('p', [_c('span', [_vm._v("컬러")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.grs),
-      expression: "grs"
-    }],
-    attrs: {
-      "type": "range",
-      "min": "0",
-      "max": "100"
-    },
-    domProps: {
-      "value": (_vm.grs)
-    },
-    on: {
-      "__r": function($event) {
-        _vm.grs = $event.target.value
-      }
-    }
-  }), _vm._v(" "), _c('span', [_vm._v("흑백")])]), _vm._v(" "), _c('p', [_c('span', [_vm._v("선명하게")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.blr),
-      expression: "blr"
-    }],
-    attrs: {
-      "type": "range",
-      "min": "0",
-      "max": "50"
-    },
-    domProps: {
-      "value": (_vm.blr)
-    },
-    on: {
-      "__r": function($event) {
-        _vm.blr = $event.target.value
-      }
-    }
-  }), _vm._v(" "), _c('span', [_vm._v("번지게")])]), _vm._v(" "), _c('p', [_c('span', [_vm._v("huerotate")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.hrt),
-      expression: "hrt"
-    }],
-    attrs: {
-      "type": "range",
-      "min": "0",
-      "max": "360"
-    },
-    domProps: {
-      "value": (_vm.hrt)
-    },
-    on: {
-      "__r": function($event) {
-        _vm.hrt = $event.target.value
-      }
-    }
-  })]), _vm._v(" "), _c('p', [_c('span', [_vm._v("sepia")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.spa),
-      expression: "spa"
-    }],
-    attrs: {
-      "type": "range",
-      "min": "0",
-      "max": "100"
-    },
-    domProps: {
-      "value": (_vm.spa)
-    },
-    on: {
-      "__r": function($event) {
-        _vm.spa = $event.target.value
-      }
-    }
-  })]), _vm._v(" "), _c('p', [_c('span', [_vm._v("어둡게")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.brt),
-      expression: "brt"
-    }],
-    attrs: {
-      "type": "range",
-      "min": "20",
-      "max": "100"
-    },
-    domProps: {
-      "value": (_vm.brt)
-    },
-    on: {
-      "__r": function($event) {
-        _vm.brt = $event.target.value
-      }
-    }
-  }), _vm._v(" "), _c('span', [_vm._v("밝게")])]), _vm._v(" "), _c('p', [_c('span', [_vm._v("대비 약하게")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.cnt),
-      expression: "cnt"
-    }],
-    attrs: {
-      "type": "range",
-      "min": "25",
-      "max": "200"
-    },
-    domProps: {
-      "value": (_vm.cnt)
-    },
-    on: {
-      "__r": function($event) {
-        _vm.cnt = $event.target.value
-      }
-    }
-  }), _vm._v("\n                대비 강하게\n            ")]), _vm._v(" "), _c('br'), _vm._v(" "), _c('p', [_vm._v("Color Filter")]), _vm._v(" "), _c('p', [_c('span', [_vm._v("Blue mix")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.bluemix),
-      expression: "bluemix"
-    }],
-    attrs: {
-      "type": "range",
-      "min": "0",
-      "max": "1",
-      "step": "0.1"
-    },
-    domProps: {
-      "value": (_vm.bluemix)
-    },
-    on: {
-      "__r": function($event) {
-        _vm.bluemix = $event.target.value
-      }
-    }
-  })]), _vm._v(" "), _c('p', [_c('span', [_vm._v("green mix")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.greenmix),
-      expression: "greenmix"
-    }],
-    attrs: {
-      "type": "range",
-      "min": "0",
-      "max": "1",
-      "step": "0.1"
-    },
-    domProps: {
-      "value": (_vm.greenmix)
-    },
-    on: {
-      "__r": function($event) {
-        _vm.greenmix = $event.target.value
-      }
-    }
-  })]), _vm._v(" "), _c('p', [_c('span', [_vm._v("orange mix")]), _vm._v(" "), _c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: (_vm.orangemix),
-      expression: "orangemix"
-    }],
-    attrs: {
-      "type": "range",
-      "min": "0",
-      "max": "1",
-      "step": "0.1"
-    },
-    domProps: {
-      "value": (_vm.orangemix)
-    },
-    on: {
-      "__r": function($event) {
-        _vm.orangemix = $event.target.value
-      }
-    }
-  })])])])])
-},staticRenderFns: []}
-
-/***/ }),
 /* 25 */
 /***/ (function(module, exports) {
 
@@ -11741,7 +11743,7 @@ var content = __webpack_require__(11);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("154509ec", content, true);
+var update = __webpack_require__(2)("4eb613fe", content, true);
 
 /***/ }),
 /* 27 */
@@ -11754,7 +11756,7 @@ var content = __webpack_require__(12);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("67a94b06", content, true);
+var update = __webpack_require__(2)("485988e5", content, true);
 
 /***/ }),
 /* 28 */
@@ -11767,7 +11769,7 @@ var content = __webpack_require__(13);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("05176828", content, true);
+var update = __webpack_require__(2)("84d4aa2a", content, true);
 
 /***/ }),
 /* 29 */
@@ -11780,7 +11782,7 @@ var content = __webpack_require__(14);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(2)("fa1fa99e", content, true);
+var update = __webpack_require__(2)("380c8118", content, true);
 
 /***/ }),
 /* 30 */
