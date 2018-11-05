@@ -1,11 +1,11 @@
 var $play = $('.play'),
     $detail  = $('.detail'),
-    $movie = $('.movie', $detail),
+    $card = $('.card', $detail),
     $close = $('.close');
 
-$('.movies .movie').click(function(){
-  $movie.html($(this).html());
-  $play.appendTo($movie);
+$('.cardbox .card').click(function(){
+  $card.html($(this).html());
+  $play.appendTo($card);
 
   $poster = $('.poster', this).addClass('active');
 
@@ -73,7 +73,7 @@ $('body').click(function(e){
 CodePen Thumbnail
 --------------------*/
 // setTimeout(function(){
-//   $('.movie:eq(0)').click();
+//   $('.card:eq(0)').click();
 // }, 300);
 // setTimeout(function(){
 //   close();
