@@ -24,6 +24,8 @@
   src: url('../font/NotoSans/NotoSans-Light.woff');
 }
 
+body, input, select, div, textarea, table, button {font-family:'notosansKR',sans-serif;}
+
 h1 { color: #444; font-size: 1.2em; padding: 14px 2px 12px; margin: 0px; }
 h1 em { font-style: normal; color: #999; }
 a { color: #888; text-decoration: none; }
@@ -33,32 +35,8 @@ html, body {
 	height: 100%;
 	margin:0;
 	padding:0;
-	/* overflow:hidden; */
 }
-body, input, select, div, textarea, table, button {font-family: 'NanumSquare', sans-serif !important;}
-.wrapper{height:100%; width:100%; position:relative; }
 
-.wrap{height:100%;}
-.container{position:relative;height:100%;}
-
-
-/* cursor custom */
-*{
-  /*cursor:crosshair;*/
-    cursor:url('../image/cursor.png') 32 32, auto;
-  }
-  a{
-    cursor:url('../image/cursor_a.png') 32 32, auto;
-  }
-  
-  .swiper-button-next, .swiper-button-prev{
-    cursor:url('../image/cursor_a.png') 32 32, auto;
-  }
-  .swiper-pagination-clickable .swiper-pagination-bullet{
-    cursor:url('../image/cursor_a.png') 32 32, auto;
-  }
-
-  
 /* style */
 .app_wrap{
   position: relative;
@@ -79,10 +57,8 @@ body, input, select, div, textarea, table, button {font-family: 'NanumSquare', s
 
 .cards-list{
   height:100%;
-}
-
-.cards-list.hidden{
-  overflow: hidden;
+  display:flex;
+  flex-wrap: wrap;
 }
 
 .cards-list * {
@@ -90,8 +66,10 @@ body, input, select, div, textarea, table, button {font-family: 'NanumSquare', s
 }
 
 .card-holder {
+  width:100%;
   box-sizing: content-box;
   margin-bottom: 20px;
+  transition:.3s;
 }
 .card-holder:last-child{
   margin-bottom:0;
@@ -126,13 +104,13 @@ body.hidden {
 }
 .card .close {
   border: none;
-  width: 25px;
-  height: 25px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: #555;
+  background: rgba(0,0,0,.5);
   position: fixed;
-  right: 10px;
-  top: 10px;
+  right: 30px;
+  top: 20px;
   opacity: 0;
   visibility: hidden;
   z-index: 1;
@@ -144,8 +122,8 @@ body.hidden {
   height: 1px;
   background: #fff;
   position: absolute;
-  left: 5px;
-  top: 12px;
+  left: 12px;
+  top: 19px;
 }
 .card .close:after {
   transform: rotate(45deg);
@@ -196,26 +174,17 @@ body.hidden {
 }
 
 
-
-
-
-iframe{
-  width: 100%;
-  height:100%;
+@media (min-width: 768px) {
+  .card-holder{
+    width:calc(33.3% - 20px);
+    margin:10px;
+  }
 }
 
-@media screen and (max-device-width: 480px) {
-    #wrapper { position: relative; left: -3%; }
-    #shortcuts { display: none; }
+@media (min-width: 1024px) {
+  .card-holder{
+    width:calc(50% - 20px);
+    margin:10px;
+  }
 }
 
-.credit {
-    text-align: center;
-}
-
-
-@media (min-width:600px){
-	.wrapper{display:table;}
-	.wrap{ display:table-cell; vertical-align:middle;}
-	.container{border:1px solid #ddd; box-shadow:10px 10px 40px rgba(0,0,0,.1); width:375px; height:667px; overflow:auto; margin:0 auto; }
-}
