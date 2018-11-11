@@ -1,57 +1,71 @@
 'use strict';
 
 var $activeBar = $('#tabActiveBar');
-var barW = 20; // barW，px
 var btnW = 70; // btnW，px
 var slideAmount = 10; // slideAmount
+var gutter = 10;
 
+var activeTab = '';
+var activeTabW = '';
+var activeTabXpos = '';
 var colors = ['#04a5c1', '#f298e7', '#846ef4', '#f45509', '#cf396f', '#04a5c1', '#f298e7', '#846ef4', '#f45509', '#cf396f'];
 
-$(document).ready(function () {
-  var tabNavSwiper = new Swiper('.tab-nav', {
-    slidesPerView: 'auto'
-  });
+//init set
+btnW = $('#tabNav .active').innerWidth();
+$activeBar.css({
+  'left': gutter,
+  'width': btnW
+});
 
-  var tabContentSwiper = new Swiper('.tab-content', {
-    onProgress: function onProgress(swiper, progress) {
-      $activeBar.css('transition-duration', '0s');
+var tabNavSwiper = new Swiper('.tab-nav', {
+  slidesPerView: 'auto'
+});
 
-      var slideFullProgress = 1 / (slideAmount - 1); // slideFullProgress
-      var slideProgress = progress % slideFullProgress / slideFullProgress; // slideProgress[0,1]
-      var willActiveIndex = Math.floor(progress / slideFullProgress); // willActiveIndex
+var tabContentSwiper = new Swiper('.tab-content', {
+  speed:400,
+  onProgress: function onProgress(swiper, progress) {
+    var slideFullProgress = 1 / (slideAmount - 1); // slideFullProgress
+    var slideProgress = progress % slideFullProgress / slideFullProgress; // slideProgress[0,1]
+    var willActiveIndex = Math.floor(progress / slideFullProgress); // willActiveIndex
 
-      if (progress >= 0 && progress <= 1) {
-        if (slideProgress <= 0.5) {
-          $activeBar.css('width', barW + btnW * slideProgress * 2);
-        } else {
-          $activeBar.css({
-            'left': btnW * willActiveIndex + btnW * (slideProgress - 0.5) * 2,
-            'width': barW + btnW - btnW * (slideProgress - 0.5) * 2
-          });
-        }
-      }
-    },
-    onSetTransition: function onSetTransition(swiper) {
-      $activeBar.css('transition-duration', '0.25s');
-      $activeBar.css({
-        'left': btnW * swiper.activeIndex,
-        'width': barW
-      });
-    },
-    onSlideChangeStart: function onSlideChangeStart(swiper) {
-      $('#tabNav .active').removeClass('active');
-      $('#tabNav .swiper-slide[data-slide-index=' + swiper.activeIndex + ']').addClass('active');
-      if (swiper.previousIndex < swiper.activeIndex) {
-        tabNavSwiper.slideTo(swiper.activeIndex - 2);
+    if (progress > 0 && progress <= 1) {
+      if (slideProgress <= 0.5) {
+        $activeBar.css({
+          'width': activeTabW + activeTabW * slideProgress * 2
+        });
       } else {
-        tabNavSwiper.slideTo(swiper.activeIndex - 1);
+        $activeBar.css({
+          'left': gutter + activeTabW * willActiveIndex + activeTabW * (slideProgress - 0.5) * 2,
+          'width': activeTabW + activeTabW - activeTabW * (slideProgress - 0.5) * 2
+        });
       }
-      $activeBar.css('background-color', colors[swiper.activeIndex]);
     }
-  });
+  },
+  onSlideChangeStart: function onSlideChangeStart(swiper) {
+    $('#tabNav .active').removeClass('active');
+    $('#tabNav .swiper-slide[data-slide-index=' + swiper.activeIndex + ']').addClass('active');
 
-  $('#tabNav .swiper-slide').on('click', function (event) {
-    tabContentSwiper.slideTo($(this).data('slide-index'));
-  });
+    // tabNavSwiper Auto Move
+    if (swiper.previousIndex < swiper.activeIndex) {
+      tabNavSwiper.slideTo(swiper.activeIndex - 2);
+    } else {
+      tabNavSwiper.slideTo(swiper.activeIndex - 1);
+    }
+
+    activeTab = $('#tabNav .swiper-slide[data-slide-index=' + swiper.activeIndex + ']');
+    activeTabW = activeTab.innerWidth();
+    activeTabXpos = activeTab.position().left;
+
+    $activeBar.css({
+      'background-color': colors[swiper.activeIndex],
+      'width': activeTabW,
+      'left': gutter + activeTabXpos
+    });
+  },
+
+});
+
+$('#tabNav .swiper-slide').on('click', function (event) {
+  tabContentSwiper.slideTo($(this).data('slide-index'));
 });
 
