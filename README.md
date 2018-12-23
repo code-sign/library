@@ -11,7 +11,7 @@ updated 18.12.22
 - swiper parallax
 - polymer custom
 - react drag
-- vue todo
+- vue todolist
 - vue clock
 - vue search
 - vue layer
