@@ -9,3 +9,6 @@ updated 18.12.22
 - ui component
 - app store
 - swiper parallax
+- polymer custom
+- react drag
+- vue todo
