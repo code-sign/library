@@ -4,7 +4,7 @@ ver.0.5
 
 updated 18.12.22 
 
-- naver slider
+- naver slide tab 
 - naver greendot
 - ui component
 - app store
