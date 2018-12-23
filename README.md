@@ -18,3 +18,4 @@ updated 18.12.22
 - vue font tester
 - position ui
 - card ui
+- ripple motion
