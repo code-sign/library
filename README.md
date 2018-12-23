@@ -15,3 +15,5 @@ updated 18.12.22
 - vue clock
 - vue search
 - vue layer
+- vue font tester
+- position ui
