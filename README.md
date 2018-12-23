@@ -12,3 +12,5 @@ updated 18.12.22
 - polymer custom
 - react drag
 - vue todo
+- vue clock
+- vue search
