@@ -13,7 +13,7 @@ last updated : 18.12.22
 - react drag
 - vue todolist
 - vue clock
-- vue search
+- vue search filter
 - vue layer
 - vue font tester
 - position ui
