@@ -21,7 +21,7 @@ last updated : 18.12.22
 - ripple motion
 - form motion
 - music app
-- audio mition
+- audio play motion
 - sorting
 - framer prototype travel
 - micro interaction
