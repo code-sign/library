@@ -4,7 +4,7 @@
 > last updated : 18.12.22 
 
 ### UI List
-- naver slide tab 
+- naver slide bar 
 - naver greendot
 - ui component
 - app store
