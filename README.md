@@ -9,7 +9,7 @@
 - ui component
 - app store
 - swiper parallax
-- polymer custom
+- polymer drawer custom
 - react drag
 - vue todolist
 - vue clock
