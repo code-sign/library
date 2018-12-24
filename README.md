@@ -2,7 +2,7 @@
 
 ver.0.5
 
-updated 18.12.22 
+last updated : 18.12.22 
 
 - naver slide tab 
 - naver greendot
