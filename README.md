@@ -20,7 +20,7 @@ last updated : 18.12.22
 - card ui
 - ripple motion
 - form motion
-- music app
+- music app ui
 - audio play motion
 - sorting
 - framer prototype travel
