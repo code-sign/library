@@ -23,6 +23,6 @@
 - form motion
 - music app ui
 - audio play motion
-- vue sorting
+- sorting
 - framer prototype travel
 - micro interaction
