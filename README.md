@@ -19,7 +19,7 @@
 - vue font tester
 - position ui
 - card ui
-- ripple motion
+- ripple click motion
 - form motion
 - music app ui
 - audio play motion
