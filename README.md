@@ -6,7 +6,7 @@
 
 ### UI List
 - naver slide bar 
-- naver greendot
+- greendot
 - ui component
 - app store
 - swiper parallax
