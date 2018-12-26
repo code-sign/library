@@ -8,9 +8,9 @@
 - naver slide bar 
 - greendot
 - ui component
-- app store
+- app store ui
 - swiper parallax
-- polymer drawer custom
+- polymer drawer custom 
 - react drag
 - vue todolist
 - vue clock
