@@ -27,4 +27,3 @@
 - framer prototype travel
 - micro interaction
  
- 
