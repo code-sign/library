@@ -28,4 +28,3 @@ lineAnim();
 setInterval(function(){
     lineAnim();
 },interve);
-
