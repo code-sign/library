@@ -17,8 +17,8 @@ function lineAnim(){
 
     setTimeout(function(){
         $('path').velocity({
-            'stroke-dashoffset':1000,
-            'opacity':'.1'
+            "stroke-dashoffset": 1000,
+            opacity: .1
         },{duration:speed});
     },4600)
 }
