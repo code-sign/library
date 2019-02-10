@@ -1,0 +1,209 @@
+body {
+  font-family: avenir, helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.container{
+  position: relative;
+  height: 100vh;
+  width:100%;
+}
+
+.bg_photo{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+  /* background: url('../bg.jpg') 0 0 no-repeat; */
+  background-size: cover;
+  background-position: center 70%;
+  height: 100vh;
+  width:100%;
+}
+.bg_gr{
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+
+  background: linear-gradient(120deg,
+   rgba(19, 178, 102, 0.72),
+   rgba(38, 184, 208, 0.72),
+   rgba(50, 107, 185, 0.72),
+   rgba(90, 71, 183, 0.72),
+   rgba(206, 61, 104, 0.72)) fixed;
+  background-size: 500%;
+  -webkit-animation: bg-gradient 15s ease infinite;
+  -moz-animation: bg-gradient 15s ease infinite;
+  -o-animation: bg-gradient 15s ease infinite;
+  animation: bg-gradient 15s ease infinite;
+
+
+}
+
+  @-webkit-keyframes bg-gradient {
+    0% {
+      background-position: 14% 0;
+    }
+    50% {
+      background-position: 87% 100%;
+    }
+    100% {
+      background-position: 14% 0;
+    }
+  }
+  @-moz-keyframes bg-gradient {
+    0% {
+      background-position: 14% 0;
+    }
+    50% {
+      background-position: 87% 100%;
+    }
+    100% {
+      background-position: 14% 0;
+    }
+  }
+  @-o-keyframes bg-gradient {
+    0% {
+      background-position: 14% 0;
+    }
+    50% {
+      background-position: 87% 100%;
+    }
+    100% {
+      background-position: 14% 0;
+    }
+  }
+  @keyframes bg-gradient {
+    0% {
+      background-position: 14% 0;
+    }
+    50% {
+      background-position: 87% 100%;
+    }
+    100% {
+      background-position: 14% 0;
+    }
+  }
+
+.mysvg{
+  position: relative;
+  max-width:1280px;
+  margin: 0 auto;
+  overflow: hidden;
+  
+}
+
+.mysvg svg {
+  margin-top:200px;
+  width:100%;
+  -webkit-filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.05));      
+  filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.05));  
+}
+
+.st0{display:none;}
+.st1{display:inline;}
+.st2{font-family:'TuesdayNight-Regular';}
+.st3{font-size:73.5195px;}
+.st4{clip-path:url(#SVGID_2_);fill:none;stroke:#fff;stroke-width:10;}
+.st5{clip-path:url(#SVGID_4_);fill:none;stroke:#fff;stroke-width:10;stroke-miterlimit:10;}
+.st6{clip-path:url(#SVGID_6_);fill:none;stroke:#fff;stroke-width:8;}
+.st7{clip-path:url(#SVGID_8_);fill:none;stroke:#fff;stroke-width:7;}
+.st8{clip-path:url(#SVGID_10_);fill:none;stroke:#fff;stroke-width:10;}
+.st9{clip-path:url(#SVGID_12_);fill:none;stroke:#fff;stroke-width:10;}
+.st10{clip-path:url(#SVGID_14_);fill:none;stroke:#fff;stroke-width:10;}
+.st11{clip-path:url(#SVGID_16_);fill:none;stroke:#fff;stroke-width:12;}
+.st12{clip-path:url(#SVGID_18_);fill:none;stroke:#FF0000;stroke-miterlimit:10;}
+.st13{clip-path:url(#SVGID_18_);fill:none;stroke:#fff;stroke-width:10;stroke-miterlimit:10;}
+
+
+path{
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  stroke-width: 10;
+
+}
+
+
+/*
+@keyframes curse {
+  100%{
+    stroke-dashoffset: 0;
+  }
+}
+
+.st13{
+  stroke:#000;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  stroke-width: 10;
+  animation: curse .7s linear forwards;
+}
+
+.st11{
+  stroke:slateblue;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  stroke-width: 10;
+  animation: curse 2s .4s linear forwards;
+}
+
+.st10{
+  stroke:rosybrown;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  stroke-width: 10;
+  animation: curse .5s 1s linear forwards;
+}
+
+.st9{
+  stroke:cornflowerblue;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  stroke-width: 10;
+  animation: curse .5s 1.3s linear forwards;
+}
+
+.st8{
+  stroke:skyblue;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  stroke-width: 10;
+  animation: curse .3s 1.7s linear forwards;
+}
+
+.st7{
+  stroke:burlywood;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  stroke-width: 10;
+  animation: curse .5s 2s linear forwards;
+}
+
+.st6{
+  stroke:burlywood;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  stroke-width: 10;
+  animation: curse .3s 2.2s linear forwards;
+}
+
+.st5{
+  stroke:burlywood;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  stroke-width: 10;
+  animation: curse .3s 2.7s linear forwards;
+}
+
+.st4{
+  stroke:burlywood;
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
+  stroke-width: 10;
+  animation: curse .5s 3s linear forwards;
+}
+*/
